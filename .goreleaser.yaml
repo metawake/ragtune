@@ -66,6 +66,7 @@ brews:
     repository:
       owner: metawake
       name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
     install: |
       bin.install "ragtune"
     test: |
