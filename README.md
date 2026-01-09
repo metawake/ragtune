@@ -7,6 +7,10 @@
 **EXPLAIN ANALYZE for RAG retrieval** — inspect, explain, benchmark, and tune your RAG retrieval layer.
 
 <p align="center">
+  <img src="assets/demo.gif" alt="RagTune demo" width="700">
+</p>
+
+<p align="center">
   <a href="#30-second-quickstart">Quickstart</a> •
   <a href="#key-concepts-60-second-primer">Concepts</a> •
   <a href="#command-guide">Commands</a> •
