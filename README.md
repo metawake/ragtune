@@ -602,33 +602,43 @@ Default is `openai`. Use `--embedder ollama` for zero-config local setup.
 
 ## Installation
 
-### Option A: Download Binary (Recommended)
-
-Download the latest release for your platform:
+### Option A: Homebrew (macOS/Linux)
 
 ```bash
-# macOS (Apple Silicon)
-curl -L https://github.com/metawake/ragtune/releases/latest/download/ragtune_darwin_arm64.tar.gz | tar xz
-sudo mv ragtune /usr/local/bin/
-
-# macOS (Intel)
-curl -L https://github.com/metawake/ragtune/releases/latest/download/ragtune_darwin_amd64.tar.gz | tar xz
-sudo mv ragtune /usr/local/bin/
-
-# Linux
-curl -L https://github.com/metawake/ragtune/releases/latest/download/ragtune_linux_amd64.tar.gz | tar xz
-sudo mv ragtune /usr/local/bin/
+brew install metawake/tap/ragtune
 ```
 
-Or download from [GitHub Releases](https://github.com/metawake/ragtune/releases).
+### Option B: Install Script
 
-### Option B: Go Install
+```bash
+curl -sSL https://raw.githubusercontent.com/metawake/ragtune/main/install.sh | bash
+```
+
+### Option C: Go Install
 
 ```bash
 go install github.com/metawake/ragtune/cmd/ragtune@latest
 ```
 
-### Option C: Build from Source
+### Option D: Download Binary
+
+Download from [GitHub Releases](https://github.com/metawake/ragtune/releases) or manually:
+
+```bash
+# macOS (Apple Silicon)
+curl -L https://github.com/metawake/ragtune/releases/latest/download/ragtune_0.1.0_darwin_arm64.tar.gz | tar xz
+sudo mv ragtune /usr/local/bin/
+
+# macOS (Intel)
+curl -L https://github.com/metawake/ragtune/releases/latest/download/ragtune_0.1.0_darwin_amd64.tar.gz | tar xz
+sudo mv ragtune /usr/local/bin/
+
+# Linux
+curl -L https://github.com/metawake/ragtune/releases/latest/download/ragtune_0.1.0_linux_amd64.tar.gz | tar xz
+sudo mv ragtune /usr/local/bin/
+```
+
+### Option E: Build from Source
 
 ```bash
 git clone https://github.com/metawake/ragtune.git
