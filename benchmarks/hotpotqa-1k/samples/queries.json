@@ -1,0 +1,57 @@
+{
+  "queries": [
+    {
+      "id": "q1",
+      "text": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+      "answer": "no",
+      "relevant_docs": [
+        "Laleli_Mosque_c7818f.txt",
+        "Esma_Sultan_Mansion_fb6370.txt"
+      ],
+      "type": "comparison"
+    },
+    {
+      "id": "q2",
+      "text": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+      "answer": "no",
+      "relevant_docs": [
+        "888_7th_Avenue_f091f0.txt",
+        "Random_House_Tower_2b6a2a.txt"
+      ],
+      "type": "comparison"
+    },
+    {
+      "id": "q3",
+      "text": "The football manager who recruited David Beckham managed Manchester United during what timeframe?",
+      "answer": "from 1986 to 2013",
+      "relevant_docs": [
+        "1995_96_Manchester_United_F.C._season_3f9756.txt",
+        "Alex_Ferguson_6962e9.txt"
+      ],
+      "type": "bridge"
+    },
+    {
+      "id": "q4",
+      "text": "Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?",
+      "answer": "keyboard function keys",
+      "relevant_docs": [
+        "Apple_Remote_fcaffa.txt",
+        "Front_Row__software__ec6691.txt"
+      ],
+      "type": "bridge"
+    },
+    {
+      "id": "q5",
+      "text": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+      "answer": "World's Best Goalkeeper",
+      "relevant_docs": [
+        "Kasper_Schmeichel_c9da28.txt",
+        "Peter_Schmeichel_0b144a.txt"
+      ],
+      "type": "bridge"
+    }
+  ]
+}
+
+
+

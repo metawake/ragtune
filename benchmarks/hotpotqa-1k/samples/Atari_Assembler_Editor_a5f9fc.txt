@@ -1,0 +1,3 @@
+# Atari Assembler Editor
+
+The Atari Assembler Editor is a cartridge-based development system used to edit, assemble, and debug 6502 programs for the Atari 8-bit family of home computers.  It was programmed by Kathleen O'Brien of Shepardson Microsystems.  It was the first commercially available assembler for the Atari 8-bit computers.

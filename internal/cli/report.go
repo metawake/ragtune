@@ -1,0 +1,253 @@
+package cli
+
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+	"path/filepath"
+	"strings"
+
+	"github.com/spf13/cobra"
+)
+
+var (
+	runPath    string
+	reportPath string
+	format     string
+)
+
+var reportCmd = &cobra.Command{
+	Use:   "report",
+	Short: "Generate a report from a simulation run",
+	Long: `Generate a Markdown or JSON report from a simulation run.
+
+Reads a run artifact and produces a formatted report suitable for
+documentation, PRs, or CI artifacts.
+
+Example:
+  ragtune report --run runs/latest.json --out report.md
+  ragtune report --run runs/latest.json --out report.json --format json`,
+	RunE: runReport,
+}
+
+func init() {
+	reportCmd.Flags().StringVar(&runPath, "run", "runs/latest.json", "Path to run JSON file")
+	reportCmd.Flags().StringVar(&reportPath, "out", "report.md", "Output file path")
+	reportCmd.Flags().StringVar(&format, "format", "", "Output format (md, json) - auto-detected from extension if not specified")
+
+	rootCmd.AddCommand(reportCmd)
+}
+
+func runReport(cmd *cobra.Command, args []string) error {
+	// Load run data
+	data, err := os.ReadFile(runPath)
+	if err != nil {
+		return fmt.Errorf("failed to read run file: %w", err)
+	}
+
+	var run RunResult
+	if err := json.Unmarshal(data, &run); err != nil {
+		return fmt.Errorf("failed to parse run file: %w", err)
+	}
+
+	// Determine format
+	if format == "" {
+		ext := filepath.Ext(reportPath)
+		switch ext {
+		case ".json":
+			format = "json"
+		default:
+			format = "md"
+		}
+	}
+
+	var output string
+	switch format {
+	case "json":
+		output, err = generateJSONReport(run)
+	case "md", "markdown":
+		output, err = generateMarkdownReport(run)
+	default:
+		return fmt.Errorf("unsupported format: %s (use md or json)", format)
+	}
+
+	if err != nil {
+		return fmt.Errorf("failed to generate report: %w", err)
+	}
+
+	if err := os.WriteFile(reportPath, []byte(output), 0644); err != nil {
+		return fmt.Errorf("failed to write report: %w", err)
+	}
+
+	fmt.Printf("✓ Report generated: %s\n", reportPath)
+	return nil
+}
+
+func generateMarkdownReport(run RunResult) (string, error) {
+	var sb strings.Builder
+
+	sb.WriteString("# RagTune Retrieval Report\n\n")
+	sb.WriteString(fmt.Sprintf("**Timestamp:** %s  \n", run.Timestamp))
+	sb.WriteString(fmt.Sprintf("**Collection:** %s  \n", run.Collection))
+	sb.WriteString(fmt.Sprintf("**Store:** %s  \n", run.Store))
+	sb.WriteString("\n---\n\n")
+
+	// Summary table
+	sb.WriteString("## Summary\n\n")
+	
+	// Check if we have latency data
+	hasLatency := false
+	for _, cfg := range run.Configs {
+		if cfg.Metrics.LatencyAvg > 0 {
+			hasLatency = true
+			break
+		}
+	}
+
+	if hasLatency {
+		sb.WriteString("| Config | Top-K | Recall@K | MRR | Coverage | Latency (p50/p95) |\n")
+		sb.WriteString("|--------|-------|----------|-----|----------|-------------------|\n")
+		for _, cfg := range run.Configs {
+			sb.WriteString(fmt.Sprintf("| %s | %d | %.3f | %.3f | %.3f | %.0f/%.0fms |\n",
+				cfg.Config.Name,
+				cfg.Config.TopK,
+				cfg.Metrics.RecallAtK,
+				cfg.Metrics.MRR,
+				cfg.Metrics.Coverage,
+				cfg.Metrics.LatencyP50,
+				cfg.Metrics.LatencyP95,
+			))
+		}
+	} else {
+		sb.WriteString("| Config | Top-K | Recall@K | MRR | Coverage | Redundancy |\n")
+		sb.WriteString("|--------|-------|----------|-----|----------|------------|\n")
+		for _, cfg := range run.Configs {
+			sb.WriteString(fmt.Sprintf("| %s | %d | %.3f | %.3f | %.3f | %.2f |\n",
+				cfg.Config.Name,
+				cfg.Config.TopK,
+				cfg.Metrics.RecallAtK,
+				cfg.Metrics.MRR,
+				cfg.Metrics.Coverage,
+				cfg.Metrics.Redundancy,
+			))
+		}
+	}
+
+	sb.WriteString("\n---\n\n")
+
+	// Detailed results per config
+	sb.WriteString("## Detailed Results\n\n")
+
+	for _, cfg := range run.Configs {
+		sb.WriteString(fmt.Sprintf("### Config: %s (top_k=%d)\n\n", cfg.Config.Name, cfg.Config.TopK))
+
+		sb.WriteString("| Query | Retrieved | Relevant | Hit? |\n")
+		sb.WriteString("|-------|-----------|----------|------|\n")
+
+		for _, qr := range cfg.QueryResults {
+			retrieved := truncateList(qr.RetrievedIDs, 3)
+			relevant := truncateList(qr.RelevantIDs, 3)
+			hit := hasOverlap(qr.RetrievedIDs, qr.RelevantIDs)
+			hitStr := "❌"
+			if hit {
+				hitStr = "✅"
+			}
+			sb.WriteString(fmt.Sprintf("| %s | %s | %s | %s |\n",
+				qr.QueryID,
+				retrieved,
+				relevant,
+				hitStr,
+			))
+		}
+		sb.WriteString("\n")
+	}
+
+	// Interpretation guide
+	sb.WriteString("---\n\n")
+	sb.WriteString("## Metrics Guide\n\n")
+	sb.WriteString("- **Recall@K**: Fraction of relevant docs found in top-K results (higher is better)\n")
+	sb.WriteString("- **MRR**: Mean Reciprocal Rank — how high the first relevant result ranks (higher is better)\n")
+	sb.WriteString("- **Coverage**: Fraction of all relevant docs ever retrieved across queries (higher is better)\n")
+	sb.WriteString("- **Redundancy**: Average times each doc is retrieved (lower may indicate diverse results)\n")
+	sb.WriteString("- **Latency**: Query latency including embedding + search (p50/p95/p99 percentiles)\n")
+	sb.WriteString("\n---\n\n")
+	sb.WriteString("*Generated by [RagTune](https://github.com/metawake/ragtune)*\n")
+
+	return sb.String(), nil
+}
+
+func generateJSONReport(run RunResult) (string, error) {
+	// Create a simplified report structure
+	type ReportConfig struct {
+		Name       string  `json:"name"`
+		TopK       int     `json:"top_k"`
+		RecallAtK  float64 `json:"recall_at_k"`
+		MRR        float64 `json:"mrr"`
+		Coverage   float64 `json:"coverage"`
+		Redundancy float64 `json:"redundancy"`
+		LatencyP50 float64 `json:"latency_p50_ms,omitempty"`
+		LatencyP95 float64 `json:"latency_p95_ms,omitempty"`
+		LatencyP99 float64 `json:"latency_p99_ms,omitempty"`
+		LatencyAvg float64 `json:"latency_avg_ms,omitempty"`
+	}
+
+	type Report struct {
+		Timestamp  string         `json:"timestamp"`
+		Collection string         `json:"collection"`
+		Store      string         `json:"store"`
+		Configs    []ReportConfig `json:"configs"`
+	}
+
+	report := Report{
+		Timestamp:  run.Timestamp,
+		Collection: run.Collection,
+		Store:      run.Store,
+	}
+
+	for _, cfg := range run.Configs {
+		report.Configs = append(report.Configs, ReportConfig{
+			Name:       cfg.Config.Name,
+			TopK:       cfg.Config.TopK,
+			RecallAtK:  cfg.Metrics.RecallAtK,
+			MRR:        cfg.Metrics.MRR,
+			Coverage:   cfg.Metrics.Coverage,
+			Redundancy: cfg.Metrics.Redundancy,
+			LatencyP50: cfg.Metrics.LatencyP50,
+			LatencyP95: cfg.Metrics.LatencyP95,
+			LatencyP99: cfg.Metrics.LatencyP99,
+			LatencyAvg: cfg.Metrics.LatencyAvg,
+		})
+	}
+
+	data, err := json.MarshalIndent(report, "", "  ")
+	if err != nil {
+		return "", err
+	}
+	return string(data), nil
+}
+
+func truncateList(items []string, max int) string {
+	if len(items) == 0 {
+		return "-"
+	}
+	if len(items) <= max {
+		return strings.Join(items, ", ")
+	}
+	return strings.Join(items[:max], ", ") + fmt.Sprintf(" (+%d)", len(items)-max)
+}
+
+func hasOverlap(a, b []string) bool {
+	set := make(map[string]struct{})
+	for _, s := range b {
+		set[s] = struct{}{}
+	}
+	for _, s := range a {
+		if _, ok := set[s]; ok {
+			return true
+		}
+	}
+	return false
+}
+
+
+

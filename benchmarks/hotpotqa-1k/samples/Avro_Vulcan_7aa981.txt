@@ -1,0 +1,3 @@
+# Avro Vulcan
+
+The Avro Vulcan (later Hawker Siddeley Vulcan from July 1963) is a jet-powered tailless delta wing high-altitude strategic bomber, which was operated by the Royal Air Force (RAF) from 1956 until 1984.  Aircraft manufacturer A.V. Roe and Company (Avro) designed the Vulcan in response to Specification B.35/46.  Of the three V bombers produced, the Vulcan was considered the most technically advanced and hence the riskiest option.  Several scale aircraft, designated Avro 707, were produced to test and refine the delta wing design principles.

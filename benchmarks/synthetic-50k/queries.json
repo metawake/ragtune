@@ -1,0 +1,6004 @@
+{
+  "queries": [
+    {
+      "id": "qb7c534d9fe77",
+      "text": "What is the procedure for service mesh operations?",
+      "answer": "See DevOps Specification: Service Mesh",
+      "relevant_docs": [
+        "doc_b7c534d9fe77.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "DevOps"
+    },
+    {
+      "id": "q0770f9428804",
+      "text": "What is the procedure for scaling operations?",
+      "answer": "See Sales Proposal: Scaling",
+      "relevant_docs": [
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt",
+        "doc_2d5e5c1133ee.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Sales"
+    },
+    {
+      "id": "q3380b18b8281",
+      "text": "How do I implement performance optimization in the HR department?",
+      "answer": "See HR Procedure: Performance Optimization",
+      "relevant_docs": [
+        "doc_3380b18b8281.txt",
+        "doc_5c408e527e85.txt",
+        "doc_9e93b36eee5c.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "HR"
+    },
+    {
+      "id": "qb9da9c1d3846",
+      "text": "Who is responsible for API versioning in Design?",
+      "answer": "See Design Memo: Api Versioning",
+      "relevant_docs": [
+        "doc_b9da9c1d3846.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_f551b50040b6.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Design"
+    },
+    {
+      "id": "q8285c0abb85e",
+      "text": "Who is responsible for microservices in Sales?",
+      "answer": "See Sales Proposal: Microservices",
+      "relevant_docs": [
+        "doc_8285c0abb85e.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Sales"
+    },
+    {
+      "id": "q28bb95b126da",
+      "text": "What are the requirements for data processing according to Product guidelines?",
+      "answer": "See Product Proposal: Data Processing",
+      "relevant_docs": [
+        "doc_28bb95b126da.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Product"
+    },
+    {
+      "id": "q41623a240a33",
+      "text": "Where can I find the proposal for scaling?",
+      "answer": "See Design Proposal: Scaling",
+      "relevant_docs": [
+        "doc_41623a240a33.txt",
+        "doc_0770f9428804.txt",
+        "doc_2d5e5c1133ee.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Design"
+    },
+    {
+      "id": "q5c408e527e85",
+      "text": "How do I troubleshoot performance optimization in the Customer Success department?",
+      "answer": "See Customer Success Analysis: Performance Optimization",
+      "relevant_docs": [
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt",
+        "doc_9e93b36eee5c.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q8c216938fe9d",
+      "text": "Who is responsible for encryption in Data Science?",
+      "answer": "See Data Science Report: Encryption",
+      "relevant_docs": [
+        "doc_8c216938fe9d.txt",
+        "doc_240d247f084f.txt",
+        "doc_c72205d88df0.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "Data Science"
+    },
+    {
+      "id": "q927f7f033d18",
+      "text": "What are the requirements for testing standards according to Finance guidelines?",
+      "answer": "See Finance Guide: Testing Standards",
+      "relevant_docs": [
+        "doc_927f7f033d18.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_431f9687f151.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Finance"
+    },
+    {
+      "id": "qdc61f40788ed",
+      "text": "Where can I find the report for security compliance?",
+      "answer": "See Operations Report: Security Compliance",
+      "relevant_docs": [
+        "doc_dc61f40788ed.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Operations"
+    },
+    {
+      "id": "q2f322504d8f9",
+      "text": "What are the requirements for load balancing according to Engineering guidelines?",
+      "answer": "See Engineering Memo: Load Balancing",
+      "relevant_docs": [
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt",
+        "doc_f85db14b9a8d.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Engineering"
+    },
+    {
+      "id": "qef54a2e48560",
+      "text": "What are the requirements for API integration according to Product guidelines?",
+      "answer": "See Product Memo: Api Integration",
+      "relevant_docs": [
+        "doc_ef54a2e48560.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_7ef4763b9daa.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Product"
+    },
+    {
+      "id": "q6f255b6880d0",
+      "text": "What is the procedure for cost optimization operations?",
+      "answer": "See QA Analysis: Cost Optimization",
+      "relevant_docs": [
+        "doc_6f255b6880d0.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "QA"
+    },
+    {
+      "id": "qbd3f858e285a",
+      "text": "What technologies are used for user onboarding?",
+      "answer": "See Data Science Specification: User Onboarding",
+      "relevant_docs": [
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt",
+        "doc_67e6317791cf.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Data Science"
+    },
+    {
+      "id": "q5c71a415022e",
+      "text": "How should I handle load balancing compliance requirements?",
+      "answer": "See Research Analysis: Load Balancing",
+      "relevant_docs": [
+        "doc_5c71a415022e.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_f85db14b9a8d.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Research"
+    },
+    {
+      "id": "q1f10e94f686c",
+      "text": "Where can I find the procedure for security compliance?",
+      "answer": "See DevOps Procedure: Security Compliance",
+      "relevant_docs": [
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt",
+        "doc_dc61f40788ed.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "DevOps"
+    },
+    {
+      "id": "q6c26e7a43f9b",
+      "text": "What technologies are used for SLA management?",
+      "answer": "See Engineering Summary: Sla Management",
+      "relevant_docs": [
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt",
+        "doc_acfb01b20fa1.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Engineering"
+    },
+    {
+      "id": "qd38077beeec4",
+      "text": "How should I handle incident response compliance requirements?",
+      "answer": "See Engineering Report: Incident Response",
+      "relevant_docs": [
+        "doc_d38077beeec4.txt",
+        "doc_76db8f131b62.txt",
+        "doc_f4b7597d77e7.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "Engineering"
+    },
+    {
+      "id": "q118a0ec9b20d",
+      "text": "Who is responsible for deployment pipeline in Design?",
+      "answer": "See Design Guide: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_118a0ec9b20d.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Design"
+    },
+    {
+      "id": "q6760ad9524a5",
+      "text": "Where can I find the proposal for event sourcing?",
+      "answer": "See Sales Proposal: Event Sourcing",
+      "relevant_docs": [
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt",
+        "doc_1fded56b220f.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Sales"
+    },
+    {
+      "id": "qb3eda12d81c6",
+      "text": "What is the procedure for backup procedures operations?",
+      "answer": "See Product Procedure: Backup Procedures",
+      "relevant_docs": [
+        "doc_b3eda12d81c6.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Product"
+    },
+    {
+      "id": "q355a017c5686",
+      "text": "Where can I find the policy for data retention?",
+      "answer": "See Finance Policy: Data Retention",
+      "relevant_docs": [
+        "doc_355a017c5686.txt",
+        "doc_e782acfde554.txt",
+        "doc_0b0c7b7ef11f.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Finance"
+    },
+    {
+      "id": "q25805b24f2b5",
+      "text": "How should I handle backup procedures compliance requirements?",
+      "answer": "See Legal Analysis: Backup Procedures",
+      "relevant_docs": [
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt",
+        "doc_b3eda12d81c6.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Legal"
+    },
+    {
+      "id": "q6e15db7e6b5d",
+      "text": "What are the best practices for SLA management?",
+      "answer": "See Operations Summary: Sla Management",
+      "relevant_docs": [
+        "doc_6e15db7e6b5d.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_acfb01b20fa1.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Operations"
+    },
+    {
+      "id": "qe9ee7accbd79",
+      "text": "Who is responsible for database migration in Engineering?",
+      "answer": "See Engineering Review: Database Migration",
+      "relevant_docs": [
+        "doc_e9ee7accbd79.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_258c313bc949.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Engineering"
+    },
+    {
+      "id": "q2d1d92ba33a3",
+      "text": "How should I handle audit logging compliance requirements?",
+      "answer": "See Product Memo: Audit Logging",
+      "relevant_docs": [
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt",
+        "doc_87be3915d1f9.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Product"
+    },
+    {
+      "id": "q31013c86fc9a",
+      "text": "How should I handle vendor evaluation compliance requirements?",
+      "answer": "See Data Science Review: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_31013c86fc9a.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_bc3061537ea8.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Data Science"
+    },
+    {
+      "id": "q1b77e7e45003",
+      "text": "What are the requirements for service mesh according to Design guidelines?",
+      "answer": "See Design Memo: Service Mesh",
+      "relevant_docs": [
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt",
+        "doc_b7c534d9fe77.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Design"
+    },
+    {
+      "id": "qda72ca1fb807",
+      "text": "What technologies are used for disaster recovery?",
+      "answer": "See Security Proposal: Disaster Recovery",
+      "relevant_docs": [
+        "doc_da72ca1fb807.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Security"
+    },
+    {
+      "id": "qc603b412b70a",
+      "text": "What are the requirements for fault tolerance according to DevOps guidelines?",
+      "answer": "See DevOps Analysis: Fault Tolerance",
+      "relevant_docs": [
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt",
+        "doc_d6b218a26b71.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "DevOps"
+    },
+    {
+      "id": "q40b7d7e7d579",
+      "text": "How should I handle cost optimization compliance requirements?",
+      "answer": "See Data Science Review: Cost Optimization",
+      "relevant_docs": [
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt",
+        "doc_6f255b6880d0.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Data Science"
+    },
+    {
+      "id": "q8ce49eb4b53e",
+      "text": "Where can I find the proposal for event sourcing?",
+      "answer": "See Legal Proposal: Event Sourcing",
+      "relevant_docs": [
+        "doc_8ce49eb4b53e.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_1fded56b220f.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Legal"
+    },
+    {
+      "id": "qc22a1d2cd441",
+      "text": "Who is responsible for microservices in Operations?",
+      "answer": "See Operations Proposal: Microservices",
+      "relevant_docs": [
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt",
+        "doc_8285c0abb85e.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Operations"
+    },
+    {
+      "id": "qa04d8a571006",
+      "text": "What are the requirements for schema evolution according to Operations guidelines?",
+      "answer": "See Operations Policy: Schema Evolution",
+      "relevant_docs": [
+        "doc_a04d8a571006.txt",
+        "doc_774f497dc12b.txt",
+        "doc_9342ef784ce5.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Operations"
+    },
+    {
+      "id": "qf63ab63e83b2",
+      "text": "Where can I find the policy for billing procedures?",
+      "answer": "See Legal Policy: Billing Procedures",
+      "relevant_docs": [
+        "doc_f63ab63e83b2.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Legal"
+    },
+    {
+      "id": "q00bdfc7c6d09",
+      "text": "What technologies are used for microservices?",
+      "answer": "See Sales Memo: Microservices",
+      "relevant_docs": [
+        "doc_00bdfc7c6d09.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_8285c0abb85e.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Sales"
+    },
+    {
+      "id": "qf4b7597d77e7",
+      "text": "How should I handle incident response compliance requirements?",
+      "answer": "See Marketing Specification: Incident Response",
+      "relevant_docs": [
+        "doc_f4b7597d77e7.txt",
+        "doc_d38077beeec4.txt",
+        "doc_76db8f131b62.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "Marketing"
+    },
+    {
+      "id": "qb44be89b6354",
+      "text": "What technologies are used for authorization?",
+      "answer": "See Research Proposal: Authorization",
+      "relevant_docs": [
+        "doc_b44be89b6354.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_8be50977004a.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Research"
+    },
+    {
+      "id": "q42f5595d4c22",
+      "text": "How do I configure authentication in the QA department?",
+      "answer": "See QA Analysis: Authentication",
+      "relevant_docs": [
+        "doc_42f5595d4c22.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "QA"
+    },
+    {
+      "id": "q8bc8b0a836a8",
+      "text": "What technologies are used for monitoring?",
+      "answer": "See HR Summary: Monitoring",
+      "relevant_docs": [
+        "doc_8bc8b0a836a8.txt",
+        "doc_a97fd4164111.txt",
+        "doc_5638e6898d17.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "HR"
+    },
+    {
+      "id": "qdfba488c5eb2",
+      "text": "What technologies are used for container orchestration?",
+      "answer": "See Sales Proposal: Container Orchestration",
+      "relevant_docs": [
+        "doc_dfba488c5eb2.txt",
+        "doc_5e0925e13781.txt",
+        "doc_cdabe92bdef4.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Sales"
+    },
+    {
+      "id": "q828b284b68e0",
+      "text": "What technologies are used for billing procedures?",
+      "answer": "See Design Guide: Billing Procedures",
+      "relevant_docs": [
+        "doc_828b284b68e0.txt",
+        "doc_4758138d2b75.txt",
+        "doc_f63ab63e83b2.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Design"
+    },
+    {
+      "id": "qcc6009b4e978",
+      "text": "What are the requirements for access control according to Marketing guidelines?",
+      "answer": "See Marketing Memo: Access Control",
+      "relevant_docs": [
+        "doc_cc6009b4e978.txt",
+        "doc_343c7e211443.txt",
+        "doc_b2bdc997797c.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Marketing"
+    },
+    {
+      "id": "qa97fd4164111",
+      "text": "Who is responsible for monitoring in QA?",
+      "answer": "See QA Review: Monitoring",
+      "relevant_docs": [
+        "doc_a97fd4164111.txt",
+        "doc_8bc8b0a836a8.txt",
+        "doc_5638e6898d17.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "QA"
+    },
+    {
+      "id": "q9e93b36eee5c",
+      "text": "What are the best practices for performance optimization?",
+      "answer": "See Design Policy: Performance Optimization",
+      "relevant_docs": [
+        "doc_9e93b36eee5c.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Design"
+    },
+    {
+      "id": "q0ab6d0b5f5e4",
+      "text": "What are the best practices for disaster recovery?",
+      "answer": "See Engineering Specification: Disaster Recovery",
+      "relevant_docs": [
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt",
+        "doc_da72ca1fb807.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Engineering"
+    },
+    {
+      "id": "q5a1fe6f0f7c6",
+      "text": "What are the requirements for cost optimization according to Sales guidelines?",
+      "answer": "See Sales Procedure: Cost Optimization",
+      "relevant_docs": [
+        "doc_5a1fe6f0f7c6.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_6f255b6880d0.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Sales"
+    },
+    {
+      "id": "q10fb6e89fb47",
+      "text": "What are the requirements for capacity planning according to Research guidelines?",
+      "answer": "See Research Review: Capacity Planning",
+      "relevant_docs": [
+        "doc_10fb6e89fb47.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Research"
+    },
+    {
+      "id": "qf9324c13bbe1",
+      "text": "What technologies are used for vendor evaluation?",
+      "answer": "See HR Proposal: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt",
+        "doc_bc3061537ea8.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "HR"
+    },
+    {
+      "id": "q63c4f870569f",
+      "text": "How do I optimize rate limiting in the Operations department?",
+      "answer": "See Operations Procedure: Rate Limiting",
+      "relevant_docs": [
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt",
+        "doc_9e0078268abd.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Operations"
+    },
+    {
+      "id": "qa8cbd2f7573d",
+      "text": "Where can I find the memo for authentication?",
+      "answer": "See Engineering Memo: Authentication",
+      "relevant_docs": [
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt",
+        "doc_42f5595d4c22.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Engineering"
+    },
+    {
+      "id": "q9e0078268abd",
+      "text": "Where can I find the guide for rate limiting?",
+      "answer": "See DevOps Guide: Rate Limiting",
+      "relevant_docs": [
+        "doc_9e0078268abd.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "DevOps"
+    },
+    {
+      "id": "qa1c46ce47a49",
+      "text": "Where can I find the analysis for caching strategy?",
+      "answer": "See Engineering Analysis: Caching Strategy",
+      "relevant_docs": [
+        "doc_a1c46ce47a49.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_4fe9fef31222.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Engineering"
+    },
+    {
+      "id": "q67e6317791cf",
+      "text": "Where can I find the report for user onboarding?",
+      "answer": "See HR Report: User Onboarding",
+      "relevant_docs": [
+        "doc_67e6317791cf.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "HR"
+    },
+    {
+      "id": "qe782acfde554",
+      "text": "What are the requirements for data retention according to HR guidelines?",
+      "answer": "See HR Guide: Data Retention",
+      "relevant_docs": [
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt",
+        "doc_0b0c7b7ef11f.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "HR"
+    },
+    {
+      "id": "q0b0c7b7ef11f",
+      "text": "How do I monitor data retention in the Marketing department?",
+      "answer": "See Marketing Summary: Data Retention",
+      "relevant_docs": [
+        "doc_0b0c7b7ef11f.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Marketing"
+    },
+    {
+      "id": "q1a212cea93e8",
+      "text": "How should I handle change management compliance requirements?",
+      "answer": "See Operations Specification: Change Management",
+      "relevant_docs": [
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt",
+        "doc_d2a309d17bcb.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Operations"
+    },
+    {
+      "id": "q1da377e34f1d",
+      "text": "Who is responsible for authentication in Research?",
+      "answer": "See Research Memo: Authentication",
+      "relevant_docs": [
+        "doc_1da377e34f1d.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_42f5595d4c22.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Research"
+    },
+    {
+      "id": "q01631d25879c",
+      "text": "What is the procedure for user onboarding operations?",
+      "answer": "See Customer Success Proposal: User Onboarding",
+      "relevant_docs": [
+        "doc_01631d25879c.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_67e6317791cf.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q431f9687f151",
+      "text": "How should I handle testing standards compliance requirements?",
+      "answer": "See Customer Success Memo: Testing Standards",
+      "relevant_docs": [
+        "doc_431f9687f151.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qcef9d9c1cf80",
+      "text": "How do I optimize capacity planning in the Research department?",
+      "answer": "See Research Policy: Capacity Planning",
+      "relevant_docs": [
+        "doc_cef9d9c1cf80.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_10fb6e89fb47.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Research"
+    },
+    {
+      "id": "q240d247f084f",
+      "text": "Where can I find the proposal for encryption?",
+      "answer": "See Research Proposal: Encryption",
+      "relevant_docs": [
+        "doc_240d247f084f.txt",
+        "doc_8c216938fe9d.txt",
+        "doc_c72205d88df0.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "Research"
+    },
+    {
+      "id": "qf85db14b9a8d",
+      "text": "Who is responsible for load balancing in QA?",
+      "answer": "See QA Memo: Load Balancing",
+      "relevant_docs": [
+        "doc_f85db14b9a8d.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "QA"
+    },
+    {
+      "id": "q8be50977004a",
+      "text": "What are the best practices for authorization?",
+      "answer": "See Research Specification: Authorization",
+      "relevant_docs": [
+        "doc_8be50977004a.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Research"
+    },
+    {
+      "id": "q1bfc36a2a4d0",
+      "text": "What are the requirements for caching strategy according to DevOps guidelines?",
+      "answer": "See DevOps Specification: Caching Strategy",
+      "relevant_docs": [
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt",
+        "doc_4fe9fef31222.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "DevOps"
+    },
+    {
+      "id": "q343c7e211443",
+      "text": "How should I handle access control compliance requirements?",
+      "answer": "See Security Analysis: Access Control",
+      "relevant_docs": [
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt",
+        "doc_b2bdc997797c.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Security"
+    },
+    {
+      "id": "qbb3cb6d1ff30",
+      "text": "Who is responsible for CI/CD automation in Design?",
+      "answer": "See Design Review: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt",
+        "doc_1e1cd4aed7c7.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Design"
+    },
+    {
+      "id": "q77282c6251d2",
+      "text": "What is the procedure for disaster recovery operations?",
+      "answer": "See Sales Specification: Disaster Recovery",
+      "relevant_docs": [
+        "doc_77282c6251d2.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_da72ca1fb807.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Sales"
+    },
+    {
+      "id": "q1e1cd4aed7c7",
+      "text": "How do I troubleshoot CI/CD automation in the Security department?",
+      "answer": "See Security Guide: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_1e1cd4aed7c7.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Security"
+    },
+    {
+      "id": "q3fbd3ed7d201",
+      "text": "What is the procedure for testing standards operations?",
+      "answer": "See Security Procedure: Testing Standards",
+      "relevant_docs": [
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt",
+        "doc_431f9687f151.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Security"
+    },
+    {
+      "id": "q76db8f131b62",
+      "text": "What is the procedure for incident response operations?",
+      "answer": "See Sales Report: Incident Response",
+      "relevant_docs": [
+        "doc_76db8f131b62.txt",
+        "doc_d38077beeec4.txt",
+        "doc_f4b7597d77e7.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "Sales"
+    },
+    {
+      "id": "q774f497dc12b",
+      "text": "Who is responsible for schema evolution in Research?",
+      "answer": "See Research Report: Schema Evolution",
+      "relevant_docs": [
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt",
+        "doc_9342ef784ce5.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Research"
+    },
+    {
+      "id": "qc72205d88df0",
+      "text": "Where can I find the specification for encryption?",
+      "answer": "See Design Specification: Encryption",
+      "relevant_docs": [
+        "doc_c72205d88df0.txt",
+        "doc_8c216938fe9d.txt",
+        "doc_240d247f084f.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "Design"
+    },
+    {
+      "id": "q1652ff4cccfa",
+      "text": "How do I migrate database migration in the Data Science department?",
+      "answer": "See Data Science Procedure: Database Migration",
+      "relevant_docs": [
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt",
+        "doc_258c313bc949.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Data Science"
+    },
+    {
+      "id": "q258c313bc949",
+      "text": "How do I deploy database migration in the Design department?",
+      "answer": "See Design Report: Database Migration",
+      "relevant_docs": [
+        "doc_258c313bc949.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Design"
+    },
+    {
+      "id": "qee564ac6c6a7",
+      "text": "Where can I find the analysis for code review?",
+      "answer": "See Finance Analysis: Code Review",
+      "relevant_docs": [
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt",
+        "doc_7a2a17627a06.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Finance"
+    },
+    {
+      "id": "qbc3061537ea8",
+      "text": "Where can I find the report for vendor evaluation?",
+      "answer": "See Engineering Report: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_bc3061537ea8.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Engineering"
+    },
+    {
+      "id": "q4fe9fef31222",
+      "text": "What technologies are used for caching strategy?",
+      "answer": "See Sales Policy: Caching Strategy",
+      "relevant_docs": [
+        "doc_4fe9fef31222.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Sales"
+    },
+    {
+      "id": "q20f206cdbd9a",
+      "text": "How do I troubleshoot capacity planning in the Engineering department?",
+      "answer": "See Engineering Guide: Capacity Planning",
+      "relevant_docs": [
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt",
+        "doc_10fb6e89fb47.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Engineering"
+    },
+    {
+      "id": "q52b5466a4883",
+      "text": "Who is responsible for code review in Product?",
+      "answer": "See Product Report: Code Review",
+      "relevant_docs": [
+        "doc_52b5466a4883.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_7a2a17627a06.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Product"
+    },
+    {
+      "id": "q56f374097964",
+      "text": "Who is responsible for deployment pipeline in Customer Success?",
+      "answer": "See Customer Success Procedure: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt",
+        "doc_118a0ec9b20d.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q87be3915d1f9",
+      "text": "What technologies are used for audit logging?",
+      "answer": "See Marketing Guide: Audit Logging",
+      "relevant_docs": [
+        "doc_87be3915d1f9.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Marketing"
+    },
+    {
+      "id": "q74804324902a",
+      "text": "How do I implement fault tolerance in the QA department?",
+      "answer": "See QA Analysis: Fault Tolerance",
+      "relevant_docs": [
+        "doc_74804324902a.txt",
+        "doc_c603b412b70a.txt",
+        "doc_d6b218a26b71.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "QA"
+    },
+    {
+      "id": "q2d5e5c1133ee",
+      "text": "How should I handle scaling compliance requirements?",
+      "answer": "See DevOps Policy: Scaling",
+      "relevant_docs": [
+        "doc_2d5e5c1133ee.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "DevOps"
+    },
+    {
+      "id": "qc4dcb22885a3",
+      "text": "Where can I find the memo for deployment pipeline?",
+      "answer": "See Sales Memo: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_c4dcb22885a3.txt",
+        "doc_56f374097964.txt",
+        "doc_118a0ec9b20d.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Sales"
+    },
+    {
+      "id": "qf7f4fc958037",
+      "text": "How should I handle API integration compliance requirements?",
+      "answer": "See Design Specification: Api Integration",
+      "relevant_docs": [
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt",
+        "doc_7ef4763b9daa.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Design"
+    },
+    {
+      "id": "qd6b218a26b71",
+      "text": "Who is responsible for fault tolerance in Finance?",
+      "answer": "See Finance Policy: Fault Tolerance",
+      "relevant_docs": [
+        "doc_d6b218a26b71.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "Finance"
+    },
+    {
+      "id": "q5638e6898d17",
+      "text": "Where can I find the memo for monitoring?",
+      "answer": "See Security Memo: Monitoring",
+      "relevant_docs": [
+        "doc_5638e6898d17.txt",
+        "doc_8bc8b0a836a8.txt",
+        "doc_a97fd4164111.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "Security"
+    },
+    {
+      "id": "q53a487342e0f",
+      "text": "What are the requirements for rate limiting according to Finance guidelines?",
+      "answer": "See Finance Summary: Rate Limiting",
+      "relevant_docs": [
+        "doc_53a487342e0f.txt",
+        "doc_63c4f870569f.txt",
+        "doc_9e0078268abd.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Finance"
+    },
+    {
+      "id": "qd2a309d17bcb",
+      "text": "How should I handle change management compliance requirements?",
+      "answer": "See Operations Memo: Change Management",
+      "relevant_docs": [
+        "doc_d2a309d17bcb.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Operations"
+    },
+    {
+      "id": "q5e0925e13781",
+      "text": "How do I secure container orchestration in the Customer Success department?",
+      "answer": "See Customer Success Policy: Container Orchestration",
+      "relevant_docs": [
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt",
+        "doc_cdabe92bdef4.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q4758138d2b75",
+      "text": "Who is responsible for billing procedures in QA?",
+      "answer": "See QA Procedure: Billing Procedures",
+      "relevant_docs": [
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt",
+        "doc_f63ab63e83b2.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "QA"
+    },
+    {
+      "id": "q9342ef784ce5",
+      "text": "How should I handle schema evolution compliance requirements?",
+      "answer": "See Product Memo: Schema Evolution",
+      "relevant_docs": [
+        "doc_9342ef784ce5.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Product"
+    },
+    {
+      "id": "qb1986a0a3068",
+      "text": "How do I migrate API versioning in the Engineering department?",
+      "answer": "See Engineering Report: Api Versioning",
+      "relevant_docs": [
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt",
+        "doc_f551b50040b6.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Engineering"
+    },
+    {
+      "id": "q00d48327b741",
+      "text": "Where can I find the guide for backup procedures?",
+      "answer": "See Operations Guide: Backup Procedures",
+      "relevant_docs": [
+        "doc_00d48327b741.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_b3eda12d81c6.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Operations"
+    },
+    {
+      "id": "qb2bdc997797c",
+      "text": "Who is responsible for access control in Sales?",
+      "answer": "See Sales Review: Access Control",
+      "relevant_docs": [
+        "doc_b2bdc997797c.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Sales"
+    },
+    {
+      "id": "q76e17eaa4ff4",
+      "text": "Who is responsible for data processing in Design?",
+      "answer": "See Design Policy: Data Processing",
+      "relevant_docs": [
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt",
+        "doc_28bb95b126da.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Design"
+    },
+    {
+      "id": "q1fded56b220f",
+      "text": "What technologies are used for event sourcing?",
+      "answer": "See Sales Policy: Event Sourcing",
+      "relevant_docs": [
+        "doc_1fded56b220f.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Sales"
+    },
+    {
+      "id": "q4309ccad3686",
+      "text": "What are the requirements for CI/CD automation according to QA guidelines?",
+      "answer": "See QA Guide: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_4309ccad3686.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_1e1cd4aed7c7.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "QA"
+    },
+    {
+      "id": "qcdabe92bdef4",
+      "text": "What technologies are used for container orchestration?",
+      "answer": "See Operations Proposal: Container Orchestration",
+      "relevant_docs": [
+        "doc_cdabe92bdef4.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Operations"
+    },
+    {
+      "id": "q7a2a17627a06",
+      "text": "What are the best practices for code review?",
+      "answer": "See Marketing Guide: Code Review",
+      "relevant_docs": [
+        "doc_7a2a17627a06.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Marketing"
+    },
+    {
+      "id": "q6bbeffeb0e5e",
+      "text": "What are the requirements for authorization according to Marketing guidelines?",
+      "answer": "See Marketing Report: Authorization",
+      "relevant_docs": [
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt",
+        "doc_8be50977004a.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Marketing"
+    },
+    {
+      "id": "qf64d9ec340ef",
+      "text": "Who is responsible for change management in HR?",
+      "answer": "See HR Policy: Change Management",
+      "relevant_docs": [
+        "doc_f64d9ec340ef.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_d2a309d17bcb.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "HR"
+    },
+    {
+      "id": "q62000815c5f9",
+      "text": "What are the requirements for service mesh according to Finance guidelines?",
+      "answer": "See Finance Policy: Service Mesh",
+      "relevant_docs": [
+        "doc_62000815c5f9.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_b7c534d9fe77.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Finance"
+    },
+    {
+      "id": "q7ef4763b9daa",
+      "text": "How should I handle API integration compliance requirements?",
+      "answer": "See Sales Specification: Api Integration",
+      "relevant_docs": [
+        "doc_7ef4763b9daa.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Sales"
+    },
+    {
+      "id": "qacfb01b20fa1",
+      "text": "What are the requirements for SLA management according to Data Science guidelines?",
+      "answer": "See Data Science Report: Sla Management",
+      "relevant_docs": [
+        "doc_acfb01b20fa1.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Data Science"
+    },
+    {
+      "id": "q3cb6c2e5a8ed",
+      "text": "Where can I find the proposal for audit logging?",
+      "answer": "See DevOps Proposal: Audit Logging",
+      "relevant_docs": [
+        "doc_3cb6c2e5a8ed.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_87be3915d1f9.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "DevOps"
+    },
+    {
+      "id": "q848051745c98",
+      "text": "What technologies are used for security compliance?",
+      "answer": "See Marketing Guide: Security Compliance",
+      "relevant_docs": [
+        "doc_848051745c98.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_dc61f40788ed.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Marketing"
+    },
+    {
+      "id": "qf551b50040b6",
+      "text": "What are the requirements for API versioning according to Marketing guidelines?",
+      "answer": "See Marketing Proposal: Api Versioning",
+      "relevant_docs": [
+        "doc_f551b50040b6.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Marketing"
+    },
+    {
+      "id": "q0f84e8c41c2c",
+      "text": "How do I document data processing in the Security department?",
+      "answer": "See Security Analysis: Data Processing",
+      "relevant_docs": [
+        "doc_0f84e8c41c2c.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_28bb95b126da.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Security"
+    },
+    {
+      "id": "q3c9eab67075a",
+      "text": "How should I handle API integration compliance requirements?",
+      "answer": "See Marketing Report: Api Integration",
+      "relevant_docs": [
+        "doc_3c9eab67075a.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Marketing"
+    },
+    {
+      "id": "qd36d9c21dc5a",
+      "text": "What technologies are used for scaling?",
+      "answer": "See Engineering Specification: Scaling",
+      "relevant_docs": [
+        "doc_d36d9c21dc5a.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Engineering"
+    },
+    {
+      "id": "q9d782a3971d3",
+      "text": "What technologies are used for data retention?",
+      "answer": "See Marketing Report: Data Retention",
+      "relevant_docs": [
+        "doc_9d782a3971d3.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Marketing"
+    },
+    {
+      "id": "qf9282fe0b685",
+      "text": "How should I handle authorization compliance requirements?",
+      "answer": "See Research Proposal: Authorization",
+      "relevant_docs": [
+        "doc_f9282fe0b685.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Research"
+    },
+    {
+      "id": "qbed8ca1881ce",
+      "text": "How should I handle caching strategy compliance requirements?",
+      "answer": "See Marketing Analysis: Caching Strategy",
+      "relevant_docs": [
+        "doc_bed8ca1881ce.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Marketing"
+    },
+    {
+      "id": "q71a4e45f5472",
+      "text": "Where can I find the policy for deployment pipeline?",
+      "answer": "See Finance Policy: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_71a4e45f5472.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Finance"
+    },
+    {
+      "id": "q9e2e903553a0",
+      "text": "What are the requirements for load balancing according to Legal guidelines?",
+      "answer": "See Legal Summary: Load Balancing",
+      "relevant_docs": [
+        "doc_9e2e903553a0.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Legal"
+    },
+    {
+      "id": "qf4c3162af797",
+      "text": "What is the procedure for API versioning operations?",
+      "answer": "See Legal Review: Api Versioning",
+      "relevant_docs": [
+        "doc_f4c3162af797.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Legal"
+    },
+    {
+      "id": "q8c35d244a527",
+      "text": "Where can I find the summary for microservices?",
+      "answer": "See Engineering Summary: Microservices",
+      "relevant_docs": [
+        "doc_8c35d244a527.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Engineering"
+    },
+    {
+      "id": "q4957226b058e",
+      "text": "How should I handle API versioning compliance requirements?",
+      "answer": "See Product Report: Api Versioning",
+      "relevant_docs": [
+        "doc_4957226b058e.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Product"
+    },
+    {
+      "id": "qbfd1feed7a56",
+      "text": "How should I handle rate limiting compliance requirements?",
+      "answer": "See Security Specification: Rate Limiting",
+      "relevant_docs": [
+        "doc_bfd1feed7a56.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Security"
+    },
+    {
+      "id": "q189398770211",
+      "text": "How should I handle vendor evaluation compliance requirements?",
+      "answer": "See Research Memo: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_189398770211.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Research"
+    },
+    {
+      "id": "qebc6c729a6a7",
+      "text": "How do I validate disaster recovery in the Marketing department?",
+      "answer": "See Marketing Review: Disaster Recovery",
+      "relevant_docs": [
+        "doc_ebc6c729a6a7.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Marketing"
+    },
+    {
+      "id": "qc170007683fc",
+      "text": "How do I configure container orchestration in the HR department?",
+      "answer": "See HR Summary: Container Orchestration",
+      "relevant_docs": [
+        "doc_c170007683fc.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "HR"
+    },
+    {
+      "id": "q85ce437d5b94",
+      "text": "Where can I find the procedure for CI/CD automation?",
+      "answer": "See Engineering Procedure: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_85ce437d5b94.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Engineering"
+    },
+    {
+      "id": "qde5453e52289",
+      "text": "Who is responsible for container orchestration in Design?",
+      "answer": "See Design Procedure: Container Orchestration",
+      "relevant_docs": [
+        "doc_de5453e52289.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Design"
+    },
+    {
+      "id": "qdc97da2e7d2b",
+      "text": "What is the procedure for caching strategy operations?",
+      "answer": "See Marketing Analysis: Caching Strategy",
+      "relevant_docs": [
+        "doc_dc97da2e7d2b.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Marketing"
+    },
+    {
+      "id": "qbf903c25650d",
+      "text": "What are the requirements for scaling according to DevOps guidelines?",
+      "answer": "See DevOps Policy: Scaling",
+      "relevant_docs": [
+        "doc_bf903c25650d.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "DevOps"
+    },
+    {
+      "id": "q0ec8058e0e6f",
+      "text": "How should I handle security compliance compliance requirements?",
+      "answer": "See Research Report: Security Compliance",
+      "relevant_docs": [
+        "doc_0ec8058e0e6f.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Research"
+    },
+    {
+      "id": "q82414468609b",
+      "text": "How do I test performance optimization in the Operations department?",
+      "answer": "See Operations Analysis: Performance Optimization",
+      "relevant_docs": [
+        "doc_82414468609b.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Operations"
+    },
+    {
+      "id": "q96d4a5201265",
+      "text": "How should I handle code review compliance requirements?",
+      "answer": "See HR Memo: Code Review",
+      "relevant_docs": [
+        "doc_96d4a5201265.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "HR"
+    },
+    {
+      "id": "q7a68e3b87417",
+      "text": "Who is responsible for API versioning in Legal?",
+      "answer": "See Legal Memo: Api Versioning",
+      "relevant_docs": [
+        "doc_7a68e3b87417.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Legal"
+    },
+    {
+      "id": "q95e2a9e5d05f",
+      "text": "How should I handle user onboarding compliance requirements?",
+      "answer": "See Marketing Proposal: User Onboarding",
+      "relevant_docs": [
+        "doc_95e2a9e5d05f.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Marketing"
+    },
+    {
+      "id": "q0c29a933bd12",
+      "text": "What are the requirements for CI/CD automation according to HR guidelines?",
+      "answer": "See HR Summary: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_0c29a933bd12.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "HR"
+    },
+    {
+      "id": "q77f4c9866f5f",
+      "text": "How do I optimize performance optimization in the Legal department?",
+      "answer": "See Legal Summary: Performance Optimization",
+      "relevant_docs": [
+        "doc_77f4c9866f5f.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Legal"
+    },
+    {
+      "id": "qe7ab81a0da7e",
+      "text": "What are the requirements for deployment pipeline according to Engineering guidelines?",
+      "answer": "See Engineering Guide: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_e7ab81a0da7e.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Engineering"
+    },
+    {
+      "id": "q322791751e65",
+      "text": "What is the procedure for rate limiting operations?",
+      "answer": "See HR Policy: Rate Limiting",
+      "relevant_docs": [
+        "doc_322791751e65.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "HR"
+    },
+    {
+      "id": "qbe9c5827ecb5",
+      "text": "What are the best practices for load balancing?",
+      "answer": "See Security Procedure: Load Balancing",
+      "relevant_docs": [
+        "doc_be9c5827ecb5.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Security"
+    },
+    {
+      "id": "qe8bda05e660b",
+      "text": "How do I validate load balancing in the Data Science department?",
+      "answer": "See Data Science Memo: Load Balancing",
+      "relevant_docs": [
+        "doc_e8bda05e660b.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Data Science"
+    },
+    {
+      "id": "q6b8050d232e9",
+      "text": "What technologies are used for API integration?",
+      "answer": "See Research Review: Api Integration",
+      "relevant_docs": [
+        "doc_6b8050d232e9.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Research"
+    },
+    {
+      "id": "q0e11ea6a3c97",
+      "text": "What are the requirements for billing procedures according to Design guidelines?",
+      "answer": "See Design Review: Billing Procedures",
+      "relevant_docs": [
+        "doc_0e11ea6a3c97.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Design"
+    },
+    {
+      "id": "q3b4c7d59b75b",
+      "text": "What are the requirements for CI/CD automation according to HR guidelines?",
+      "answer": "See HR Summary: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_3b4c7d59b75b.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "HR"
+    },
+    {
+      "id": "q06bc58a1acec",
+      "text": "How should I handle security compliance compliance requirements?",
+      "answer": "See Finance Analysis: Security Compliance",
+      "relevant_docs": [
+        "doc_06bc58a1acec.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Finance"
+    },
+    {
+      "id": "qbf2acd473bfe",
+      "text": "What are the requirements for authentication according to QA guidelines?",
+      "answer": "See QA Guide: Authentication",
+      "relevant_docs": [
+        "doc_bf2acd473bfe.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "QA"
+    },
+    {
+      "id": "q7f30ca4d0842",
+      "text": "Where can I find the specification for change management?",
+      "answer": "See Security Specification: Change Management",
+      "relevant_docs": [
+        "doc_7f30ca4d0842.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Security"
+    },
+    {
+      "id": "q4752e2e3a3ae",
+      "text": "What is the procedure for event sourcing operations?",
+      "answer": "See Customer Success Analysis: Event Sourcing",
+      "relevant_docs": [
+        "doc_4752e2e3a3ae.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q28d3e8b6942b",
+      "text": "What are the requirements for incident response according to DevOps guidelines?",
+      "answer": "See DevOps Summary: Incident Response",
+      "relevant_docs": [
+        "doc_28d3e8b6942b.txt",
+        "doc_d38077beeec4.txt",
+        "doc_76db8f131b62.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "DevOps"
+    },
+    {
+      "id": "q684f9abc62f8",
+      "text": "What are the requirements for caching strategy according to HR guidelines?",
+      "answer": "See HR Guide: Caching Strategy",
+      "relevant_docs": [
+        "doc_684f9abc62f8.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "HR"
+    },
+    {
+      "id": "qc561b3090f7e",
+      "text": "What technologies are used for database migration?",
+      "answer": "See Operations Summary: Database Migration",
+      "relevant_docs": [
+        "doc_c561b3090f7e.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Operations"
+    },
+    {
+      "id": "q13f64a474eb8",
+      "text": "What are the requirements for authorization according to QA guidelines?",
+      "answer": "See QA Policy: Authorization",
+      "relevant_docs": [
+        "doc_13f64a474eb8.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "QA"
+    },
+    {
+      "id": "q3d16fe453376",
+      "text": "How do I benchmark API integration in the DevOps department?",
+      "answer": "See DevOps Summary: Api Integration",
+      "relevant_docs": [
+        "doc_3d16fe453376.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "DevOps"
+    },
+    {
+      "id": "qe6b260bd33da",
+      "text": "What technologies are used for monitoring?",
+      "answer": "See Finance Analysis: Monitoring",
+      "relevant_docs": [
+        "doc_e6b260bd33da.txt",
+        "doc_8bc8b0a836a8.txt",
+        "doc_a97fd4164111.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "Finance"
+    },
+    {
+      "id": "q51d2368d02b3",
+      "text": "How do I benchmark deployment pipeline in the Marketing department?",
+      "answer": "See Marketing Proposal: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_51d2368d02b3.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Marketing"
+    },
+    {
+      "id": "qa0f50eae0a7e",
+      "text": "What is the procedure for API versioning operations?",
+      "answer": "See QA Procedure: Api Versioning",
+      "relevant_docs": [
+        "doc_a0f50eae0a7e.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "QA"
+    },
+    {
+      "id": "qce8fcd327a1c",
+      "text": "Who is responsible for schema evolution in Sales?",
+      "answer": "See Sales Procedure: Schema Evolution",
+      "relevant_docs": [
+        "doc_ce8fcd327a1c.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Sales"
+    },
+    {
+      "id": "q2259a8c3db13",
+      "text": "What is the procedure for schema evolution operations?",
+      "answer": "See Design Procedure: Schema Evolution",
+      "relevant_docs": [
+        "doc_2259a8c3db13.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Design"
+    },
+    {
+      "id": "q9bb28ab52b9f",
+      "text": "What are the best practices for database migration?",
+      "answer": "See Design Report: Database Migration",
+      "relevant_docs": [
+        "doc_9bb28ab52b9f.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Design"
+    },
+    {
+      "id": "q74f8013d1bac",
+      "text": "What technologies are used for microservices?",
+      "answer": "See Product Proposal: Microservices",
+      "relevant_docs": [
+        "doc_74f8013d1bac.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Product"
+    },
+    {
+      "id": "qe7ffefe8a604",
+      "text": "What is the procedure for scaling operations?",
+      "answer": "See Finance Report: Scaling",
+      "relevant_docs": [
+        "doc_e7ffefe8a604.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Finance"
+    },
+    {
+      "id": "q6be2e54d3ef7",
+      "text": "Where can I find the specification for event sourcing?",
+      "answer": "See Operations Specification: Event Sourcing",
+      "relevant_docs": [
+        "doc_6be2e54d3ef7.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Operations"
+    },
+    {
+      "id": "q55ae7c53227a",
+      "text": "What are the requirements for service mesh according to Engineering guidelines?",
+      "answer": "See Engineering Proposal: Service Mesh",
+      "relevant_docs": [
+        "doc_55ae7c53227a.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Engineering"
+    },
+    {
+      "id": "q9831e6e62600",
+      "text": "Where can I find the procedure for CI/CD automation?",
+      "answer": "See Legal Procedure: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_9831e6e62600.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Legal"
+    },
+    {
+      "id": "qc357af7239d6",
+      "text": "Where can I find the analysis for service mesh?",
+      "answer": "See Product Analysis: Service Mesh",
+      "relevant_docs": [
+        "doc_c357af7239d6.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Product"
+    },
+    {
+      "id": "q2fca8d3218f0",
+      "text": "What are the requirements for scaling according to QA guidelines?",
+      "answer": "See QA Memo: Scaling",
+      "relevant_docs": [
+        "doc_2fca8d3218f0.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "QA"
+    },
+    {
+      "id": "q654a15f7f3ce",
+      "text": "Where can I find the specification for cost optimization?",
+      "answer": "See Operations Specification: Cost Optimization",
+      "relevant_docs": [
+        "doc_654a15f7f3ce.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Operations"
+    },
+    {
+      "id": "q053374f6db29",
+      "text": "What is the procedure for billing procedures operations?",
+      "answer": "See Sales Memo: Billing Procedures",
+      "relevant_docs": [
+        "doc_053374f6db29.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Sales"
+    },
+    {
+      "id": "q0e914a061803",
+      "text": "Where can I find the analysis for vendor evaluation?",
+      "answer": "See Security Analysis: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_0e914a061803.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Security"
+    },
+    {
+      "id": "q9720ded3fedd",
+      "text": "What are the requirements for vendor evaluation according to HR guidelines?",
+      "answer": "See HR Policy: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_9720ded3fedd.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "HR"
+    },
+    {
+      "id": "q27d96f1c0ed4",
+      "text": "How should I handle vendor evaluation compliance requirements?",
+      "answer": "See QA Specification: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_27d96f1c0ed4.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "QA"
+    },
+    {
+      "id": "qb96afda59b6e",
+      "text": "How do I document access control in the QA department?",
+      "answer": "See QA Analysis: Access Control",
+      "relevant_docs": [
+        "doc_b96afda59b6e.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "QA"
+    },
+    {
+      "id": "q36dd23b44987",
+      "text": "What are the requirements for deployment pipeline according to Product guidelines?",
+      "answer": "See Product Guide: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_36dd23b44987.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Product"
+    },
+    {
+      "id": "q7f91a87777c9",
+      "text": "How do I optimize audit logging in the Finance department?",
+      "answer": "See Finance Guide: Audit Logging",
+      "relevant_docs": [
+        "doc_7f91a87777c9.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Finance"
+    },
+    {
+      "id": "q0db7b44d3048",
+      "text": "How do I audit user onboarding in the Legal department?",
+      "answer": "See Legal Specification: User Onboarding",
+      "relevant_docs": [
+        "doc_0db7b44d3048.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Legal"
+    },
+    {
+      "id": "qe3c372abb27f",
+      "text": "Who is responsible for cost optimization in Engineering?",
+      "answer": "See Engineering Summary: Cost Optimization",
+      "relevant_docs": [
+        "doc_e3c372abb27f.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Engineering"
+    },
+    {
+      "id": "qc62cb29ae250",
+      "text": "What are the requirements for access control according to Design guidelines?",
+      "answer": "See Design Summary: Access Control",
+      "relevant_docs": [
+        "doc_c62cb29ae250.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Design"
+    },
+    {
+      "id": "qd113b9493c12",
+      "text": "What are the best practices for API versioning?",
+      "answer": "See Finance Memo: Api Versioning",
+      "relevant_docs": [
+        "doc_d113b9493c12.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Finance"
+    },
+    {
+      "id": "qdea014a4972e",
+      "text": "How should I handle access control compliance requirements?",
+      "answer": "See Marketing Summary: Access Control",
+      "relevant_docs": [
+        "doc_dea014a4972e.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Marketing"
+    },
+    {
+      "id": "q19afb99da025",
+      "text": "Who is responsible for database migration in DevOps?",
+      "answer": "See DevOps Analysis: Database Migration",
+      "relevant_docs": [
+        "doc_19afb99da025.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "DevOps"
+    },
+    {
+      "id": "qf475c6e149a3",
+      "text": "What are the requirements for data retention according to Operations guidelines?",
+      "answer": "See Operations Guide: Data Retention",
+      "relevant_docs": [
+        "doc_f475c6e149a3.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Operations"
+    },
+    {
+      "id": "q21a7f454d1ac",
+      "text": "How do I validate audit logging in the Engineering department?",
+      "answer": "See Engineering Analysis: Audit Logging",
+      "relevant_docs": [
+        "doc_21a7f454d1ac.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Engineering"
+    },
+    {
+      "id": "qf3de80c6a441",
+      "text": "Who is responsible for testing standards in Product?",
+      "answer": "See Product Report: Testing Standards",
+      "relevant_docs": [
+        "doc_f3de80c6a441.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Product"
+    },
+    {
+      "id": "qbbab72faef47",
+      "text": "How should I handle change management compliance requirements?",
+      "answer": "See Legal Policy: Change Management",
+      "relevant_docs": [
+        "doc_bbab72faef47.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Legal"
+    },
+    {
+      "id": "qc96311747440",
+      "text": "How do I benchmark security compliance in the Product department?",
+      "answer": "See Product Report: Security Compliance",
+      "relevant_docs": [
+        "doc_c96311747440.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Product"
+    },
+    {
+      "id": "q5ac87b18277e",
+      "text": "Who is responsible for backup procedures in Engineering?",
+      "answer": "See Engineering Review: Backup Procedures",
+      "relevant_docs": [
+        "doc_5ac87b18277e.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Engineering"
+    },
+    {
+      "id": "qae037ede916f",
+      "text": "What are the requirements for access control according to Marketing guidelines?",
+      "answer": "See Marketing Policy: Access Control",
+      "relevant_docs": [
+        "doc_ae037ede916f.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Marketing"
+    },
+    {
+      "id": "q7f7c21f555ed",
+      "text": "What is the procedure for event sourcing operations?",
+      "answer": "See Engineering Analysis: Event Sourcing",
+      "relevant_docs": [
+        "doc_7f7c21f555ed.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Engineering"
+    },
+    {
+      "id": "qbf906a827e90",
+      "text": "What are the requirements for deployment pipeline according to Security guidelines?",
+      "answer": "See Security Specification: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_bf906a827e90.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Security"
+    },
+    {
+      "id": "qa3919edb62be",
+      "text": "Where can I find the analysis for caching strategy?",
+      "answer": "See Design Analysis: Caching Strategy",
+      "relevant_docs": [
+        "doc_a3919edb62be.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Design"
+    },
+    {
+      "id": "qa5607377df5c",
+      "text": "What are the best practices for deployment pipeline?",
+      "answer": "See Customer Success Report: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_a5607377df5c.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q8674b8547ac5",
+      "text": "What technologies are used for container orchestration?",
+      "answer": "See DevOps Procedure: Container Orchestration",
+      "relevant_docs": [
+        "doc_8674b8547ac5.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "DevOps"
+    },
+    {
+      "id": "q218856267ecb",
+      "text": "What technologies are used for service mesh?",
+      "answer": "See Marketing Analysis: Service Mesh",
+      "relevant_docs": [
+        "doc_218856267ecb.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Marketing"
+    },
+    {
+      "id": "q8ba032c885ee",
+      "text": "Where can I find the summary for testing standards?",
+      "answer": "See Product Summary: Testing Standards",
+      "relevant_docs": [
+        "doc_8ba032c885ee.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Product"
+    },
+    {
+      "id": "q87f747ba4d23",
+      "text": "Who is responsible for CI/CD automation in Data Science?",
+      "answer": "See Data Science Report: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_87f747ba4d23.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Data Science"
+    },
+    {
+      "id": "q739375aa8de7",
+      "text": "How do I audit database migration in the Data Science department?",
+      "answer": "See Data Science Specification: Database Migration",
+      "relevant_docs": [
+        "doc_739375aa8de7.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Data Science"
+    },
+    {
+      "id": "q2dcdf50ae8dd",
+      "text": "Who is responsible for audit logging in HR?",
+      "answer": "See HR Summary: Audit Logging",
+      "relevant_docs": [
+        "doc_2dcdf50ae8dd.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "HR"
+    },
+    {
+      "id": "q7f988f6eb236",
+      "text": "How should I handle cost optimization compliance requirements?",
+      "answer": "See Design Specification: Cost Optimization",
+      "relevant_docs": [
+        "doc_7f988f6eb236.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Design"
+    },
+    {
+      "id": "q4f82058f5688",
+      "text": "Where can I find the summary for backup procedures?",
+      "answer": "See Data Science Summary: Backup Procedures",
+      "relevant_docs": [
+        "doc_4f82058f5688.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Data Science"
+    },
+    {
+      "id": "q856c16cdf88f",
+      "text": "Who is responsible for incident response in Legal?",
+      "answer": "See Legal Specification: Incident Response",
+      "relevant_docs": [
+        "doc_856c16cdf88f.txt",
+        "doc_d38077beeec4.txt",
+        "doc_76db8f131b62.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "Legal"
+    },
+    {
+      "id": "q43c7eed486b6",
+      "text": "What are the requirements for authorization according to QA guidelines?",
+      "answer": "See QA Memo: Authorization",
+      "relevant_docs": [
+        "doc_43c7eed486b6.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "QA"
+    },
+    {
+      "id": "q5bb6981a278d",
+      "text": "What is the procedure for data retention operations?",
+      "answer": "See Finance Procedure: Data Retention",
+      "relevant_docs": [
+        "doc_5bb6981a278d.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Finance"
+    },
+    {
+      "id": "q5686f97666b3",
+      "text": "What are the requirements for change management according to Design guidelines?",
+      "answer": "See Design Report: Change Management",
+      "relevant_docs": [
+        "doc_5686f97666b3.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Design"
+    },
+    {
+      "id": "qb565c5399afb",
+      "text": "What are the best practices for audit logging?",
+      "answer": "See Sales Guide: Audit Logging",
+      "relevant_docs": [
+        "doc_b565c5399afb.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Sales"
+    },
+    {
+      "id": "q253417dfb8d7",
+      "text": "Where can I find the report for authorization?",
+      "answer": "See Sales Report: Authorization",
+      "relevant_docs": [
+        "doc_253417dfb8d7.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Sales"
+    },
+    {
+      "id": "q8101112d3ff6",
+      "text": "What are the best practices for disaster recovery?",
+      "answer": "See Research Proposal: Disaster Recovery",
+      "relevant_docs": [
+        "doc_8101112d3ff6.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Research"
+    },
+    {
+      "id": "q8dcd5eb90c1d",
+      "text": "Who is responsible for rate limiting in Research?",
+      "answer": "See Research Policy: Rate Limiting",
+      "relevant_docs": [
+        "doc_8dcd5eb90c1d.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Research"
+    },
+    {
+      "id": "q85c85b1f5f3a",
+      "text": "What are the requirements for schema evolution according to Security guidelines?",
+      "answer": "See Security Analysis: Schema Evolution",
+      "relevant_docs": [
+        "doc_85c85b1f5f3a.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Security"
+    },
+    {
+      "id": "q5499b836e6af",
+      "text": "What are the requirements for authentication according to Finance guidelines?",
+      "answer": "See Finance Review: Authentication",
+      "relevant_docs": [
+        "doc_5499b836e6af.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Finance"
+    },
+    {
+      "id": "qaa7e594f4c0a",
+      "text": "What technologies are used for database migration?",
+      "answer": "See Finance Memo: Database Migration",
+      "relevant_docs": [
+        "doc_aa7e594f4c0a.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Finance"
+    },
+    {
+      "id": "qf4227f5ab52f",
+      "text": "Who is responsible for cost optimization in Finance?",
+      "answer": "See Finance Report: Cost Optimization",
+      "relevant_docs": [
+        "doc_f4227f5ab52f.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Finance"
+    },
+    {
+      "id": "q6f0620386748",
+      "text": "How should I handle testing standards compliance requirements?",
+      "answer": "See DevOps Memo: Testing Standards",
+      "relevant_docs": [
+        "doc_6f0620386748.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "DevOps"
+    },
+    {
+      "id": "qaaf31726102e",
+      "text": "What are the requirements for billing procedures according to Security guidelines?",
+      "answer": "See Security Specification: Billing Procedures",
+      "relevant_docs": [
+        "doc_aaf31726102e.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Security"
+    },
+    {
+      "id": "qd94e31247468",
+      "text": "Where can I find the review for load balancing?",
+      "answer": "See Product Review: Load Balancing",
+      "relevant_docs": [
+        "doc_d94e31247468.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Product"
+    },
+    {
+      "id": "q82fac9d063e1",
+      "text": "What is the procedure for data retention operations?",
+      "answer": "See Research Memo: Data Retention",
+      "relevant_docs": [
+        "doc_82fac9d063e1.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Research"
+    },
+    {
+      "id": "q5d46d094fddc",
+      "text": "What are the requirements for database migration according to Customer Success guidelines?",
+      "answer": "See Customer Success Guide: Database Migration",
+      "relevant_docs": [
+        "doc_5d46d094fddc.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qadea6b5431fe",
+      "text": "Who is responsible for caching strategy in Product?",
+      "answer": "See Product Procedure: Caching Strategy",
+      "relevant_docs": [
+        "doc_adea6b5431fe.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Product"
+    },
+    {
+      "id": "q16cc3cf4788e",
+      "text": "What are the best practices for fault tolerance?",
+      "answer": "See Legal Guide: Fault Tolerance",
+      "relevant_docs": [
+        "doc_16cc3cf4788e.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "Legal"
+    },
+    {
+      "id": "q06f2866356d4",
+      "text": "Who is responsible for microservices in Legal?",
+      "answer": "See Legal Specification: Microservices",
+      "relevant_docs": [
+        "doc_06f2866356d4.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Legal"
+    },
+    {
+      "id": "q538a95666d12",
+      "text": "What are the requirements for capacity planning according to Design guidelines?",
+      "answer": "See Design Memo: Capacity Planning",
+      "relevant_docs": [
+        "doc_538a95666d12.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Design"
+    },
+    {
+      "id": "q7e21aa3ce09f",
+      "text": "What are the requirements for CI/CD automation according to QA guidelines?",
+      "answer": "See QA Memo: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_7e21aa3ce09f.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "QA"
+    },
+    {
+      "id": "qbeebc03a8cd7",
+      "text": "What technologies are used for cost optimization?",
+      "answer": "See Marketing Summary: Cost Optimization",
+      "relevant_docs": [
+        "doc_beebc03a8cd7.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Marketing"
+    },
+    {
+      "id": "q388c017d4330",
+      "text": "What technologies are used for access control?",
+      "answer": "See Research Analysis: Access Control",
+      "relevant_docs": [
+        "doc_388c017d4330.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Research"
+    },
+    {
+      "id": "qa5043fd74dec",
+      "text": "How should I handle capacity planning compliance requirements?",
+      "answer": "See Engineering Summary: Capacity Planning",
+      "relevant_docs": [
+        "doc_a5043fd74dec.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Engineering"
+    },
+    {
+      "id": "q2b1d21cf27ac",
+      "text": "How should I handle microservices compliance requirements?",
+      "answer": "See Product Policy: Microservices",
+      "relevant_docs": [
+        "doc_2b1d21cf27ac.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Product"
+    },
+    {
+      "id": "qd375e803dbaa",
+      "text": "How do I troubleshoot authorization in the Finance department?",
+      "answer": "See Finance Guide: Authorization",
+      "relevant_docs": [
+        "doc_d375e803dbaa.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Finance"
+    },
+    {
+      "id": "q760d797aa6b1",
+      "text": "What technologies are used for event sourcing?",
+      "answer": "See Security Summary: Event Sourcing",
+      "relevant_docs": [
+        "doc_760d797aa6b1.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Security"
+    },
+    {
+      "id": "q012d1cb3c8b9",
+      "text": "Where can I find the procedure for vendor evaluation?",
+      "answer": "See Customer Success Procedure: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_012d1cb3c8b9.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qe5af32f59bff",
+      "text": "What are the requirements for schema evolution according to Sales guidelines?",
+      "answer": "See Sales Summary: Schema Evolution",
+      "relevant_docs": [
+        "doc_e5af32f59bff.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Sales"
+    },
+    {
+      "id": "qaff0d9bb458c",
+      "text": "What are the requirements for security compliance according to Data Science guidelines?",
+      "answer": "See Data Science Memo: Security Compliance",
+      "relevant_docs": [
+        "doc_aff0d9bb458c.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Data Science"
+    },
+    {
+      "id": "q9c9370d46220",
+      "text": "Where can I find the memo for access control?",
+      "answer": "See Marketing Memo: Access Control",
+      "relevant_docs": [
+        "doc_9c9370d46220.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Marketing"
+    },
+    {
+      "id": "q8bbe3fbc15fc",
+      "text": "What are the requirements for event sourcing according to Data Science guidelines?",
+      "answer": "See Data Science Report: Event Sourcing",
+      "relevant_docs": [
+        "doc_8bbe3fbc15fc.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Data Science"
+    },
+    {
+      "id": "q7812ea4f0d3b",
+      "text": "How do I optimize SLA management in the Sales department?",
+      "answer": "See Sales Specification: Sla Management",
+      "relevant_docs": [
+        "doc_7812ea4f0d3b.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Sales"
+    },
+    {
+      "id": "q89c95869ab87",
+      "text": "Where can I find the report for backup procedures?",
+      "answer": "See Operations Report: Backup Procedures",
+      "relevant_docs": [
+        "doc_89c95869ab87.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Operations"
+    },
+    {
+      "id": "qc09b5754921b",
+      "text": "What technologies are used for billing procedures?",
+      "answer": "See Security Summary: Billing Procedures",
+      "relevant_docs": [
+        "doc_c09b5754921b.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Security"
+    },
+    {
+      "id": "qaa1ac7a265c7",
+      "text": "Who is responsible for rate limiting in HR?",
+      "answer": "See HR Proposal: Rate Limiting",
+      "relevant_docs": [
+        "doc_aa1ac7a265c7.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "HR"
+    },
+    {
+      "id": "q3d2627ffde50",
+      "text": "What is the procedure for SLA management operations?",
+      "answer": "See QA Guide: Sla Management",
+      "relevant_docs": [
+        "doc_3d2627ffde50.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "QA"
+    },
+    {
+      "id": "q55113621df60",
+      "text": "Where can I find the review for vendor evaluation?",
+      "answer": "See Sales Review: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_55113621df60.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Sales"
+    },
+    {
+      "id": "qe6cb82575e94",
+      "text": "Where can I find the analysis for billing procedures?",
+      "answer": "See Finance Analysis: Billing Procedures",
+      "relevant_docs": [
+        "doc_e6cb82575e94.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Finance"
+    },
+    {
+      "id": "q9b8ed217cf88",
+      "text": "How do I migrate fault tolerance in the Legal department?",
+      "answer": "See Legal Report: Fault Tolerance",
+      "relevant_docs": [
+        "doc_9b8ed217cf88.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "Legal"
+    },
+    {
+      "id": "qeebd45ef4160",
+      "text": "What is the procedure for database migration operations?",
+      "answer": "See Product Summary: Database Migration",
+      "relevant_docs": [
+        "doc_eebd45ef4160.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Product"
+    },
+    {
+      "id": "qd48b1df107f8",
+      "text": "How do I migrate caching strategy in the Customer Success department?",
+      "answer": "See Customer Success Guide: Caching Strategy",
+      "relevant_docs": [
+        "doc_d48b1df107f8.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qeba1b511f951",
+      "text": "What is the procedure for database migration operations?",
+      "answer": "See Marketing Proposal: Database Migration",
+      "relevant_docs": [
+        "doc_eba1b511f951.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Marketing"
+    },
+    {
+      "id": "q5d083f51e7c0",
+      "text": "What is the procedure for event sourcing operations?",
+      "answer": "See Customer Success Review: Event Sourcing",
+      "relevant_docs": [
+        "doc_5d083f51e7c0.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q3d19c7714fb1",
+      "text": "Who is responsible for disaster recovery in QA?",
+      "answer": "See QA Specification: Disaster Recovery",
+      "relevant_docs": [
+        "doc_3d19c7714fb1.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "QA"
+    },
+    {
+      "id": "q2124df4d7f90",
+      "text": "What technologies are used for capacity planning?",
+      "answer": "See HR Review: Capacity Planning",
+      "relevant_docs": [
+        "doc_2124df4d7f90.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "HR"
+    },
+    {
+      "id": "q5a4351457e28",
+      "text": "What are the best practices for cost optimization?",
+      "answer": "See QA Analysis: Cost Optimization",
+      "relevant_docs": [
+        "doc_5a4351457e28.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "QA"
+    },
+    {
+      "id": "q748fde850cfe",
+      "text": "How should I handle code review compliance requirements?",
+      "answer": "See Engineering Summary: Code Review",
+      "relevant_docs": [
+        "doc_748fde850cfe.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Engineering"
+    },
+    {
+      "id": "qcd966e14938f",
+      "text": "Where can I find the policy for billing procedures?",
+      "answer": "See Sales Policy: Billing Procedures",
+      "relevant_docs": [
+        "doc_cd966e14938f.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Sales"
+    },
+    {
+      "id": "qb2bbfa6db307",
+      "text": "What is the procedure for disaster recovery operations?",
+      "answer": "See Legal Guide: Disaster Recovery",
+      "relevant_docs": [
+        "doc_b2bbfa6db307.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Legal"
+    },
+    {
+      "id": "qbb7afca52b8a",
+      "text": "What are the requirements for scaling according to Engineering guidelines?",
+      "answer": "See Engineering Specification: Scaling",
+      "relevant_docs": [
+        "doc_bb7afca52b8a.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Engineering"
+    },
+    {
+      "id": "q0ed6eef4ecb0",
+      "text": "How do I benchmark authorization in the Operations department?",
+      "answer": "See Operations Guide: Authorization",
+      "relevant_docs": [
+        "doc_0ed6eef4ecb0.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Operations"
+    },
+    {
+      "id": "q42d1fa4248f5",
+      "text": "What is the procedure for rate limiting operations?",
+      "answer": "See Sales Memo: Rate Limiting",
+      "relevant_docs": [
+        "doc_42d1fa4248f5.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Sales"
+    },
+    {
+      "id": "q986ab7cd4051",
+      "text": "What is the procedure for service mesh operations?",
+      "answer": "See Customer Success Guide: Service Mesh",
+      "relevant_docs": [
+        "doc_986ab7cd4051.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q005e48254149",
+      "text": "What are the best practices for caching strategy?",
+      "answer": "See Product Specification: Caching Strategy",
+      "relevant_docs": [
+        "doc_005e48254149.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Product"
+    },
+    {
+      "id": "q70645bcdef64",
+      "text": "What are the best practices for CI/CD automation?",
+      "answer": "See Data Science Specification: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_70645bcdef64.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Data Science"
+    },
+    {
+      "id": "q98beaa672e16",
+      "text": "What are the requirements for vendor evaluation according to Finance guidelines?",
+      "answer": "See Finance Analysis: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_98beaa672e16.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Finance"
+    },
+    {
+      "id": "q6cd84c89bb99",
+      "text": "What are the best practices for cost optimization?",
+      "answer": "See Operations Specification: Cost Optimization",
+      "relevant_docs": [
+        "doc_6cd84c89bb99.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Operations"
+    },
+    {
+      "id": "q75787e411767",
+      "text": "What are the requirements for load balancing according to HR guidelines?",
+      "answer": "See HR Analysis: Load Balancing",
+      "relevant_docs": [
+        "doc_75787e411767.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "HR"
+    },
+    {
+      "id": "qa10d5d11cb36",
+      "text": "Who is responsible for deployment pipeline in Engineering?",
+      "answer": "See Engineering Report: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_a10d5d11cb36.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Engineering"
+    },
+    {
+      "id": "qcefef0564419",
+      "text": "What are the requirements for authentication according to Legal guidelines?",
+      "answer": "See Legal Report: Authentication",
+      "relevant_docs": [
+        "doc_cefef0564419.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Legal"
+    },
+    {
+      "id": "qf21da225e100",
+      "text": "Where can I find the review for vendor evaluation?",
+      "answer": "See Engineering Review: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_f21da225e100.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Engineering"
+    },
+    {
+      "id": "q936b3591cea7",
+      "text": "What technologies are used for user onboarding?",
+      "answer": "See QA Guide: User Onboarding",
+      "relevant_docs": [
+        "doc_936b3591cea7.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "QA"
+    },
+    {
+      "id": "qd139dd195418",
+      "text": "What is the procedure for code review operations?",
+      "answer": "See Finance Analysis: Code Review",
+      "relevant_docs": [
+        "doc_d139dd195418.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Finance"
+    },
+    {
+      "id": "q0b00fe9f79e2",
+      "text": "How should I handle backup procedures compliance requirements?",
+      "answer": "See Engineering Summary: Backup Procedures",
+      "relevant_docs": [
+        "doc_0b00fe9f79e2.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Engineering"
+    },
+    {
+      "id": "q86a0a9f937ba",
+      "text": "Who is responsible for schema evolution in DevOps?",
+      "answer": "See DevOps Summary: Schema Evolution",
+      "relevant_docs": [
+        "doc_86a0a9f937ba.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "DevOps"
+    },
+    {
+      "id": "qe18797545e4a",
+      "text": "How do I document API integration in the Product department?",
+      "answer": "See Product Review: Api Integration",
+      "relevant_docs": [
+        "doc_e18797545e4a.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Product"
+    },
+    {
+      "id": "qd54d2625133a",
+      "text": "What technologies are used for monitoring?",
+      "answer": "See Legal Procedure: Monitoring",
+      "relevant_docs": [
+        "doc_d54d2625133a.txt",
+        "doc_8bc8b0a836a8.txt",
+        "doc_a97fd4164111.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "Legal"
+    },
+    {
+      "id": "qb7cf24505d13",
+      "text": "What technologies are used for audit logging?",
+      "answer": "See Data Science Review: Audit Logging",
+      "relevant_docs": [
+        "doc_b7cf24505d13.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Data Science"
+    },
+    {
+      "id": "q55152b48e576",
+      "text": "What is the procedure for performance optimization operations?",
+      "answer": "See Finance Guide: Performance Optimization",
+      "relevant_docs": [
+        "doc_55152b48e576.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Finance"
+    },
+    {
+      "id": "qc6ba8b14de54",
+      "text": "What are the best practices for user onboarding?",
+      "answer": "See Engineering Proposal: User Onboarding",
+      "relevant_docs": [
+        "doc_c6ba8b14de54.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Engineering"
+    },
+    {
+      "id": "qc8a9f3a1e045",
+      "text": "What is the procedure for scaling operations?",
+      "answer": "See Data Science Specification: Scaling",
+      "relevant_docs": [
+        "doc_c8a9f3a1e045.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Data Science"
+    },
+    {
+      "id": "qa5e0fa834c72",
+      "text": "What technologies are used for vendor evaluation?",
+      "answer": "See DevOps Report: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_a5e0fa834c72.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "DevOps"
+    },
+    {
+      "id": "q35c4128fff4f",
+      "text": "Where can I find the analysis for disaster recovery?",
+      "answer": "See Operations Analysis: Disaster Recovery",
+      "relevant_docs": [
+        "doc_35c4128fff4f.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Operations"
+    },
+    {
+      "id": "q010043896b68",
+      "text": "Who is responsible for fault tolerance in DevOps?",
+      "answer": "See DevOps Review: Fault Tolerance",
+      "relevant_docs": [
+        "doc_010043896b68.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "DevOps"
+    },
+    {
+      "id": "q47530dce2703",
+      "text": "What are the requirements for SLA management according to Data Science guidelines?",
+      "answer": "See Data Science Guide: Sla Management",
+      "relevant_docs": [
+        "doc_47530dce2703.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Data Science"
+    },
+    {
+      "id": "q86326b23bc5a",
+      "text": "How do I implement access control in the Research department?",
+      "answer": "See Research Report: Access Control",
+      "relevant_docs": [
+        "doc_86326b23bc5a.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Research"
+    },
+    {
+      "id": "qf1eb15a5baf1",
+      "text": "What technologies are used for caching strategy?",
+      "answer": "See Customer Success Proposal: Caching Strategy",
+      "relevant_docs": [
+        "doc_f1eb15a5baf1.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q721924385835",
+      "text": "How do I upgrade billing procedures in the Data Science department?",
+      "answer": "See Data Science Policy: Billing Procedures",
+      "relevant_docs": [
+        "doc_721924385835.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Data Science"
+    },
+    {
+      "id": "q120198741c49",
+      "text": "How do I secure incident response in the Design department?",
+      "answer": "See Design Procedure: Incident Response",
+      "relevant_docs": [
+        "doc_120198741c49.txt",
+        "doc_d38077beeec4.txt",
+        "doc_76db8f131b62.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "Design"
+    },
+    {
+      "id": "q95b0f3c2c01e",
+      "text": "What is the procedure for code review operations?",
+      "answer": "See DevOps Proposal: Code Review",
+      "relevant_docs": [
+        "doc_95b0f3c2c01e.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "DevOps"
+    },
+    {
+      "id": "q15355972ba4d",
+      "text": "Where can I find the procedure for billing procedures?",
+      "answer": "See Product Procedure: Billing Procedures",
+      "relevant_docs": [
+        "doc_15355972ba4d.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Product"
+    },
+    {
+      "id": "q1d821f1a5394",
+      "text": "What is the procedure for fault tolerance operations?",
+      "answer": "See Sales Specification: Fault Tolerance",
+      "relevant_docs": [
+        "doc_1d821f1a5394.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "Sales"
+    },
+    {
+      "id": "q15cab56caf9e",
+      "text": "What technologies are used for testing standards?",
+      "answer": "See Design Policy: Testing Standards",
+      "relevant_docs": [
+        "doc_15cab56caf9e.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Design"
+    },
+    {
+      "id": "q74261eb8714a",
+      "text": "Who is responsible for caching strategy in Design?",
+      "answer": "See Design Proposal: Caching Strategy",
+      "relevant_docs": [
+        "doc_74261eb8714a.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Design"
+    },
+    {
+      "id": "qa6ccc7d00852",
+      "text": "What are the requirements for access control according to Data Science guidelines?",
+      "answer": "See Data Science Analysis: Access Control",
+      "relevant_docs": [
+        "doc_a6ccc7d00852.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Data Science"
+    },
+    {
+      "id": "qa8ee01645656",
+      "text": "What technologies are used for schema evolution?",
+      "answer": "See Engineering Analysis: Schema Evolution",
+      "relevant_docs": [
+        "doc_a8ee01645656.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Engineering"
+    },
+    {
+      "id": "q3db8afa934d3",
+      "text": "What is the procedure for cost optimization operations?",
+      "answer": "See Data Science Procedure: Cost Optimization",
+      "relevant_docs": [
+        "doc_3db8afa934d3.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Data Science"
+    },
+    {
+      "id": "qd0e00b1d79b6",
+      "text": "What are the requirements for schema evolution according to Finance guidelines?",
+      "answer": "See Finance Report: Schema Evolution",
+      "relevant_docs": [
+        "doc_d0e00b1d79b6.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Finance"
+    },
+    {
+      "id": "q8869f0da0329",
+      "text": "What is the procedure for code review operations?",
+      "answer": "See Engineering Specification: Code Review",
+      "relevant_docs": [
+        "doc_8869f0da0329.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Engineering"
+    },
+    {
+      "id": "q974d4134809f",
+      "text": "How do I test fault tolerance in the QA department?",
+      "answer": "See QA Specification: Fault Tolerance",
+      "relevant_docs": [
+        "doc_974d4134809f.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "QA"
+    },
+    {
+      "id": "q407210c1caaa",
+      "text": "What technologies are used for event sourcing?",
+      "answer": "See Marketing Policy: Event Sourcing",
+      "relevant_docs": [
+        "doc_407210c1caaa.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Marketing"
+    },
+    {
+      "id": "q0f47ce57164b",
+      "text": "What are the requirements for capacity planning according to Finance guidelines?",
+      "answer": "See Finance Specification: Capacity Planning",
+      "relevant_docs": [
+        "doc_0f47ce57164b.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Finance"
+    },
+    {
+      "id": "q6127b074f13e",
+      "text": "How do I audit event sourcing in the Product department?",
+      "answer": "See Product Guide: Event Sourcing",
+      "relevant_docs": [
+        "doc_6127b074f13e.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Product"
+    },
+    {
+      "id": "qe0a237781256",
+      "text": "What are the requirements for user onboarding according to Security guidelines?",
+      "answer": "See Security Guide: User Onboarding",
+      "relevant_docs": [
+        "doc_e0a237781256.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Security"
+    },
+    {
+      "id": "q70fe1c53b14b",
+      "text": "What technologies are used for user onboarding?",
+      "answer": "See Engineering Summary: User Onboarding",
+      "relevant_docs": [
+        "doc_70fe1c53b14b.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Engineering"
+    },
+    {
+      "id": "q854f5447a20a",
+      "text": "How should I handle capacity planning compliance requirements?",
+      "answer": "See Sales Summary: Capacity Planning",
+      "relevant_docs": [
+        "doc_854f5447a20a.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Sales"
+    },
+    {
+      "id": "q387d6746af1d",
+      "text": "What are the best practices for security compliance?",
+      "answer": "See Customer Success Review: Security Compliance",
+      "relevant_docs": [
+        "doc_387d6746af1d.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q2f4defa84cd9",
+      "text": "What are the best practices for scaling?",
+      "answer": "See Operations Guide: Scaling",
+      "relevant_docs": [
+        "doc_2f4defa84cd9.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Operations"
+    },
+    {
+      "id": "qc1f52e853135",
+      "text": "What are the requirements for billing procedures according to Product guidelines?",
+      "answer": "See Product Specification: Billing Procedures",
+      "relevant_docs": [
+        "doc_c1f52e853135.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Product"
+    },
+    {
+      "id": "q444166632cf5",
+      "text": "Where can I find the memo for scaling?",
+      "answer": "See Legal Memo: Scaling",
+      "relevant_docs": [
+        "doc_444166632cf5.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Legal"
+    },
+    {
+      "id": "qdaef15c53d0d",
+      "text": "How do I configure container orchestration in the Product department?",
+      "answer": "See Product Summary: Container Orchestration",
+      "relevant_docs": [
+        "doc_daef15c53d0d.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Product"
+    },
+    {
+      "id": "q4149ad80d7e3",
+      "text": "Where can I find the proposal for data processing?",
+      "answer": "See Marketing Proposal: Data Processing",
+      "relevant_docs": [
+        "doc_4149ad80d7e3.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Marketing"
+    },
+    {
+      "id": "q777f32c24cf5",
+      "text": "Where can I find the procedure for performance optimization?",
+      "answer": "See DevOps Procedure: Performance Optimization",
+      "relevant_docs": [
+        "doc_777f32c24cf5.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "DevOps"
+    },
+    {
+      "id": "q4b1b37c28b0a",
+      "text": "What are the best practices for API versioning?",
+      "answer": "See Security Specification: Api Versioning",
+      "relevant_docs": [
+        "doc_4b1b37c28b0a.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Security"
+    },
+    {
+      "id": "q933fe3cc88a8",
+      "text": "Who is responsible for performance optimization in Design?",
+      "answer": "See Design Report: Performance Optimization",
+      "relevant_docs": [
+        "doc_933fe3cc88a8.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Design"
+    },
+    {
+      "id": "qfb0f6202f00c",
+      "text": "What are the best practices for data processing?",
+      "answer": "See HR Policy: Data Processing",
+      "relevant_docs": [
+        "doc_fb0f6202f00c.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "HR"
+    },
+    {
+      "id": "q96b505ae0abf",
+      "text": "Where can I find the review for schema evolution?",
+      "answer": "See Security Review: Schema Evolution",
+      "relevant_docs": [
+        "doc_96b505ae0abf.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Security"
+    },
+    {
+      "id": "qfb2d1e4b0c1c",
+      "text": "What are the requirements for authorization according to Legal guidelines?",
+      "answer": "See Legal Proposal: Authorization",
+      "relevant_docs": [
+        "doc_fb2d1e4b0c1c.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Legal"
+    },
+    {
+      "id": "qe6fcb33b0704",
+      "text": "How do I validate change management in the Marketing department?",
+      "answer": "See Marketing Analysis: Change Management",
+      "relevant_docs": [
+        "doc_e6fcb33b0704.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Marketing"
+    },
+    {
+      "id": "qf19437130835",
+      "text": "What are the requirements for schema evolution according to Security guidelines?",
+      "answer": "See Security Report: Schema Evolution",
+      "relevant_docs": [
+        "doc_f19437130835.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Security"
+    },
+    {
+      "id": "qa523d9d0266b",
+      "text": "What is the procedure for caching strategy operations?",
+      "answer": "See Sales Review: Caching Strategy",
+      "relevant_docs": [
+        "doc_a523d9d0266b.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Sales"
+    },
+    {
+      "id": "q3c3b1c08868d",
+      "text": "What are the requirements for microservices according to DevOps guidelines?",
+      "answer": "See DevOps Specification: Microservices",
+      "relevant_docs": [
+        "doc_3c3b1c08868d.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "DevOps"
+    },
+    {
+      "id": "qf7b4a341943b",
+      "text": "How do I benchmark user onboarding in the Product department?",
+      "answer": "See Product Specification: User Onboarding",
+      "relevant_docs": [
+        "doc_f7b4a341943b.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Product"
+    },
+    {
+      "id": "q93308c3b216f",
+      "text": "What is the procedure for billing procedures operations?",
+      "answer": "See Engineering Analysis: Billing Procedures",
+      "relevant_docs": [
+        "doc_93308c3b216f.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Engineering"
+    },
+    {
+      "id": "qb311c3e7f548",
+      "text": "What is the procedure for rate limiting operations?",
+      "answer": "See Design Guide: Rate Limiting",
+      "relevant_docs": [
+        "doc_b311c3e7f548.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Design"
+    },
+    {
+      "id": "q915f7edddc89",
+      "text": "How should I handle API integration compliance requirements?",
+      "answer": "See Security Policy: Api Integration",
+      "relevant_docs": [
+        "doc_915f7edddc89.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Security"
+    },
+    {
+      "id": "q31ba78860a41",
+      "text": "How do I upgrade testing standards in the Product department?",
+      "answer": "See Product Guide: Testing Standards",
+      "relevant_docs": [
+        "doc_31ba78860a41.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Product"
+    },
+    {
+      "id": "qced2f9eab4f7",
+      "text": "What is the procedure for API versioning operations?",
+      "answer": "See Marketing Specification: Api Versioning",
+      "relevant_docs": [
+        "doc_ced2f9eab4f7.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Marketing"
+    },
+    {
+      "id": "q9a8e4cd2b091",
+      "text": "What are the requirements for backup procedures according to DevOps guidelines?",
+      "answer": "See DevOps Specification: Backup Procedures",
+      "relevant_docs": [
+        "doc_9a8e4cd2b091.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "DevOps"
+    },
+    {
+      "id": "q02ecf548eb1e",
+      "text": "What are the best practices for authentication?",
+      "answer": "See Operations Memo: Authentication",
+      "relevant_docs": [
+        "doc_02ecf548eb1e.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Operations"
+    },
+    {
+      "id": "q5fd16f069bd1",
+      "text": "What are the best practices for testing standards?",
+      "answer": "See Security Proposal: Testing Standards",
+      "relevant_docs": [
+        "doc_5fd16f069bd1.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Security"
+    },
+    {
+      "id": "q49deb51973c4",
+      "text": "What is the procedure for fault tolerance operations?",
+      "answer": "See HR Summary: Fault Tolerance",
+      "relevant_docs": [
+        "doc_49deb51973c4.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "HR"
+    },
+    {
+      "id": "q95843158fce5",
+      "text": "What are the requirements for user onboarding according to Marketing guidelines?",
+      "answer": "See Marketing Analysis: User Onboarding",
+      "relevant_docs": [
+        "doc_95843158fce5.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Marketing"
+    },
+    {
+      "id": "qb48eca112438",
+      "text": "How should I handle container orchestration compliance requirements?",
+      "answer": "See Design Summary: Container Orchestration",
+      "relevant_docs": [
+        "doc_b48eca112438.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Design"
+    },
+    {
+      "id": "qc549fd44ab88",
+      "text": "Who is responsible for capacity planning in Security?",
+      "answer": "See Security Specification: Capacity Planning",
+      "relevant_docs": [
+        "doc_c549fd44ab88.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Security"
+    },
+    {
+      "id": "q1d4c189cc4b1",
+      "text": "What are the requirements for SLA management according to Engineering guidelines?",
+      "answer": "See Engineering Policy: Sla Management",
+      "relevant_docs": [
+        "doc_1d4c189cc4b1.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Engineering"
+    },
+    {
+      "id": "qa4e521c5872f",
+      "text": "What technologies are used for CI/CD automation?",
+      "answer": "See Finance Review: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_a4e521c5872f.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Finance"
+    },
+    {
+      "id": "qd25785dc0dce",
+      "text": "Where can I find the guide for load balancing?",
+      "answer": "See Security Guide: Load Balancing",
+      "relevant_docs": [
+        "doc_d25785dc0dce.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Security"
+    },
+    {
+      "id": "qf2dc3a2053bf",
+      "text": "What is the procedure for API integration operations?",
+      "answer": "See Finance Review: Api Integration",
+      "relevant_docs": [
+        "doc_f2dc3a2053bf.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Finance"
+    },
+    {
+      "id": "qedfdce70107a",
+      "text": "What are the requirements for data processing according to Customer Success guidelines?",
+      "answer": "See Customer Success Proposal: Data Processing",
+      "relevant_docs": [
+        "doc_edfdce70107a.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qd8e497d2c9d9",
+      "text": "How should I handle access control compliance requirements?",
+      "answer": "See Engineering Specification: Access Control",
+      "relevant_docs": [
+        "doc_d8e497d2c9d9.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Engineering"
+    },
+    {
+      "id": "qcda3520a01f6",
+      "text": "What technologies are used for SLA management?",
+      "answer": "See Customer Success Procedure: Sla Management",
+      "relevant_docs": [
+        "doc_cda3520a01f6.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q92749235dae4",
+      "text": "What are the requirements for testing standards according to Sales guidelines?",
+      "answer": "See Sales Report: Testing Standards",
+      "relevant_docs": [
+        "doc_92749235dae4.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Sales"
+    },
+    {
+      "id": "qa60c32ccfd9e",
+      "text": "Where can I find the memo for encryption?",
+      "answer": "See QA Memo: Encryption",
+      "relevant_docs": [
+        "doc_a60c32ccfd9e.txt",
+        "doc_8c216938fe9d.txt",
+        "doc_240d247f084f.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "QA"
+    },
+    {
+      "id": "q112fd92661c4",
+      "text": "What are the best practices for database migration?",
+      "answer": "See Marketing Report: Database Migration",
+      "relevant_docs": [
+        "doc_112fd92661c4.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Marketing"
+    },
+    {
+      "id": "qd33e2cc5eaa1",
+      "text": "Where can I find the policy for rate limiting?",
+      "answer": "See Operations Policy: Rate Limiting",
+      "relevant_docs": [
+        "doc_d33e2cc5eaa1.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Operations"
+    },
+    {
+      "id": "qcc8a5e5a4863",
+      "text": "What technologies are used for CI/CD automation?",
+      "answer": "See Security Memo: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_cc8a5e5a4863.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Security"
+    },
+    {
+      "id": "q1c42a72a0272",
+      "text": "Where can I find the guide for rate limiting?",
+      "answer": "See Legal Guide: Rate Limiting",
+      "relevant_docs": [
+        "doc_1c42a72a0272.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Legal"
+    },
+    {
+      "id": "qf00e12487f98",
+      "text": "What is the procedure for caching strategy operations?",
+      "answer": "See Legal Guide: Caching Strategy",
+      "relevant_docs": [
+        "doc_f00e12487f98.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Legal"
+    },
+    {
+      "id": "q48bc129c8624",
+      "text": "How do I monitor authentication in the Operations department?",
+      "answer": "See Operations Analysis: Authentication",
+      "relevant_docs": [
+        "doc_48bc129c8624.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Operations"
+    },
+    {
+      "id": "q923de8805f58",
+      "text": "How do I monitor capacity planning in the Data Science department?",
+      "answer": "See Data Science Report: Capacity Planning",
+      "relevant_docs": [
+        "doc_923de8805f58.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Data Science"
+    },
+    {
+      "id": "q9b712a61fcf8",
+      "text": "What is the procedure for audit logging operations?",
+      "answer": "See Customer Success Guide: Audit Logging",
+      "relevant_docs": [
+        "doc_9b712a61fcf8.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q01faad53623b",
+      "text": "Where can I find the summary for user onboarding?",
+      "answer": "See Research Summary: User Onboarding",
+      "relevant_docs": [
+        "doc_01faad53623b.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Research"
+    },
+    {
+      "id": "qf3604828b402",
+      "text": "How should I handle container orchestration compliance requirements?",
+      "answer": "See Finance Summary: Container Orchestration",
+      "relevant_docs": [
+        "doc_f3604828b402.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Finance"
+    },
+    {
+      "id": "qd11de4409e48",
+      "text": "What is the procedure for performance optimization operations?",
+      "answer": "See QA Analysis: Performance Optimization",
+      "relevant_docs": [
+        "doc_d11de4409e48.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "QA"
+    },
+    {
+      "id": "q9be7e7d3ac6c",
+      "text": "Where can I find the procedure for API integration?",
+      "answer": "See QA Procedure: Api Integration",
+      "relevant_docs": [
+        "doc_9be7e7d3ac6c.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "QA"
+    },
+    {
+      "id": "q16a5bc13a5c6",
+      "text": "What technologies are used for SLA management?",
+      "answer": "See Legal Procedure: Sla Management",
+      "relevant_docs": [
+        "doc_16a5bc13a5c6.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Legal"
+    },
+    {
+      "id": "q9a37e94bdd69",
+      "text": "What is the procedure for service mesh operations?",
+      "answer": "See Finance Analysis: Service Mesh",
+      "relevant_docs": [
+        "doc_9a37e94bdd69.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Finance"
+    },
+    {
+      "id": "q01693d106e4d",
+      "text": "What are the best practices for audit logging?",
+      "answer": "See Design Proposal: Audit Logging",
+      "relevant_docs": [
+        "doc_01693d106e4d.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Design"
+    },
+    {
+      "id": "qc8645660821d",
+      "text": "What is the procedure for data retention operations?",
+      "answer": "See QA Guide: Data Retention",
+      "relevant_docs": [
+        "doc_c8645660821d.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "QA"
+    },
+    {
+      "id": "qa29950e8ede3",
+      "text": "What technologies are used for SLA management?",
+      "answer": "See Customer Success Policy: Sla Management",
+      "relevant_docs": [
+        "doc_a29950e8ede3.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q6460e020d905",
+      "text": "What are the best practices for SLA management?",
+      "answer": "See Product Proposal: Sla Management",
+      "relevant_docs": [
+        "doc_6460e020d905.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Product"
+    },
+    {
+      "id": "q93eaa6a4ee61",
+      "text": "What are the requirements for audit logging according to Engineering guidelines?",
+      "answer": "See Engineering Report: Audit Logging",
+      "relevant_docs": [
+        "doc_93eaa6a4ee61.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Engineering"
+    },
+    {
+      "id": "qe158b9d40849",
+      "text": "What are the best practices for SLA management?",
+      "answer": "See Finance Summary: Sla Management",
+      "relevant_docs": [
+        "doc_e158b9d40849.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Finance"
+    },
+    {
+      "id": "qd6a9814b1559",
+      "text": "What technologies are used for code review?",
+      "answer": "See Security Memo: Code Review",
+      "relevant_docs": [
+        "doc_d6a9814b1559.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Security"
+    },
+    {
+      "id": "q500c903926a8",
+      "text": "What is the procedure for database migration operations?",
+      "answer": "See Legal Summary: Database Migration",
+      "relevant_docs": [
+        "doc_500c903926a8.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Legal"
+    },
+    {
+      "id": "q2de34a2a857a",
+      "text": "Where can I find the proposal for CI/CD automation?",
+      "answer": "See Data Science Proposal: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_2de34a2a857a.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Data Science"
+    },
+    {
+      "id": "q007aae568aed",
+      "text": "What are the best practices for user onboarding?",
+      "answer": "See HR Guide: User Onboarding",
+      "relevant_docs": [
+        "doc_007aae568aed.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "HR"
+    },
+    {
+      "id": "qfd3ef9dfe9d7",
+      "text": "What technologies are used for authorization?",
+      "answer": "See Product Review: Authorization",
+      "relevant_docs": [
+        "doc_fd3ef9dfe9d7.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Product"
+    },
+    {
+      "id": "q4290e15821bf",
+      "text": "What are the best practices for performance optimization?",
+      "answer": "See HR Review: Performance Optimization",
+      "relevant_docs": [
+        "doc_4290e15821bf.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "HR"
+    },
+    {
+      "id": "qb053f5138e23",
+      "text": "How do I validate vendor evaluation in the Engineering department?",
+      "answer": "See Engineering Memo: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_b053f5138e23.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Engineering"
+    },
+    {
+      "id": "q7b24bc5c0c44",
+      "text": "What technologies are used for security compliance?",
+      "answer": "See DevOps Review: Security Compliance",
+      "relevant_docs": [
+        "doc_7b24bc5c0c44.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "DevOps"
+    },
+    {
+      "id": "q3ae3108a2234",
+      "text": "What technologies are used for access control?",
+      "answer": "See Engineering Policy: Access Control",
+      "relevant_docs": [
+        "doc_3ae3108a2234.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Engineering"
+    },
+    {
+      "id": "q6e8317f6e082",
+      "text": "What are the requirements for monitoring according to Data Science guidelines?",
+      "answer": "See Data Science Policy: Monitoring",
+      "relevant_docs": [
+        "doc_6e8317f6e082.txt",
+        "doc_8bc8b0a836a8.txt",
+        "doc_a97fd4164111.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "Data Science"
+    },
+    {
+      "id": "q1f7ffa4449d0",
+      "text": "What technologies are used for API versioning?",
+      "answer": "See Research Analysis: Api Versioning",
+      "relevant_docs": [
+        "doc_1f7ffa4449d0.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Research"
+    },
+    {
+      "id": "qad7643ceb78f",
+      "text": "How should I handle encryption compliance requirements?",
+      "answer": "See Engineering Guide: Encryption",
+      "relevant_docs": [
+        "doc_ad7643ceb78f.txt",
+        "doc_8c216938fe9d.txt",
+        "doc_240d247f084f.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "Engineering"
+    },
+    {
+      "id": "q68719c51ea90",
+      "text": "How should I handle service mesh compliance requirements?",
+      "answer": "See Engineering Memo: Service Mesh",
+      "relevant_docs": [
+        "doc_68719c51ea90.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Engineering"
+    },
+    {
+      "id": "q48b72e2068d9",
+      "text": "What is the procedure for rate limiting operations?",
+      "answer": "See Product Review: Rate Limiting",
+      "relevant_docs": [
+        "doc_48b72e2068d9.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Product"
+    },
+    {
+      "id": "q484a90e4dd6b",
+      "text": "Where can I find the report for capacity planning?",
+      "answer": "See Security Report: Capacity Planning",
+      "relevant_docs": [
+        "doc_484a90e4dd6b.txt",
+        "doc_20f206cdbd9a.txt",
+        "doc_cef9d9c1cf80.txt"
+      ],
+      "primary_topic": "capacity planning",
+      "department": "Security"
+    },
+    {
+      "id": "q05b975d0d699",
+      "text": "What is the procedure for cost optimization operations?",
+      "answer": "See HR Report: Cost Optimization",
+      "relevant_docs": [
+        "doc_05b975d0d699.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "HR"
+    },
+    {
+      "id": "q588ab1498839",
+      "text": "What is the procedure for disaster recovery operations?",
+      "answer": "See Engineering Proposal: Disaster Recovery",
+      "relevant_docs": [
+        "doc_588ab1498839.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Engineering"
+    },
+    {
+      "id": "qdaebd7574a76",
+      "text": "What technologies are used for vendor evaluation?",
+      "answer": "See QA Memo: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_daebd7574a76.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "QA"
+    },
+    {
+      "id": "q0a56dabc845f",
+      "text": "What are the requirements for access control according to Product guidelines?",
+      "answer": "See Product Policy: Access Control",
+      "relevant_docs": [
+        "doc_0a56dabc845f.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Product"
+    },
+    {
+      "id": "q08ae5fc56e95",
+      "text": "What are the best practices for backup procedures?",
+      "answer": "See Design Summary: Backup Procedures",
+      "relevant_docs": [
+        "doc_08ae5fc56e95.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Design"
+    },
+    {
+      "id": "qec57607e87b5",
+      "text": "What is the procedure for caching strategy operations?",
+      "answer": "See QA Specification: Caching Strategy",
+      "relevant_docs": [
+        "doc_ec57607e87b5.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "QA"
+    },
+    {
+      "id": "qa8eaaaf9cb61",
+      "text": "Where can I find the summary for change management?",
+      "answer": "See Engineering Summary: Change Management",
+      "relevant_docs": [
+        "doc_a8eaaaf9cb61.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Engineering"
+    },
+    {
+      "id": "qc4eea04122b1",
+      "text": "How do I validate encryption in the Legal department?",
+      "answer": "See Legal Memo: Encryption",
+      "relevant_docs": [
+        "doc_c4eea04122b1.txt",
+        "doc_8c216938fe9d.txt",
+        "doc_240d247f084f.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "Legal"
+    },
+    {
+      "id": "q6b6ae3546b0d",
+      "text": "What are the requirements for incident response according to Data Science guidelines?",
+      "answer": "See Data Science Policy: Incident Response",
+      "relevant_docs": [
+        "doc_6b6ae3546b0d.txt",
+        "doc_d38077beeec4.txt",
+        "doc_76db8f131b62.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "Data Science"
+    },
+    {
+      "id": "q7ffbb0b9d7e2",
+      "text": "Who is responsible for caching strategy in Research?",
+      "answer": "See Research Specification: Caching Strategy",
+      "relevant_docs": [
+        "doc_7ffbb0b9d7e2.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Research"
+    },
+    {
+      "id": "q3a99d6f8d2d9",
+      "text": "How do I troubleshoot data retention in the Operations department?",
+      "answer": "See Operations Guide: Data Retention",
+      "relevant_docs": [
+        "doc_3a99d6f8d2d9.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Operations"
+    },
+    {
+      "id": "qa9190113f27b",
+      "text": "How should I handle billing procedures compliance requirements?",
+      "answer": "See HR Policy: Billing Procedures",
+      "relevant_docs": [
+        "doc_a9190113f27b.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "HR"
+    },
+    {
+      "id": "q682156fc347b",
+      "text": "Where can I find the procedure for access control?",
+      "answer": "See Marketing Procedure: Access Control",
+      "relevant_docs": [
+        "doc_682156fc347b.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Marketing"
+    },
+    {
+      "id": "q0dc4f0d7f199",
+      "text": "How do I monitor container orchestration in the Product department?",
+      "answer": "See Product Analysis: Container Orchestration",
+      "relevant_docs": [
+        "doc_0dc4f0d7f199.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Product"
+    },
+    {
+      "id": "q9b551f4e8794",
+      "text": "What is the procedure for code review operations?",
+      "answer": "See Research Memo: Code Review",
+      "relevant_docs": [
+        "doc_9b551f4e8794.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Research"
+    },
+    {
+      "id": "qef677aa4d9bc",
+      "text": "Where can I find the report for service mesh?",
+      "answer": "See Sales Report: Service Mesh",
+      "relevant_docs": [
+        "doc_ef677aa4d9bc.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "Sales"
+    },
+    {
+      "id": "q97f732c6c561",
+      "text": "What are the best practices for authorization?",
+      "answer": "See Marketing Analysis: Authorization",
+      "relevant_docs": [
+        "doc_97f732c6c561.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Marketing"
+    },
+    {
+      "id": "qd57ae3605cec",
+      "text": "Where can I find the analysis for vendor evaluation?",
+      "answer": "See Legal Analysis: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_d57ae3605cec.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Legal"
+    },
+    {
+      "id": "q06580e190925",
+      "text": "Where can I find the specification for deployment pipeline?",
+      "answer": "See DevOps Specification: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_06580e190925.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "DevOps"
+    },
+    {
+      "id": "qe2fdd5728302",
+      "text": "Who is responsible for container orchestration in Operations?",
+      "answer": "See Operations Report: Container Orchestration",
+      "relevant_docs": [
+        "doc_e2fdd5728302.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Operations"
+    },
+    {
+      "id": "qd20351c3d147",
+      "text": "What technologies are used for authentication?",
+      "answer": "See Security Report: Authentication",
+      "relevant_docs": [
+        "doc_d20351c3d147.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Security"
+    },
+    {
+      "id": "q5bbf44429a6c",
+      "text": "What are the best practices for database migration?",
+      "answer": "See QA Analysis: Database Migration",
+      "relevant_docs": [
+        "doc_5bbf44429a6c.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "QA"
+    },
+    {
+      "id": "qc39dae17c6f8",
+      "text": "Where can I find the proposal for performance optimization?",
+      "answer": "See Design Proposal: Performance Optimization",
+      "relevant_docs": [
+        "doc_c39dae17c6f8.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Design"
+    },
+    {
+      "id": "qf8cfe7fc326a",
+      "text": "What is the procedure for user onboarding operations?",
+      "answer": "See Sales Guide: User Onboarding",
+      "relevant_docs": [
+        "doc_f8cfe7fc326a.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Sales"
+    },
+    {
+      "id": "q237cad313262",
+      "text": "How should I handle security compliance compliance requirements?",
+      "answer": "See Research Specification: Security Compliance",
+      "relevant_docs": [
+        "doc_237cad313262.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Research"
+    },
+    {
+      "id": "qa2915848f9e6",
+      "text": "How do I audit database migration in the HR department?",
+      "answer": "See HR Summary: Database Migration",
+      "relevant_docs": [
+        "doc_a2915848f9e6.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "HR"
+    },
+    {
+      "id": "q6ca27c6f49e4",
+      "text": "What is the procedure for schema evolution operations?",
+      "answer": "See Legal Analysis: Schema Evolution",
+      "relevant_docs": [
+        "doc_6ca27c6f49e4.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Legal"
+    },
+    {
+      "id": "q44a15badd14a",
+      "text": "What technologies are used for data retention?",
+      "answer": "See Research Analysis: Data Retention",
+      "relevant_docs": [
+        "doc_44a15badd14a.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Research"
+    },
+    {
+      "id": "qa07611cb3167",
+      "text": "Where can I find the policy for scaling?",
+      "answer": "See Engineering Policy: Scaling",
+      "relevant_docs": [
+        "doc_a07611cb3167.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Engineering"
+    },
+    {
+      "id": "q881b37f64852",
+      "text": "Who is responsible for API versioning in Research?",
+      "answer": "See Research Review: Api Versioning",
+      "relevant_docs": [
+        "doc_881b37f64852.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Research"
+    },
+    {
+      "id": "q332fb919265e",
+      "text": "Where can I find the analysis for change management?",
+      "answer": "See Data Science Analysis: Change Management",
+      "relevant_docs": [
+        "doc_332fb919265e.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Data Science"
+    },
+    {
+      "id": "qe1f1f3fce9e6",
+      "text": "What technologies are used for backup procedures?",
+      "answer": "See HR Analysis: Backup Procedures",
+      "relevant_docs": [
+        "doc_e1f1f3fce9e6.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "HR"
+    },
+    {
+      "id": "q044b11f13351",
+      "text": "What are the best practices for audit logging?",
+      "answer": "See Legal Summary: Audit Logging",
+      "relevant_docs": [
+        "doc_044b11f13351.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Legal"
+    },
+    {
+      "id": "q7602609ad10c",
+      "text": "How do I configure disaster recovery in the Product department?",
+      "answer": "See Product Report: Disaster Recovery",
+      "relevant_docs": [
+        "doc_7602609ad10c.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Product"
+    },
+    {
+      "id": "qa9d7e180596f",
+      "text": "What are the best practices for code review?",
+      "answer": "See Marketing Specification: Code Review",
+      "relevant_docs": [
+        "doc_a9d7e180596f.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Marketing"
+    },
+    {
+      "id": "qea57145ab849",
+      "text": "What technologies are used for change management?",
+      "answer": "See Legal Review: Change Management",
+      "relevant_docs": [
+        "doc_ea57145ab849.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Legal"
+    },
+    {
+      "id": "q5df7a36e5523",
+      "text": "Who is responsible for microservices in HR?",
+      "answer": "See HR Policy: Microservices",
+      "relevant_docs": [
+        "doc_5df7a36e5523.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "HR"
+    },
+    {
+      "id": "q8deac9e6a657",
+      "text": "What are the requirements for SLA management according to Product guidelines?",
+      "answer": "See Product Memo: Sla Management",
+      "relevant_docs": [
+        "doc_8deac9e6a657.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Product"
+    },
+    {
+      "id": "qa9d6ce9417a1",
+      "text": "How should I handle deployment pipeline compliance requirements?",
+      "answer": "See HR Memo: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_a9d6ce9417a1.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "HR"
+    },
+    {
+      "id": "qa214e46d3766",
+      "text": "Who is responsible for performance optimization in Engineering?",
+      "answer": "See Engineering Guide: Performance Optimization",
+      "relevant_docs": [
+        "doc_a214e46d3766.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Engineering"
+    },
+    {
+      "id": "q64679d5201a2",
+      "text": "What are the best practices for deployment pipeline?",
+      "answer": "See Sales Procedure: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_64679d5201a2.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Sales"
+    },
+    {
+      "id": "qd28564840b91",
+      "text": "What technologies are used for change management?",
+      "answer": "See Security Procedure: Change Management",
+      "relevant_docs": [
+        "doc_d28564840b91.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "Security"
+    },
+    {
+      "id": "q6719285a3df1",
+      "text": "What are the requirements for backup procedures according to Sales guidelines?",
+      "answer": "See Sales Report: Backup Procedures",
+      "relevant_docs": [
+        "doc_6719285a3df1.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Sales"
+    },
+    {
+      "id": "q6087f131602f",
+      "text": "What is the procedure for security compliance operations?",
+      "answer": "See Data Science Report: Security Compliance",
+      "relevant_docs": [
+        "doc_6087f131602f.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Data Science"
+    },
+    {
+      "id": "q183fe281f2bf",
+      "text": "How should I handle encryption compliance requirements?",
+      "answer": "See Customer Success Memo: Encryption",
+      "relevant_docs": [
+        "doc_183fe281f2bf.txt",
+        "doc_8c216938fe9d.txt",
+        "doc_240d247f084f.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q3ec1e7f72394",
+      "text": "Where can I find the proposal for cost optimization?",
+      "answer": "See HR Proposal: Cost Optimization",
+      "relevant_docs": [
+        "doc_3ec1e7f72394.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "HR"
+    },
+    {
+      "id": "q78fbbb39fed1",
+      "text": "How do I secure database migration in the Data Science department?",
+      "answer": "See Data Science Guide: Database Migration",
+      "relevant_docs": [
+        "doc_78fbbb39fed1.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Data Science"
+    },
+    {
+      "id": "q6f366754fc81",
+      "text": "What is the procedure for service mesh operations?",
+      "answer": "See HR Policy: Service Mesh",
+      "relevant_docs": [
+        "doc_6f366754fc81.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "HR"
+    },
+    {
+      "id": "q223c0b49b44c",
+      "text": "How should I handle container orchestration compliance requirements?",
+      "answer": "See Customer Success Guide: Container Orchestration",
+      "relevant_docs": [
+        "doc_223c0b49b44c.txt",
+        "doc_5e0925e13781.txt",
+        "doc_dfba488c5eb2.txt"
+      ],
+      "primary_topic": "container orchestration",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q1b8f791fb27b",
+      "text": "How do I migrate data processing in the Legal department?",
+      "answer": "See Legal Review: Data Processing",
+      "relevant_docs": [
+        "doc_1b8f791fb27b.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Legal"
+    },
+    {
+      "id": "q141a7b0af7b9",
+      "text": "Where can I find the procedure for CI/CD automation?",
+      "answer": "See HR Procedure: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_141a7b0af7b9.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "HR"
+    },
+    {
+      "id": "q46712654712f",
+      "text": "What are the best practices for SLA management?",
+      "answer": "See Finance Proposal: Sla Management",
+      "relevant_docs": [
+        "doc_46712654712f.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "Finance"
+    },
+    {
+      "id": "q4030e6a50e7e",
+      "text": "Who is responsible for vendor evaluation in Marketing?",
+      "answer": "See Marketing Policy: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_4030e6a50e7e.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "Marketing"
+    },
+    {
+      "id": "q9a55b365c884",
+      "text": "How should I handle authentication compliance requirements?",
+      "answer": "See Engineering Specification: Authentication",
+      "relevant_docs": [
+        "doc_9a55b365c884.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Engineering"
+    },
+    {
+      "id": "q5bea74fea37b",
+      "text": "How do I migrate performance optimization in the HR department?",
+      "answer": "See HR Analysis: Performance Optimization",
+      "relevant_docs": [
+        "doc_5bea74fea37b.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "HR"
+    },
+    {
+      "id": "qf10a2db1d851",
+      "text": "What are the best practices for data processing?",
+      "answer": "See Data Science Specification: Data Processing",
+      "relevant_docs": [
+        "doc_f10a2db1d851.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Data Science"
+    },
+    {
+      "id": "qc97b5f94e1a5",
+      "text": "Where can I find the report for vendor evaluation?",
+      "answer": "See DevOps Report: Vendor Evaluation",
+      "relevant_docs": [
+        "doc_c97b5f94e1a5.txt",
+        "doc_f9324c13bbe1.txt",
+        "doc_31013c86fc9a.txt"
+      ],
+      "primary_topic": "vendor evaluation",
+      "department": "DevOps"
+    },
+    {
+      "id": "q3fe57fe6fbe5",
+      "text": "What are the best practices for service mesh?",
+      "answer": "See HR Summary: Service Mesh",
+      "relevant_docs": [
+        "doc_3fe57fe6fbe5.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "HR"
+    },
+    {
+      "id": "qa9c933353c82",
+      "text": "Where can I find the memo for cost optimization?",
+      "answer": "See Security Memo: Cost Optimization",
+      "relevant_docs": [
+        "doc_a9c933353c82.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Security"
+    },
+    {
+      "id": "qaf20fbaa04b0",
+      "text": "Who is responsible for scaling in HR?",
+      "answer": "See HR Guide: Scaling",
+      "relevant_docs": [
+        "doc_af20fbaa04b0.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "HR"
+    },
+    {
+      "id": "qce36cd465ae0",
+      "text": "What is the procedure for data processing operations?",
+      "answer": "See Legal Analysis: Data Processing",
+      "relevant_docs": [
+        "doc_ce36cd465ae0.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Legal"
+    },
+    {
+      "id": "q17ba6d52cc2d",
+      "text": "What technologies are used for change management?",
+      "answer": "See HR Report: Change Management",
+      "relevant_docs": [
+        "doc_17ba6d52cc2d.txt",
+        "doc_1a212cea93e8.txt",
+        "doc_f64d9ec340ef.txt"
+      ],
+      "primary_topic": "change management",
+      "department": "HR"
+    },
+    {
+      "id": "q864d1a486d61",
+      "text": "How should I handle data retention compliance requirements?",
+      "answer": "See Product Procedure: Data Retention",
+      "relevant_docs": [
+        "doc_864d1a486d61.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Product"
+    },
+    {
+      "id": "q91c0aadcce57",
+      "text": "How should I handle schema evolution compliance requirements?",
+      "answer": "See Design Report: Schema Evolution",
+      "relevant_docs": [
+        "doc_91c0aadcce57.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Design"
+    },
+    {
+      "id": "qe0d3689537ff",
+      "text": "What technologies are used for microservices?",
+      "answer": "See Design Policy: Microservices",
+      "relevant_docs": [
+        "doc_e0d3689537ff.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Design"
+    },
+    {
+      "id": "q6a40f87a2bce",
+      "text": "What is the procedure for API integration operations?",
+      "answer": "See Finance Guide: Api Integration",
+      "relevant_docs": [
+        "doc_6a40f87a2bce.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Finance"
+    },
+    {
+      "id": "q7c37f565f028",
+      "text": "What technologies are used for API integration?",
+      "answer": "See Sales Guide: Api Integration",
+      "relevant_docs": [
+        "doc_7c37f565f028.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Sales"
+    },
+    {
+      "id": "q72e414a929cf",
+      "text": "How do I validate deployment pipeline in the Legal department?",
+      "answer": "See Legal Analysis: Deployment Pipeline",
+      "relevant_docs": [
+        "doc_72e414a929cf.txt",
+        "doc_56f374097964.txt",
+        "doc_c4dcb22885a3.txt"
+      ],
+      "primary_topic": "deployment pipeline",
+      "department": "Legal"
+    },
+    {
+      "id": "q626b21c68041",
+      "text": "Where can I find the memo for backup procedures?",
+      "answer": "See Research Memo: Backup Procedures",
+      "relevant_docs": [
+        "doc_626b21c68041.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Research"
+    },
+    {
+      "id": "qdf715845fb58",
+      "text": "How do I migrate billing procedures in the Security department?",
+      "answer": "See Security Summary: Billing Procedures",
+      "relevant_docs": [
+        "doc_df715845fb58.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Security"
+    },
+    {
+      "id": "q8f0ea8341b12",
+      "text": "What are the requirements for incident response according to Legal guidelines?",
+      "answer": "See Legal Summary: Incident Response",
+      "relevant_docs": [
+        "doc_8f0ea8341b12.txt",
+        "doc_d38077beeec4.txt",
+        "doc_76db8f131b62.txt"
+      ],
+      "primary_topic": "incident response",
+      "department": "Legal"
+    },
+    {
+      "id": "qad2901581a4e",
+      "text": "How do I optimize load balancing in the QA department?",
+      "answer": "See QA Policy: Load Balancing",
+      "relevant_docs": [
+        "doc_ad2901581a4e.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "QA"
+    },
+    {
+      "id": "q256909b0f99e",
+      "text": "What is the procedure for database migration operations?",
+      "answer": "See Customer Success Guide: Database Migration",
+      "relevant_docs": [
+        "doc_256909b0f99e.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qb6fe6cf93cf8",
+      "text": "Where can I find the procedure for code review?",
+      "answer": "See Design Procedure: Code Review",
+      "relevant_docs": [
+        "doc_b6fe6cf93cf8.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Design"
+    },
+    {
+      "id": "q8792d3ef84aa",
+      "text": "What are the best practices for event sourcing?",
+      "answer": "See Legal Policy: Event Sourcing",
+      "relevant_docs": [
+        "doc_8792d3ef84aa.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Legal"
+    },
+    {
+      "id": "qcffd50455da9",
+      "text": "Who is responsible for disaster recovery in Customer Success?",
+      "answer": "See Customer Success Procedure: Disaster Recovery",
+      "relevant_docs": [
+        "doc_cffd50455da9.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qa5e7b637a04e",
+      "text": "Where can I find the proposal for cost optimization?",
+      "answer": "See Research Proposal: Cost Optimization",
+      "relevant_docs": [
+        "doc_a5e7b637a04e.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Research"
+    },
+    {
+      "id": "qa0cb59227b90",
+      "text": "How do I test rate limiting in the Finance department?",
+      "answer": "See Finance Summary: Rate Limiting",
+      "relevant_docs": [
+        "doc_a0cb59227b90.txt",
+        "doc_63c4f870569f.txt",
+        "doc_53a487342e0f.txt"
+      ],
+      "primary_topic": "rate limiting",
+      "department": "Finance"
+    },
+    {
+      "id": "q5fa8d79b2e0a",
+      "text": "How should I handle authorization compliance requirements?",
+      "answer": "See Data Science Policy: Authorization",
+      "relevant_docs": [
+        "doc_5fa8d79b2e0a.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "Data Science"
+    },
+    {
+      "id": "q2cf957f67240",
+      "text": "How do I implement CI/CD automation in the Product department?",
+      "answer": "See Product Summary: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_2cf957f67240.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Product"
+    },
+    {
+      "id": "qbb27d31f27ea",
+      "text": "Who is responsible for API versioning in Security?",
+      "answer": "See Security Policy: Api Versioning",
+      "relevant_docs": [
+        "doc_bb27d31f27ea.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_b9da9c1d3846.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Security"
+    },
+    {
+      "id": "q6b2da597d9f6",
+      "text": "What are the requirements for load balancing according to Customer Success guidelines?",
+      "answer": "See Customer Success Review: Load Balancing",
+      "relevant_docs": [
+        "doc_6b2da597d9f6.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Customer Success"
+    },
+    {
+      "id": "qe63d356332d7",
+      "text": "What are the best practices for billing procedures?",
+      "answer": "See Sales Memo: Billing Procedures",
+      "relevant_docs": [
+        "doc_e63d356332d7.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Sales"
+    },
+    {
+      "id": "q5123220b0b18",
+      "text": "What are the requirements for schema evolution according to Research guidelines?",
+      "answer": "See Research Memo: Schema Evolution",
+      "relevant_docs": [
+        "doc_5123220b0b18.txt",
+        "doc_774f497dc12b.txt",
+        "doc_a04d8a571006.txt"
+      ],
+      "primary_topic": "schema evolution",
+      "department": "Research"
+    },
+    {
+      "id": "qd0b2005014d6",
+      "text": "What is the procedure for event sourcing operations?",
+      "answer": "See Sales Memo: Event Sourcing",
+      "relevant_docs": [
+        "doc_d0b2005014d6.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Sales"
+    },
+    {
+      "id": "q5040d6d84280",
+      "text": "Who is responsible for security compliance in Operations?",
+      "answer": "See Operations Report: Security Compliance",
+      "relevant_docs": [
+        "doc_5040d6d84280.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Operations"
+    },
+    {
+      "id": "qcad2904630d4",
+      "text": "What is the procedure for data retention operations?",
+      "answer": "See HR Policy: Data Retention",
+      "relevant_docs": [
+        "doc_cad2904630d4.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "HR"
+    },
+    {
+      "id": "q8ef95414e78a",
+      "text": "Where can I find the proposal for security compliance?",
+      "answer": "See Research Proposal: Security Compliance",
+      "relevant_docs": [
+        "doc_8ef95414e78a.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Research"
+    },
+    {
+      "id": "q1dfa0671660c",
+      "text": "What is the procedure for performance optimization operations?",
+      "answer": "See Legal Procedure: Performance Optimization",
+      "relevant_docs": [
+        "doc_1dfa0671660c.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Legal"
+    },
+    {
+      "id": "q0d4ff13a42a1",
+      "text": "How do I validate authorization in the QA department?",
+      "answer": "See QA Summary: Authorization",
+      "relevant_docs": [
+        "doc_0d4ff13a42a1.txt",
+        "doc_6bbeffeb0e5e.txt",
+        "doc_b44be89b6354.txt"
+      ],
+      "primary_topic": "authorization",
+      "department": "QA"
+    },
+    {
+      "id": "q6b376a9d4393",
+      "text": "What is the procedure for caching strategy operations?",
+      "answer": "See Research Policy: Caching Strategy",
+      "relevant_docs": [
+        "doc_6b376a9d4393.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Research"
+    },
+    {
+      "id": "qb4488962818a",
+      "text": "What are the requirements for fault tolerance according to Marketing guidelines?",
+      "answer": "See Marketing Memo: Fault Tolerance",
+      "relevant_docs": [
+        "doc_b4488962818a.txt",
+        "doc_c603b412b70a.txt",
+        "doc_74804324902a.txt"
+      ],
+      "primary_topic": "fault tolerance",
+      "department": "Marketing"
+    },
+    {
+      "id": "qbdd90f9304fe",
+      "text": "How do I audit security compliance in the Customer Success department?",
+      "answer": "See Customer Success Guide: Security Compliance",
+      "relevant_docs": [
+        "doc_bdd90f9304fe.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q7688ffc21e2a",
+      "text": "Who is responsible for CI/CD automation in Engineering?",
+      "answer": "See Engineering Summary: Ci/Cd Automation",
+      "relevant_docs": [
+        "doc_7688ffc21e2a.txt",
+        "doc_bb3cb6d1ff30.txt",
+        "doc_4309ccad3686.txt"
+      ],
+      "primary_topic": "CI/CD automation",
+      "department": "Engineering"
+    },
+    {
+      "id": "q302164fba9b1",
+      "text": "What are the requirements for API integration according to Marketing guidelines?",
+      "answer": "See Marketing Review: Api Integration",
+      "relevant_docs": [
+        "doc_302164fba9b1.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Marketing"
+    },
+    {
+      "id": "q0ff6b68b575e",
+      "text": "What are the requirements for database migration according to Engineering guidelines?",
+      "answer": "See Engineering Summary: Database Migration",
+      "relevant_docs": [
+        "doc_0ff6b68b575e.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "Engineering"
+    },
+    {
+      "id": "q16172c053c3b",
+      "text": "Who is responsible for API integration in Customer Success?",
+      "answer": "See Customer Success Memo: Api Integration",
+      "relevant_docs": [
+        "doc_16172c053c3b.txt",
+        "doc_f7f4fc958037.txt",
+        "doc_ef54a2e48560.txt"
+      ],
+      "primary_topic": "API integration",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q032f3bd43c1f",
+      "text": "What are the requirements for data retention according to Legal guidelines?",
+      "answer": "See Legal Memo: Data Retention",
+      "relevant_docs": [
+        "doc_032f3bd43c1f.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Legal"
+    },
+    {
+      "id": "qe9f5da1a568f",
+      "text": "How do I upgrade data processing in the Engineering department?",
+      "answer": "See Engineering Review: Data Processing",
+      "relevant_docs": [
+        "doc_e9f5da1a568f.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Engineering"
+    },
+    {
+      "id": "qf71dff6e60eb",
+      "text": "Who is responsible for code review in Sales?",
+      "answer": "See Sales Memo: Code Review",
+      "relevant_docs": [
+        "doc_f71dff6e60eb.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "Sales"
+    },
+    {
+      "id": "q35f8adc4a9a0",
+      "text": "Where can I find the procedure for caching strategy?",
+      "answer": "See Product Procedure: Caching Strategy",
+      "relevant_docs": [
+        "doc_35f8adc4a9a0.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Product"
+    },
+    {
+      "id": "q751e5bffc3b1",
+      "text": "What is the procedure for database migration operations?",
+      "answer": "See HR Guide: Database Migration",
+      "relevant_docs": [
+        "doc_751e5bffc3b1.txt",
+        "doc_1652ff4cccfa.txt",
+        "doc_e9ee7accbd79.txt"
+      ],
+      "primary_topic": "database migration",
+      "department": "HR"
+    },
+    {
+      "id": "q8b3d2362e63d",
+      "text": "What is the procedure for data processing operations?",
+      "answer": "See Engineering Policy: Data Processing",
+      "relevant_docs": [
+        "doc_8b3d2362e63d.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Engineering"
+    },
+    {
+      "id": "q538384b47fa4",
+      "text": "Where can I find the summary for backup procedures?",
+      "answer": "See Data Science Summary: Backup Procedures",
+      "relevant_docs": [
+        "doc_538384b47fa4.txt",
+        "doc_25805b24f2b5.txt",
+        "doc_00d48327b741.txt"
+      ],
+      "primary_topic": "backup procedures",
+      "department": "Data Science"
+    },
+    {
+      "id": "q17cd5094ee7c",
+      "text": "How should I handle billing procedures compliance requirements?",
+      "answer": "See Design Report: Billing Procedures",
+      "relevant_docs": [
+        "doc_17cd5094ee7c.txt",
+        "doc_4758138d2b75.txt",
+        "doc_828b284b68e0.txt"
+      ],
+      "primary_topic": "billing procedures",
+      "department": "Design"
+    },
+    {
+      "id": "qc6744f1c6559",
+      "text": "What are the best practices for load balancing?",
+      "answer": "See Security Report: Load Balancing",
+      "relevant_docs": [
+        "doc_c6744f1c6559.txt",
+        "doc_2f322504d8f9.txt",
+        "doc_5c71a415022e.txt"
+      ],
+      "primary_topic": "load balancing",
+      "department": "Security"
+    },
+    {
+      "id": "qdedbf99f30c7",
+      "text": "What are the requirements for security compliance according to Marketing guidelines?",
+      "answer": "See Marketing Review: Security Compliance",
+      "relevant_docs": [
+        "doc_dedbf99f30c7.txt",
+        "doc_1f10e94f686c.txt",
+        "doc_848051745c98.txt"
+      ],
+      "primary_topic": "security compliance",
+      "department": "Marketing"
+    },
+    {
+      "id": "q2ded5d76eba1",
+      "text": "How do I implement cost optimization in the Legal department?",
+      "answer": "See Legal Proposal: Cost Optimization",
+      "relevant_docs": [
+        "doc_2ded5d76eba1.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Legal"
+    },
+    {
+      "id": "q39a0105b7df9",
+      "text": "Who is responsible for SLA management in QA?",
+      "answer": "See QA Proposal: Sla Management",
+      "relevant_docs": [
+        "doc_39a0105b7df9.txt",
+        "doc_6c26e7a43f9b.txt",
+        "doc_6e15db7e6b5d.txt"
+      ],
+      "primary_topic": "SLA management",
+      "department": "QA"
+    },
+    {
+      "id": "qbcb16063f06d",
+      "text": "What is the procedure for testing standards operations?",
+      "answer": "See Marketing Memo: Testing Standards",
+      "relevant_docs": [
+        "doc_bcb16063f06d.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Marketing"
+    },
+    {
+      "id": "qe46956e251f3",
+      "text": "How should I handle caching strategy compliance requirements?",
+      "answer": "See Research Memo: Caching Strategy",
+      "relevant_docs": [
+        "doc_e46956e251f3.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Research"
+    },
+    {
+      "id": "qc487af7f6613",
+      "text": "How do I test caching strategy in the Engineering department?",
+      "answer": "See Engineering Analysis: Caching Strategy",
+      "relevant_docs": [
+        "doc_c487af7f6613.txt",
+        "doc_1bfc36a2a4d0.txt",
+        "doc_a1c46ce47a49.txt"
+      ],
+      "primary_topic": "caching strategy",
+      "department": "Engineering"
+    },
+    {
+      "id": "q0d03aa832621",
+      "text": "What are the best practices for data retention?",
+      "answer": "See Operations Guide: Data Retention",
+      "relevant_docs": [
+        "doc_0d03aa832621.txt",
+        "doc_e782acfde554.txt",
+        "doc_355a017c5686.txt"
+      ],
+      "primary_topic": "data retention",
+      "department": "Operations"
+    },
+    {
+      "id": "q6c222843e467",
+      "text": "Who is responsible for encryption in Engineering?",
+      "answer": "See Engineering Policy: Encryption",
+      "relevant_docs": [
+        "doc_6c222843e467.txt",
+        "doc_8c216938fe9d.txt",
+        "doc_240d247f084f.txt"
+      ],
+      "primary_topic": "encryption",
+      "department": "Engineering"
+    },
+    {
+      "id": "q28779495c81f",
+      "text": "What technologies are used for microservices?",
+      "answer": "See Product Policy: Microservices",
+      "relevant_docs": [
+        "doc_28779495c81f.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Product"
+    },
+    {
+      "id": "q1e56a868eca3",
+      "text": "What technologies are used for performance optimization?",
+      "answer": "See HR Summary: Performance Optimization",
+      "relevant_docs": [
+        "doc_1e56a868eca3.txt",
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "HR"
+    },
+    {
+      "id": "q15cf5be29303",
+      "text": "How should I handle scaling compliance requirements?",
+      "answer": "See HR Summary: Scaling",
+      "relevant_docs": [
+        "doc_15cf5be29303.txt",
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "HR"
+    },
+    {
+      "id": "q753f6c310ff9",
+      "text": "What are the requirements for event sourcing according to Data Science guidelines?",
+      "answer": "See Data Science Summary: Event Sourcing",
+      "relevant_docs": [
+        "doc_753f6c310ff9.txt",
+        "doc_6760ad9524a5.txt",
+        "doc_8ce49eb4b53e.txt"
+      ],
+      "primary_topic": "event sourcing",
+      "department": "Data Science"
+    },
+    {
+      "id": "qe8cb03bdadee",
+      "text": "What technologies are used for user onboarding?",
+      "answer": "See Engineering Analysis: User Onboarding",
+      "relevant_docs": [
+        "doc_e8cb03bdadee.txt",
+        "doc_bd3f858e285a.txt",
+        "doc_01631d25879c.txt"
+      ],
+      "primary_topic": "user onboarding",
+      "department": "Engineering"
+    },
+    {
+      "id": "q04a6613186c4",
+      "text": "What are the best practices for microservices?",
+      "answer": "See HR Report: Microservices",
+      "relevant_docs": [
+        "doc_04a6613186c4.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "HR"
+    },
+    {
+      "id": "q4ade93edf8cb",
+      "text": "How should I handle cost optimization compliance requirements?",
+      "answer": "See Marketing Review: Cost Optimization",
+      "relevant_docs": [
+        "doc_4ade93edf8cb.txt",
+        "doc_40b7d7e7d579.txt",
+        "doc_5a1fe6f0f7c6.txt"
+      ],
+      "primary_topic": "cost optimization",
+      "department": "Marketing"
+    },
+    {
+      "id": "q56e1ed758f56",
+      "text": "What is the procedure for access control operations?",
+      "answer": "See Security Guide: Access Control",
+      "relevant_docs": [
+        "doc_56e1ed758f56.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Security"
+    },
+    {
+      "id": "qfb95e59f876c",
+      "text": "What technologies are used for code review?",
+      "answer": "See DevOps Memo: Code Review",
+      "relevant_docs": [
+        "doc_fb95e59f876c.txt",
+        "doc_ee564ac6c6a7.txt",
+        "doc_52b5466a4883.txt"
+      ],
+      "primary_topic": "code review",
+      "department": "DevOps"
+    },
+    {
+      "id": "qbae035af1e59",
+      "text": "What is the procedure for access control operations?",
+      "answer": "See Research Guide: Access Control",
+      "relevant_docs": [
+        "doc_bae035af1e59.txt",
+        "doc_343c7e211443.txt",
+        "doc_cc6009b4e978.txt"
+      ],
+      "primary_topic": "access control",
+      "department": "Research"
+    },
+    {
+      "id": "q5bf66688e17b",
+      "text": "Who is responsible for authentication in Data Science?",
+      "answer": "See Data Science Memo: Authentication",
+      "relevant_docs": [
+        "doc_5bf66688e17b.txt",
+        "doc_a8cbd2f7573d.txt",
+        "doc_1da377e34f1d.txt"
+      ],
+      "primary_topic": "authentication",
+      "department": "Data Science"
+    },
+    {
+      "id": "qa3c3f727fc07",
+      "text": "Who is responsible for disaster recovery in Research?",
+      "answer": "See Research Analysis: Disaster Recovery",
+      "relevant_docs": [
+        "doc_a3c3f727fc07.txt",
+        "doc_0ab6d0b5f5e4.txt",
+        "doc_77282c6251d2.txt"
+      ],
+      "primary_topic": "disaster recovery",
+      "department": "Research"
+    },
+    {
+      "id": "q1c784431f5d0",
+      "text": "What is the procedure for monitoring operations?",
+      "answer": "See Product Report: Monitoring",
+      "relevant_docs": [
+        "doc_1c784431f5d0.txt",
+        "doc_8bc8b0a836a8.txt",
+        "doc_a97fd4164111.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "Product"
+    },
+    {
+      "id": "q76925a312b87",
+      "text": "What technologies are used for monitoring?",
+      "answer": "See HR Guide: Monitoring",
+      "relevant_docs": [
+        "doc_76925a312b87.txt",
+        "doc_8bc8b0a836a8.txt",
+        "doc_a97fd4164111.txt"
+      ],
+      "primary_topic": "monitoring",
+      "department": "HR"
+    },
+    {
+      "id": "q1a9cb526b1ba",
+      "text": "What technologies are used for microservices?",
+      "answer": "See Research Guide: Microservices",
+      "relevant_docs": [
+        "doc_1a9cb526b1ba.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Research"
+    },
+    {
+      "id": "q6104c85f85c2",
+      "text": "How do I document audit logging in the Marketing department?",
+      "answer": "See Marketing Summary: Audit Logging",
+      "relevant_docs": [
+        "doc_6104c85f85c2.txt",
+        "doc_2d1d92ba33a3.txt",
+        "doc_3cb6c2e5a8ed.txt"
+      ],
+      "primary_topic": "audit logging",
+      "department": "Marketing"
+    },
+    {
+      "id": "q98a4f18f2bb5",
+      "text": "What are the best practices for testing standards?",
+      "answer": "See Security Review: Testing Standards",
+      "relevant_docs": [
+        "doc_98a4f18f2bb5.txt",
+        "doc_3fbd3ed7d201.txt",
+        "doc_927f7f033d18.txt"
+      ],
+      "primary_topic": "testing standards",
+      "department": "Security"
+    }
+  ]
+}

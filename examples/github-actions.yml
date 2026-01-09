@@ -1,0 +1,119 @@
+# RagTune CI/CD Quality Gate
+#
+# This workflow runs RAG retrieval quality checks on every push to docs.
+# Copy this file to .github/workflows/rag-quality.yml in your repository.
+#
+# Prerequisites:
+# 1. Create tests/golden-queries.json with your test queries
+# 2. Set up your embedding API key as a secret (if using cloud embedders)
+#
+# Usage:
+#   ragtune explain "your query" --collection prod --save
+#   # Repeat to build up golden-queries.json, then commit it
+
+name: RAG Quality Gate
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - 'tests/golden-queries.json'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'tests/golden-queries.json'
+
+jobs:
+  rag-quality-check:
+    runs-on: ubuntu-latest
+    
+    services:
+      qdrant:
+        image: qdrant/qdrant
+        ports:
+          - 6333:6333
+          - 6334:6334
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      
+      - name: Install RagTune
+        run: go install github.com/metawake/ragtune/cmd/ragtune@latest
+      
+      # Option A: Use Ollama (free, no API key needed)
+      - name: Setup Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve &
+          sleep 5
+          ollama pull nomic-embed-text
+      
+      - name: Ingest documents
+        run: |
+          ragtune ingest ./docs \
+            --collection ci-test \
+            --embedder ollama \
+            --chunk-size 512
+      
+      - name: Run quality check
+        run: |
+          ragtune simulate \
+            --collection ci-test \
+            --queries ./tests/golden-queries.json \
+            --embedder ollama \
+            --ci \
+            --min-recall 0.85 \
+            --min-coverage 0.90
+      
+      # Option B: Use OpenAI (faster, requires API key)
+      # Uncomment below and comment out Ollama steps above
+      #
+      # - name: Ingest documents
+      #   env:
+      #     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      #   run: |
+      #     ragtune ingest ./docs \
+      #       --collection ci-test \
+      #       --embedder openai \
+      #       --chunk-size 512
+      #
+      # - name: Run quality check
+      #   env:
+      #     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      #   run: |
+      #     ragtune simulate \
+      #       --collection ci-test \
+      #       --queries ./tests/golden-queries.json \
+      #       --embedder openai \
+      #       --ci \
+      #       --min-recall 0.85 \
+      #       --min-coverage 0.90
+
+---
+# Minimal version (copy-paste ready)
+#
+# name: RAG Quality
+# on: [push]
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     services:
+#       qdrant:
+#         image: qdrant/qdrant
+#         ports: ["6333:6333", "6334:6334"]
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-go@v5
+#         with: { go-version: '1.22' }
+#       - run: go install github.com/metawake/ragtune/cmd/ragtune@latest
+#       - run: |
+#           curl -fsSL https://ollama.com/install.sh | sh
+#           ollama serve & sleep 5 && ollama pull nomic-embed-text
+#       - run: ragtune ingest ./docs --collection test --embedder ollama
+#       - run: ragtune simulate --collection test --queries tests/golden-queries.json --embedder ollama --ci --min-recall 0.85
