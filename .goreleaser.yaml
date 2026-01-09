@@ -1,0 +1,76 @@
+# GoReleaser configuration for RagTune
+# Docs: https://goreleaser.com
+#
+# Usage:
+#   goreleaser release --snapshot --clean  # Local test
+#   goreleaser release                      # Actual release (requires GITHUB_TOKEN)
+
+version: 2
+
+project_name: ragtune
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - main: ./cmd/ragtune
+    binary: ragtune
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+      - -X github.com/metawake/ragtune/internal/cli.Version={{.Version}}
+
+archives:
+  - format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - README.md
+      - LICENSE
+
+checksum:
+  name_template: 'checksums.txt'
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^chore:'
+
+release:
+  github:
+    owner: metawake
+    name: ragtune
+  draft: false
+  prerelease: auto
+  name_template: "v{{.Version}}"
+
+brews:
+  - name: ragtune
+    homepage: https://github.com/metawake/ragtune
+    description: "EXPLAIN ANALYZE for RAG retrieval — inspect, explain, benchmark, and tune your RAG retrieval layer"
+    license: MIT
+    repository:
+      owner: metawake
+      name: homebrew-tap
+    install: |
+      bin.install "ragtune"
+    test: |
+      system "#{bin}/ragtune", "--version"
+
+# Announce
+announce:
+  skip: true

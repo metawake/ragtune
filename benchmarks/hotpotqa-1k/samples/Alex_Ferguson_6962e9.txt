@@ -1,0 +1,3 @@
+# Alex Ferguson
+
+Sir Alexander Chapman Ferguson, CBE (born 31 December 1941) is a Scottish former football manager and player who managed Manchester United from 1986 to 2013.  He is regarded by many players, managers and analysts to be one of the greatest and most successful managers of all time.

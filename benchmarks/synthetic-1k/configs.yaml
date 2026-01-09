@@ -1,0 +1,23 @@
+# Benchmark configurations for enterprise-scale testing
+# Tests various top_k values to measure recall at different retrieval depths
+
+configs:
+  - name: top3
+    top_k: 3
+    description: "Minimal retrieval - tests precision"
+
+  - name: top5
+    top_k: 5
+    description: "Standard retrieval depth"
+
+  - name: top10
+    top_k: 10
+    description: "Extended retrieval for complex queries"
+
+  - name: top20
+    top_k: 20
+    description: "Deep retrieval for multi-hop reasoning"
+
+  - name: top50
+    top_k: 50
+    description: "Maximum retrieval for exhaustive search"

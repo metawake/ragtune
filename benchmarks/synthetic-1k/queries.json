@@ -1,0 +1,100 @@
+{
+  "queries": [
+    {
+      "id": "qb7c534d9fe77",
+      "text": "What is the procedure for service mesh operations?",
+      "answer": "See DevOps Specification: Service Mesh",
+      "relevant_docs": [
+        "doc_b7c534d9fe77.txt",
+        "doc_1b77e7e45003.txt",
+        "doc_62000815c5f9.txt"
+      ],
+      "primary_topic": "service mesh",
+      "department": "DevOps"
+    },
+    {
+      "id": "q0770f9428804",
+      "text": "What is the procedure for scaling operations?",
+      "answer": "See Sales Proposal: Scaling",
+      "relevant_docs": [
+        "doc_0770f9428804.txt",
+        "doc_41623a240a33.txt",
+        "doc_2d5e5c1133ee.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Sales"
+    },
+    {
+      "id": "q3380b18b8281",
+      "text": "How do I implement performance optimization in the HR department?",
+      "answer": "See HR Procedure: Performance Optimization",
+      "relevant_docs": [
+        "doc_3380b18b8281.txt",
+        "doc_5c408e527e85.txt",
+        "doc_9e93b36eee5c.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "HR"
+    },
+    {
+      "id": "qb9da9c1d3846",
+      "text": "Who is responsible for API versioning in Design?",
+      "answer": "See Design Memo: Api Versioning",
+      "relevant_docs": [
+        "doc_b9da9c1d3846.txt",
+        "doc_b1986a0a3068.txt",
+        "doc_f551b50040b6.txt"
+      ],
+      "primary_topic": "API versioning",
+      "department": "Design"
+    },
+    {
+      "id": "q8285c0abb85e",
+      "text": "Who is responsible for microservices in Sales?",
+      "answer": "See Sales Proposal: Microservices",
+      "relevant_docs": [
+        "doc_8285c0abb85e.txt",
+        "doc_c22a1d2cd441.txt",
+        "doc_00bdfc7c6d09.txt"
+      ],
+      "primary_topic": "microservices",
+      "department": "Sales"
+    },
+    {
+      "id": "q28bb95b126da",
+      "text": "What are the requirements for data processing according to Product guidelines?",
+      "answer": "See Product Proposal: Data Processing",
+      "relevant_docs": [
+        "doc_28bb95b126da.txt",
+        "doc_76e17eaa4ff4.txt",
+        "doc_0f84e8c41c2c.txt"
+      ],
+      "primary_topic": "data processing",
+      "department": "Product"
+    },
+    {
+      "id": "q41623a240a33",
+      "text": "Where can I find the proposal for scaling?",
+      "answer": "See Design Proposal: Scaling",
+      "relevant_docs": [
+        "doc_41623a240a33.txt",
+        "doc_0770f9428804.txt",
+        "doc_2d5e5c1133ee.txt"
+      ],
+      "primary_topic": "scaling",
+      "department": "Design"
+    },
+    {
+      "id": "q5c408e527e85",
+      "text": "How do I troubleshoot performance optimization in the Customer Success department?",
+      "answer": "See Customer Success Analysis: Performance Optimization",
+      "relevant_docs": [
+        "doc_5c408e527e85.txt",
+        "doc_3380b18b8281.txt",
+        "doc_9e93b36eee5c.txt"
+      ],
+      "primary_topic": "performance optimization",
+      "department": "Customer Success"
+    },
+    {
+      "id": "q8c216938fe9d",

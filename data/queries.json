@@ -1,0 +1,94 @@
+{
+  "queries": [
+    {
+      "id": "q1",
+      "text": "How do I secure my API integration?",
+      "relevant_docs": ["security.md", "api-keys.md", "authentication.md"],
+      "notes": "Broad security question - needs multiple docs for complete answer"
+    },
+    {
+      "id": "q2",
+      "text": "What should I do when authentication fails?",
+      "relevant_docs": ["troubleshooting.md", "authentication.md"],
+      "notes": "Error handling spans troubleshooting and auth docs"
+    },
+    {
+      "id": "q3",
+      "text": "How do I get started with webhooks?",
+      "relevant_docs": ["webhooks.md", "getting-started.md", "integrations.md"],
+      "notes": "Onboarding question touches multiple docs"
+    },
+    {
+      "id": "q4",
+      "text": "What are the rate limits for different authentication methods?",
+      "relevant_docs": ["rate-limits.md", "authentication.md"],
+      "notes": "Cross-cutting concern: limits vary by auth type"
+    },
+    {
+      "id": "q5",
+      "text": "How do I handle API errors in my integration?",
+      "relevant_docs": ["troubleshooting.md", "integrations.md", "rate-limits.md"],
+      "notes": "Error handling spans multiple docs"
+    },
+    {
+      "id": "q6",
+      "text": "How do I rotate my credentials securely?",
+      "relevant_docs": ["api-keys.md", "security.md", "authentication.md"],
+      "notes": "Key rotation touches security, keys, and auth"
+    },
+    {
+      "id": "q7",
+      "text": "What events can I subscribe to?",
+      "relevant_docs": ["webhooks.md", "integrations.md"],
+      "notes": "Event subscription in webhooks and integrations"
+    },
+    {
+      "id": "q8",
+      "text": "How do I fix 429 Too Many Requests errors?",
+      "relevant_docs": ["rate-limits.md", "troubleshooting.md"],
+      "notes": "Rate limit errors in both docs"
+    },
+    {
+      "id": "q9",
+      "text": "What security best practices should I follow?",
+      "relevant_docs": ["security.md", "authentication.md", "api-keys.md"],
+      "notes": "Security practices spread across multiple docs"
+    },
+    {
+      "id": "q10",
+      "text": "How do I integrate with Slack?",
+      "relevant_docs": ["integrations.md"],
+      "notes": "Single doc - easy baseline query"
+    },
+    {
+      "id": "q11",
+      "text": "What payment methods do you accept?",
+      "relevant_docs": ["billing.md"],
+      "notes": "Single doc - easy baseline query"
+    },
+    {
+      "id": "q12",
+      "text": "How do I verify webhook signatures?",
+      "relevant_docs": ["webhooks.md", "security.md", "integrations.md"],
+      "notes": "Webhook security spans multiple docs"
+    },
+    {
+      "id": "q13",
+      "text": "What happens if my payment fails?",
+      "relevant_docs": ["billing.md", "troubleshooting.md"],
+      "notes": "Payment issues in billing and troubleshooting"
+    },
+    {
+      "id": "q14",
+      "text": "How do I upgrade my subscription and what changes?",
+      "relevant_docs": ["billing.md", "rate-limits.md"],
+      "notes": "Upgrade affects billing and rate limits"
+    },
+    {
+      "id": "q15",
+      "text": "What is IP allowlisting and how do I set it up?",
+      "relevant_docs": ["security.md", "authentication.md"],
+      "notes": "IP allowlisting in security and auth docs"
+    }
+  ]
+}
