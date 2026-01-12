@@ -131,7 +131,10 @@ func runCompare(cmd *cobra.Command, args []string) error {
 		fmt.Printf("Found %d documents\n", len(docs))
 
 		// Chunk documents once
-		c := chunker.New(compareChunkSize, compareChunkSize/8) // 12.5% overlap
+		c, err := chunker.New(compareChunkSize, compareChunkSize/8) // 12.5% overlap
+		if err != nil {
+			return fmt.Errorf("invalid chunker config: %w", err)
+		}
 		var allChunks []chunker.Chunk
 		for _, doc := range docs {
 			chunks := c.Chunk(doc.Content, doc.Path)

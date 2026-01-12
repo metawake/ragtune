@@ -7,7 +7,11 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"time"
 )
+
+// Compile-time interface compliance check.
+var _ Embedder = (*TEIEmbedder)(nil)
 
 // TEIEmbedder uses Hugging Face Text Embeddings Inference server.
 // TEI provides native batching and is optimized for high-throughput embedding.
@@ -58,7 +62,7 @@ func NewTEIEmbedder(opts ...TEIOption) *TEIEmbedder {
 		baseURL: "http://localhost:8080",
 		model:   "BAAI/bge-base-en-v1.5",
 		dim:     768,
-		client:  &http.Client{},
+		client:  &http.Client{Timeout: 30 * time.Second},
 	}
 	for _, opt := range opts {
 		opt(e)

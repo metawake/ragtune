@@ -3,7 +3,6 @@ package cli
 import (
 	"context"
 	"fmt"
-	"os"
 	"path/filepath"
 	"time"
 
@@ -249,11 +248,11 @@ func printAuditReport(collection string, queryCount int, m metrics.Result, maxLa
 
 	fmt.Println("╚════════════════════════════════════════════════════════════════╝")
 
-	// Exit with error if failing
+	// Return error if failing (let main.go handle exit code)
 	if failCount > 0 {
 		fmt.Println()
 		fmt.Printf("Audit failed: %d metric(s) below threshold\n", failCount)
-		os.Exit(1)
+		return &AuditError{FailCount: failCount}
 	}
 
 	if warnCount > 0 {

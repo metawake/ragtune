@@ -7,7 +7,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+// Compile-time interface compliance check.
+var _ Embedder = (*CohereEmbedder)(nil)
 
 // CohereEmbedder uses Cohere's embedding API.
 type CohereEmbedder struct {
@@ -45,7 +49,7 @@ func NewCohereEmbedder(opts ...CohereOption) *CohereEmbedder {
 		model:     "embed-english-v3.0",
 		dim:       1024,
 		inputType: "search_document",
-		client:    &http.Client{},
+		client:    &http.Client{Timeout: 30 * time.Second},
 	}
 	for _, opt := range opts {
 		opt(e)

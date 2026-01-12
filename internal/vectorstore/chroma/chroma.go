@@ -13,6 +13,9 @@ import (
 	"github.com/metawake/ragtune/internal/vectorstore"
 )
 
+// Compile-time interface compliance check.
+var _ vectorstore.Store = (*Client)(nil)
+
 // Client implements vectorstore.Store for Chroma.
 type Client struct {
 	baseURL    string

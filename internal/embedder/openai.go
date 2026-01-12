@@ -7,7 +7,17 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const (
+	// defaultHTTPTimeout is the timeout for HTTP requests to embedding APIs.
+	// 30 seconds allows for large batch requests while preventing indefinite hangs.
+	defaultHTTPTimeout = 30 * time.Second
+)
+
+// Compile-time interface compliance check.
+var _ Embedder = (*OpenAIEmbedder)(nil)
 
 // OpenAIEmbedder uses OpenAI's embedding API.
 type OpenAIEmbedder struct {
@@ -24,7 +34,7 @@ func NewOpenAIEmbedder() *OpenAIEmbedder {
 		apiKey: os.Getenv("OPENAI_API_KEY"),
 		model:  "text-embedding-3-small",
 		dim:    1536,
-		client: &http.Client{},
+		client: &http.Client{Timeout: defaultHTTPTimeout},
 	}
 }
 

@@ -11,6 +11,9 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
+// Compile-time interface compliance check.
+var _ vectorstore.Store = (*Client)(nil)
+
 // Client implements vectorstore.Store for Qdrant.
 type Client struct {
 	conn        *grpc.ClientConn

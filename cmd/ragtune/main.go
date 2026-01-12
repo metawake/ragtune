@@ -3,6 +3,7 @@
 package main
 
 import (
+	"errors"
 	"os"
 
 	"github.com/metawake/ragtune/internal/cli"
@@ -10,7 +11,12 @@ import (
 
 func main() {
 	if err := cli.Execute(); err != nil {
-		os.Exit(1)
+		// Exit code 1 for audit/CI failures (expected failures)
+		// Exit code 2 for unexpected errors
+		if errors.Is(err, cli.ErrAuditFailed) || errors.Is(err, cli.ErrCICheckFailed) {
+			os.Exit(1)
+		}
+		os.Exit(2)
 	}
 }
 

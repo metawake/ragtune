@@ -10,6 +10,9 @@ import (
 	"github.com/metawake/ragtune/internal/vectorstore"
 )
 
+// Compile-time interface compliance check.
+var _ vectorstore.Store = (*Store)(nil)
+
 // Store is an in-memory mock implementation of vectorstore.Store.
 // Useful for testing without a real vector database.
 type Store struct {

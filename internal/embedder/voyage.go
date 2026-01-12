@@ -7,7 +7,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+// Compile-time interface compliance check.
+var _ Embedder = (*VoyageEmbedder)(nil)
 
 // VoyageEmbedder uses Voyage AI's embedding API.
 type VoyageEmbedder struct {
@@ -45,7 +49,7 @@ func NewVoyageEmbedder(opts ...VoyageOption) *VoyageEmbedder {
 		model:     "voyage-2",
 		dim:       1024,
 		inputType: "document",
-		client:    &http.Client{},
+		client:    &http.Client{Timeout: 30 * time.Second},
 	}
 	for _, opt := range opts {
 		opt(e)

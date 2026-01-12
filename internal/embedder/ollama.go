@@ -7,7 +7,11 @@ import (
 	"fmt"
 	"net/http"
 	"sync"
+	"time"
 )
+
+// Compile-time interface compliance check.
+var _ Embedder = (*OllamaEmbedder)(nil)
 
 // OllamaEmbedder uses Ollama's local embedding API.
 type OllamaEmbedder struct {
@@ -56,7 +60,7 @@ func NewOllamaEmbedder(opts ...OllamaOption) *OllamaEmbedder {
 		model:       "nomic-embed-text",
 		dim:         768,
 		concurrency: 8,
-		client:      &http.Client{},
+		client:      &http.Client{Timeout: 60 * time.Second}, // Longer timeout for local inference
 	}
 	for _, opt := range opts {
 		opt(e)

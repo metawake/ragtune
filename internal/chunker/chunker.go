@@ -3,11 +3,21 @@ package chunker
 
 import (
 	"crypto/sha256"
+	"errors"
 	"fmt"
 	"strings"
 	"unicode/utf8"
 
 	"github.com/google/uuid"
+)
+
+// Validation errors for chunker configuration.
+var (
+	// ErrInvalidChunkSize is returned when chunk size is not positive.
+	ErrInvalidChunkSize = errors.New("chunk size must be positive")
+
+	// ErrNegativeOverlap is returned when overlap is negative.
+	ErrNegativeOverlap = errors.New("overlap cannot be negative")
 )
 
 // Chunk represents a text chunk with metadata.
@@ -25,14 +35,32 @@ type Chunker struct {
 }
 
 // New creates a new Chunker with the specified size and overlap.
-func New(size, overlap int) *Chunker {
+// Returns an error if size <= 0 or overlap < 0.
+// If overlap >= size, it is automatically clamped to size/4.
+func New(size, overlap int) (*Chunker, error) {
+	if size <= 0 {
+		return nil, ErrInvalidChunkSize
+	}
+	if overlap < 0 {
+		return nil, ErrNegativeOverlap
+	}
 	if overlap >= size {
 		overlap = size / 4
 	}
 	return &Chunker{
 		size:    size,
 		overlap: overlap,
+	}, nil
+}
+
+// MustNew creates a new Chunker, panicking on invalid input.
+// Use this only in tests or when inputs are known-valid constants.
+func MustNew(size, overlap int) *Chunker {
+	c, err := New(size, overlap)
+	if err != nil {
+		panic(err)
 	}
+	return c
 }
 
 // Chunk splits text into chunks and returns them with metadata.

@@ -14,6 +14,9 @@ import (
 	pgvecpgx "github.com/pgvector/pgvector-go/pgx"
 )
 
+// Compile-time interface compliance check.
+var _ vectorstore.Store = (*Client)(nil)
+
 // Client implements vectorstore.Store for PostgreSQL with pgvector extension.
 type Client struct {
 	pool *pgxpool.Pool

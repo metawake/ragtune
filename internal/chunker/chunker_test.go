@@ -6,7 +6,10 @@ import (
 )
 
 func TestChunker_BasicChunking(t *testing.T) {
-	c := New(100, 20)
+	c, err := New(100, 20)
+	if err != nil {
+		t.Fatalf("New() error = %v", err)
+	}
 
 	text := "This is a test document. It has multiple sentences. We want to see how it gets chunked into smaller pieces for embedding."
 	chunks := c.Chunk(text, "test.md")
@@ -33,7 +36,7 @@ func TestChunker_BasicChunking(t *testing.T) {
 }
 
 func TestChunker_EmptyText(t *testing.T) {
-	c := New(100, 20)
+	c := MustNew(100, 20)
 
 	chunks := c.Chunk("", "empty.md")
 	if len(chunks) != 0 {
@@ -47,7 +50,7 @@ func TestChunker_EmptyText(t *testing.T) {
 }
 
 func TestChunker_SmallText(t *testing.T) {
-	c := New(1000, 100)
+	c := MustNew(1000, 100)
 
 	text := "Short text."
 	chunks := c.Chunk(text, "short.md")
@@ -62,7 +65,7 @@ func TestChunker_SmallText(t *testing.T) {
 }
 
 func TestChunker_Overlap(t *testing.T) {
-	c := New(50, 10)
+	c := MustNew(50, 10)
 
 	// Create text with distinct words to verify overlap behavior
 	text := "The quick brown fox jumps over the lazy dog. A wonderful serenity has taken possession of my entire soul."
@@ -88,7 +91,7 @@ func TestChunker_Overlap(t *testing.T) {
 }
 
 func TestChunker_DeterministicIDs(t *testing.T) {
-	c := New(100, 20)
+	c := MustNew(100, 20)
 
 	text := "Deterministic ID test content."
 	chunks1 := c.Chunk(text, "test.md")
@@ -106,7 +109,7 @@ func TestChunker_DeterministicIDs(t *testing.T) {
 }
 
 func TestChunker_DifferentSourcesDifferentIDs(t *testing.T) {
-	c := New(100, 20)
+	c := MustNew(100, 20)
 
 	text := "Same content different source."
 	chunks1 := c.Chunk(text, "file1.md")
@@ -118,7 +121,7 @@ func TestChunker_DifferentSourcesDifferentIDs(t *testing.T) {
 }
 
 func TestChunker_UUIDFormat(t *testing.T) {
-	c := New(100, 20)
+	c := MustNew(100, 20)
 
 	chunks := c.Chunk("Test content for UUID validation.", "test.md")
 	if len(chunks) == 0 {
@@ -142,17 +145,51 @@ func TestChunker_UUIDFormat(t *testing.T) {
 
 func TestChunker_OverlapClampedToSize(t *testing.T) {
 	// Overlap >= size should be clamped to size/4
-	c := New(100, 200)
+	c, err := New(100, 200)
+	if err != nil {
+		t.Fatalf("New() should clamp overlap, got error: %v", err)
+	}
 
 	// Should not panic and should create valid chunks
 	chunks := c.Chunk("Test content that is reasonably long enough to chunk.", "test.md")
 	if len(chunks) == 0 {
-		t.Error("expected at least one chunk even with invalid overlap")
+		t.Error("expected at least one chunk even with clamped overlap")
+	}
+}
+
+func TestNew_ValidationErrors(t *testing.T) {
+	tests := []struct {
+		name    string
+		size    int
+		overlap int
+		wantErr error
+	}{
+		{"zero size", 0, 10, ErrInvalidChunkSize},
+		{"negative size", -100, 10, ErrInvalidChunkSize},
+		{"negative overlap", 100, -10, ErrNegativeOverlap},
+		{"valid params", 100, 20, nil},
+		{"overlap equals size (clamped)", 100, 100, nil},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			_, err := New(tt.size, tt.overlap)
+			if tt.wantErr != nil {
+				if err != tt.wantErr {
+					t.Errorf("New() error = %v, wantErr %v", err, tt.wantErr)
+				}
+			} else if err != nil {
+				t.Errorf("New() unexpected error = %v", err)
+			}
+		})
 	}
 }
 
 func TestNew_Defaults(t *testing.T) {
-	c := New(512, 64)
+	c, err := New(512, 64)
+	if err != nil {
+		t.Fatalf("New() error = %v", err)
+	}
 
 	if c.size != 512 {
 		t.Errorf("expected size 512, got %d", c.size)

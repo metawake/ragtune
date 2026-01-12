@@ -345,7 +345,7 @@ func truncateQuery(s string, maxLen int) string {
 	return s[:maxLen-3] + "..."
 }
 
-// checkCIThresholds verifies metrics against thresholds and exits with code 1 if any fail.
+// checkCIThresholds verifies metrics against thresholds and returns an error if any fail.
 func checkCIThresholds(result RunResult) error {
 	if len(result.Configs) == 0 {
 		return fmt.Errorf("no configurations to check")
@@ -359,13 +359,13 @@ func checkCIThresholds(result RunResult) error {
 	fmt.Println("CI THRESHOLD CHECK")
 	fmt.Println("─────────────────────────────────────────")
 
-	failed := false
-	
+	var failedChecks []string
+
 	if minRecall > 0 {
 		status := "✓ PASS"
 		if m.RecallAtK < minRecall {
 			status = "✗ FAIL"
-			failed = true
+			failedChecks = append(failedChecks, "Recall@K")
 		}
 		fmt.Printf("  Recall@K:    %.3f  %s  (threshold: %.3f)\n", m.RecallAtK, status, minRecall)
 	}
@@ -374,7 +374,7 @@ func checkCIThresholds(result RunResult) error {
 		status := "✓ PASS"
 		if m.MRR < minMRR {
 			status = "✗ FAIL"
-			failed = true
+			failedChecks = append(failedChecks, "MRR")
 		}
 		fmt.Printf("  MRR:         %.3f  %s  (threshold: %.3f)\n", m.MRR, status, minMRR)
 	}
@@ -383,7 +383,7 @@ func checkCIThresholds(result RunResult) error {
 		status := "✓ PASS"
 		if m.Coverage < minCoverage {
 			status = "✗ FAIL"
-			failed = true
+			failedChecks = append(failedChecks, "Coverage")
 		}
 		fmt.Printf("  Coverage:    %.3f  %s  (threshold: %.3f)\n", m.Coverage, status, minCoverage)
 	}
@@ -392,16 +392,18 @@ func checkCIThresholds(result RunResult) error {
 		status := "✓ PASS"
 		if m.LatencyP95 > maxLatencyP95 {
 			status = "✗ FAIL"
-			failed = true
+			failedChecks = append(failedChecks, "Latency p95")
 		}
 		fmt.Printf("  Latency p95: %.0fms  %s  (threshold: %.0fms)\n", m.LatencyP95, status, maxLatencyP95)
 	}
+
+	failed := len(failedChecks) > 0
 
 	fmt.Println("─────────────────────────────────────────")
 
 	if failed {
 		fmt.Println("❌ CI check FAILED: one or more thresholds not met")
-		os.Exit(1)
+		return &CICheckError{FailedChecks: failedChecks}
 	}
 
 	fmt.Println("✅ CI check PASSED: all thresholds met")

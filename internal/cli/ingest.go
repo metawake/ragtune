@@ -101,7 +101,10 @@ func runIngest(cmd *cobra.Command, args []string) error {
 
 	// Chunk documents
 	chunkStart := time.Now()
-	c := chunker.New(chunkSize, chunkOverlap)
+	c, err := chunker.New(chunkSize, chunkOverlap)
+	if err != nil {
+		return fmt.Errorf("invalid chunker config: %w", err)
+	}
 	var allChunks []chunker.Chunk
 	for _, doc := range docs {
 		chunks := c.Chunk(doc.Content, doc.Path)
