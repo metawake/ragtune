@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/metawake/ragtune?include_prereleases)](https://github.com/metawake/ragtune/releases)
 
-**EXPLAIN ANALYZE for RAG retrieval** — inspect, explain, benchmark, and tune your RAG retrieval layer.
+**Debug, benchmark, and monitor your RAG retrieval layer** — like EXPLAIN ANALYZE for production RAG.
 
 <p align="center">
   <img src="assets/demo.gif" alt="RagTune demo" width="700">
@@ -577,6 +577,32 @@ Most teams iterate blindly on RAG retrieval. RagTune provides the diagnostics to
 - Regression testing when corpus changes
 - CI/CD quality gates
 - Compare embedding models
+
+### RagTune vs. Other Tools
+
+RagTune focuses on **retrieval debugging, monitoring, and benchmarking**, not end-to-end answer evaluation.
+
+| | RagTune | Ragas / DeepEval / TruLens | misbahsy/RAGTune |
+|---|---------|---------------------------|------------------|
+| **Focus** | Retrieval layer only | Full pipeline (retrieval + LLM) | Full pipeline |
+| **LLM calls** | None required | Required | Required |
+| **Interface** | CLI (CI/CD-native) | Python library | Streamlit UI |
+| **Speed** | Fast (embedding only) | Slow (LLM inference) | Slow |
+| **Ground truth** | Relevant doc paths | Expected answers | Expected answers |
+| **CI/CD integration** | First-class (`--ci`, thresholds) | Manual setup | None |
+
+**When to use RagTune:**
+- Debug *why* retrieval missed a document
+- Set quality gates in CI/CD pipelines
+- Compare embedders/chunk sizes with fast iteration
+- You want deterministic, reproducible benchmarks
+
+**When to use other tools:**
+- Evaluate LLM answer quality (not just retrieval)
+- You need Ragas metrics like `answer_relevancy` or `answer_correctness`
+- You prefer interactive exploration over CLI automation
+
+*RagTune tells you how retrieval executed, not whether the final answer was good — like EXPLAIN ANALYZE for your RAG pipeline.*
 
 ## Embedders
 
