@@ -1,4 +1,6 @@
-// Package metrics provides RAG retrieval quality metrics.
+// Package metrics provides RAG retrieval quality metrics including
+// Recall@K, MRR, NDCG, Coverage, and latency statistics.
+// These metrics follow industry standards for information retrieval evaluation.
 package metrics
 
 import (

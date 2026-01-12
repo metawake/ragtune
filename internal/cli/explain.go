@@ -14,6 +14,33 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Diagnostic thresholds for score analysis.
+const (
+	// scoreThresholdLow indicates queries may be out-of-domain
+	scoreThresholdLow = 0.5
+
+	// scoreThresholdStrong indicates high-confidence retrieval
+	scoreThresholdStrong = 0.85
+
+	// spreadThresholdTight indicates results are nearly indistinguishable
+	spreadThresholdTight = 0.05
+
+	// spreadThresholdHigh indicates significant relevance variance
+	spreadThresholdHigh = 0.3
+
+	// stdDevThresholdTight indicates poor discrimination between chunks
+	stdDevThresholdTight = 0.02
+
+	// topGapThresholdLarge may indicate outlier top result
+	topGapThresholdLarge = 0.15
+
+	// stdDevThresholdShape classifies distribution as "tight"
+	stdDevThresholdShape = 0.03
+
+	// spreadThresholdShape classifies distribution as "spread"
+	spreadThresholdShape = 0.35
+)
+
 var (
 	saveQuery   bool
 	goldenFile  string
@@ -247,30 +274,30 @@ func computeDiagnostics(scores []float32) diagnostics {
 	d.scoreShape = classifyScoreShape(d)
 
 	// Generate warnings
-	if d.maxScore < 0.5 {
+	if d.maxScore < scoreThresholdLow {
 		d.warnings = append(d.warnings, "Low top score (<0.5): query may be out-of-domain or embeddings mismatched")
 	}
-	if d.spread > 0.3 {
+	if d.spread > spreadThresholdHigh {
 		d.warnings = append(d.warnings, "High score spread (>0.3): results vary significantly in relevance")
 	}
-	if d.spread < 0.05 && len(scores) > 1 {
+	if d.spread < spreadThresholdTight && len(scores) > 1 {
 		d.warnings = append(d.warnings, "Very low spread (<0.05): results are nearly indistinguishable, consider reviewing chunking")
 	}
-	if d.topGap > 0.15 && len(scores) >= 2 {
+	if d.topGap > topGapThresholdLarge && len(scores) >= 2 {
 		d.warnings = append(d.warnings, fmt.Sprintf("Large gap (%.2f) between #1 and #2: verify top result is truly best match", d.topGap))
 	}
-	if d.stdDev < 0.02 && len(scores) > 2 {
+	if d.stdDev < stdDevThresholdTight && len(scores) > 2 {
 		d.warnings = append(d.warnings, "Very tight distribution (σ<0.02): retrieval may not discriminate well between chunks")
 	}
 
 	// Generate positive insights
-	if d.maxScore > 0.85 {
+	if d.maxScore > scoreThresholdStrong {
 		d.insights = append(d.insights, "Strong top match (>0.85): likely high-quality retrieval")
 	}
 	if d.spread > 0.1 && d.spread < 0.25 && d.maxScore > 0.7 {
 		d.insights = append(d.insights, "Good score separation: retrieval is discriminating effectively")
 	}
-	if d.topGap > 0.05 && d.topGap < 0.15 && d.maxScore > 0.75 {
+	if d.topGap > 0.05 && d.topGap < topGapThresholdLarge && d.maxScore > 0.75 {
 		d.insights = append(d.insights, "Clear top result with gradual falloff: healthy ranking")
 	}
 
@@ -279,10 +306,10 @@ func computeDiagnostics(scores []float32) diagnostics {
 
 // classifyScoreShape determines the distribution pattern of scores
 func classifyScoreShape(d diagnostics) string {
-	if d.stdDev < 0.03 {
+	if d.stdDev < stdDevThresholdShape {
 		return "tight" // All scores clustered together
 	}
-	if d.spread > 0.35 {
+	if d.spread > spreadThresholdShape {
 		return "spread" // Wide range of scores
 	}
 	// Check for bimodal (gap in middle)

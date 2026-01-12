@@ -1,4 +1,5 @@
-// Package config handles simulation configuration loading.
+// Package config handles loading and parsing of simulation configurations
+// and query files. It supports both YAML and JSON formats for flexibility.
 package config
 
 import (

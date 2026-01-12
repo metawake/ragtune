@@ -20,6 +20,18 @@ import (
 	"github.com/metawake/ragtune/internal/vectorstore/weaviate"
 )
 
+// Batch size constants for embedding operations.
+const (
+	// defaultEmbedBatchSize is optimized for most API providers
+	defaultEmbedBatchSize = 64
+
+	// teiBatchSize is the TEI server's default max_client_batch_size
+	teiBatchSize = 32
+
+	// progressUpdateInterval controls how often progress is reported
+	progressUpdateInterval = 5 * time.Second
+)
+
 var (
 	chunkSize    int
 	chunkOverlap int
@@ -134,10 +146,10 @@ func runIngest(cmd *cobra.Command, args []string) error {
 	embedStart := time.Now()
 	var points []vectorstore.Point
 
-	// Batch size varies by provider (TEI: 32, Cohere: 96, Voyage: 128)
-	batchSize := 64
+	// Batch size varies by provider
+	batchSize := defaultEmbedBatchSize
 	if embedderName == "tei" {
-		batchSize = 32 // TEI default max_client_batch_size
+		batchSize = teiBatchSize
 	}
 	lastProgress := time.Now()
 	for i := 0; i < len(allChunks); i += batchSize {
@@ -172,8 +184,8 @@ func runIngest(cmd *cobra.Command, args []string) error {
 			})
 		}
 
-		// Progress update every 5 seconds or every 1000 chunks
-		if time.Since(lastProgress) > 5*time.Second || end%1000 == 0 {
+		// Progress update periodically
+		if time.Since(lastProgress) > progressUpdateInterval || end%1000 == 0 {
 			elapsed := time.Since(embedStart)
 			rate := float64(end) / elapsed.Seconds()
 			eta := time.Duration(float64(len(allChunks)-end)/rate) * time.Second

@@ -1,3 +1,6 @@
+// Package cli implements the command-line interface for RagTune.
+// It provides commands for document ingestion, retrieval explanation,
+// simulation, auditing, and configuration comparison.
 package cli
 
 import (
