@@ -72,7 +72,7 @@ func runAudit(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return fmt.Errorf("failed to init vector store: %w", err)
 	}
-	defer store.Close()
+	defer closeWithLog(store, "vector store")
 
 	// Initialize embedder
 	emb, err := initEmbedder()

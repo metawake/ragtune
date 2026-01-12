@@ -57,17 +57,18 @@ func New(ctx context.Context, connStr string) (*Client, error) {
 	return &Client{pool: pool}, nil
 }
 
-// tableName converts a collection name to a valid table name.
-// Prefixes with "ragtune_" and sanitizes the name.
+// tableName converts a collection name to a valid, quoted PostgreSQL identifier.
+// Prefixes with "ragtune_", sanitizes the name, and quotes for SQL injection safety.
 func tableName(collection string) string {
-	// Basic sanitization: replace non-alphanumeric chars with underscore
+	// Sanitize: replace non-alphanumeric chars with underscore
 	sanitized := strings.Map(func(r rune) rune {
 		if (r >= 'a' && r <= 'z') || (r >= 'A' && r <= 'Z') || (r >= '0' && r <= '9') || r == '_' {
 			return r
 		}
 		return '_'
 	}, collection)
-	return "ragtune_" + sanitized
+	// Quote identifier for additional safety
+	return `"ragtune_` + sanitized + `"`
 }
 
 // EnsureCollection creates a table for the collection if it doesn't exist.

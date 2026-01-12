@@ -69,7 +69,7 @@ func runIngest(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return fmt.Errorf("failed to init vector store: %w", err)
 	}
-	defer store.Close()
+	defer closeWithLog(store, "vector store")
 
 	// Determine embedding dimension (auto-detect or override)
 	dim := emb.Dim()

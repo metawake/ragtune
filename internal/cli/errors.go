@@ -1,7 +1,14 @@
 // Package cli implements the command-line interface for RagTune.
+// It provides commands for ingesting documents, explaining retrieval results,
+// running simulations, auditing RAG quality, and comparing configurations.
 package cli
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+	"io"
+	"os"
+)
 
 // Sentinel errors for CLI operations.
 // These allow callers to check specific error conditions with errors.Is().
@@ -40,4 +47,12 @@ func (e *CICheckError) Error() string {
 
 func (e *CICheckError) Unwrap() error {
 	return ErrCICheckFailed
+}
+
+// closeWithLog closes a resource and logs any error to stderr.
+// Use this with defer for resources where Close() errors should be noted but not fatal.
+func closeWithLog(c io.Closer, name string) {
+	if err := c.Close(); err != nil {
+		fmt.Fprintf(os.Stderr, "warning: failed to close %s: %v\n", name, err)
+	}
 }

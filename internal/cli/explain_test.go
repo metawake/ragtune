@@ -2,6 +2,7 @@ package cli
 
 import (
 	"math"
+	"slices"
 	"testing"
 )
 
@@ -236,7 +237,8 @@ func TestComputeDiagnostics_Empty(t *testing.T) {
 	}
 }
 
-func TestSortFloat32s(t *testing.T) {
+func TestSlicesSort(t *testing.T) {
+	// Verify slices.Sort works as expected (sanity check for stdlib)
 	tests := []struct {
 		input    []float32
 		expected []float32
@@ -260,7 +262,7 @@ func TestSortFloat32s(t *testing.T) {
 		input := make([]float32, len(tt.input))
 		copy(input, tt.input)
 
-		sortFloat32s(input)
+		slices.Sort(input)
 
 		if len(input) != len(tt.expected) {
 			t.Errorf("length mismatch after sort")
@@ -268,7 +270,7 @@ func TestSortFloat32s(t *testing.T) {
 		}
 		for i := range input {
 			if input[i] != tt.expected[i] {
-				t.Errorf("sortFloat32s: position %d = %v, want %v", i, input[i], tt.expected[i])
+				t.Errorf("slices.Sort: position %d = %v, want %v", i, input[i], tt.expected[i])
 			}
 		}
 	}

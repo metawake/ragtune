@@ -7,6 +7,7 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"slices"
 	"strings"
 	"time"
 
@@ -70,7 +71,7 @@ func runExplain(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return fmt.Errorf("failed to init vector store: %w", err)
 	}
-	defer store.Close()
+	defer closeWithLog(store, "vector store")
 
 	// Initialize embedder
 	emb, err := initEmbedder()
@@ -231,7 +232,7 @@ func computeDiagnostics(scores []float32) diagnostics {
 	// Compute percentiles (need sorted copy)
 	sorted := make([]float32, len(scores))
 	copy(sorted, scores)
-	sortFloat32s(sorted)
+	slices.Sort(sorted)
 
 	d.median = percentileFloat32(sorted, 50)
 	d.q1 = percentileFloat32(sorted, 25)
@@ -290,17 +291,6 @@ func classifyScoreShape(d diagnostics) string {
 		return "bimodal" // Scores clustered at extremes
 	}
 	return "normal" // Typical distribution
-}
-
-// sortFloat32s sorts a slice of float32 in ascending order
-func sortFloat32s(s []float32) {
-	for i := 0; i < len(s)-1; i++ {
-		for j := i + 1; j < len(s); j++ {
-			if s[j] < s[i] {
-				s[i], s[j] = s[j], s[i]
-			}
-		}
-	}
 }
 
 // percentileFloat32 calculates the p-th percentile of a sorted float32 slice

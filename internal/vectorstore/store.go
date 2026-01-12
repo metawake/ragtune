@@ -3,7 +3,22 @@
 // pluggable backends (Qdrant, pgvector, Weaviate, etc.).
 package vectorstore
 
-import "context"
+import (
+	"context"
+	"errors"
+)
+
+// Sentinel errors for vector store operations.
+var (
+	// ErrCollectionNotFound is returned when the requested collection doesn't exist.
+	ErrCollectionNotFound = errors.New("collection not found")
+
+	// ErrConnectionFailed is returned when unable to connect to the vector store.
+	ErrConnectionFailed = errors.New("connection failed")
+
+	// ErrDimensionMismatch is returned when vector dimensions don't match the collection.
+	ErrDimensionMismatch = errors.New("vector dimension mismatch")
+)
 
 // Store defines the minimal interface for vector store operations.
 // Implementations should handle connection management internally.
