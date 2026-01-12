@@ -21,21 +21,37 @@ var _ Embedder = (*OpenAIEmbedder)(nil)
 
 // OpenAIEmbedder uses OpenAI's embedding API.
 type OpenAIEmbedder struct {
-	apiKey string
-	model  string
-	dim    int
-	client *http.Client
+	apiKey  string
+	baseURL string
+	model   string
+	dim     int
+	client  *http.Client
+}
+
+// OpenAIOption configures the OpenAI embedder.
+type OpenAIOption func(*OpenAIEmbedder)
+
+// WithOpenAIURL sets a custom API URL (for testing or proxies).
+func WithOpenAIURL(url string) OpenAIOption {
+	return func(e *OpenAIEmbedder) {
+		e.baseURL = url
+	}
 }
 
 // NewOpenAIEmbedder creates a new OpenAI embedder.
 // Uses OPENAI_API_KEY environment variable.
-func NewOpenAIEmbedder() *OpenAIEmbedder {
-	return &OpenAIEmbedder{
-		apiKey: os.Getenv("OPENAI_API_KEY"),
-		model:  "text-embedding-3-small",
-		dim:    1536,
-		client: &http.Client{Timeout: defaultHTTPTimeout},
+func NewOpenAIEmbedder(opts ...OpenAIOption) *OpenAIEmbedder {
+	e := &OpenAIEmbedder{
+		apiKey:  os.Getenv("OPENAI_API_KEY"),
+		baseURL: "https://api.openai.com/v1/embeddings",
+		model:   "text-embedding-3-small",
+		dim:     1536,
+		client:  &http.Client{Timeout: defaultHTTPTimeout},
 	}
+	for _, opt := range opts {
+		opt(e)
+	}
+	return e
 }
 
 // Dim returns the embedding dimension.
@@ -71,7 +87,7 @@ func (e *OpenAIEmbedder) EmbedBatch(ctx context.Context, texts []string) ([][]fl
 		return nil, fmt.Errorf("failed to marshal request: %w", err)
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", "https://api.openai.com/v1/embeddings", bytes.NewReader(bodyBytes))
+	req, err := http.NewRequestWithContext(ctx, "POST", e.baseURL, bytes.NewReader(bodyBytes))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create request: %w", err)
 	}

@@ -2,6 +2,8 @@ package embedder
 
 import (
 	"context"
+	"net/http"
+	"net/http/httptest"
 	"os"
 	"testing"
 )
@@ -104,6 +106,95 @@ func TestCohereEmbedder_EmbedBatchMissingAPIKey(t *testing.T) {
 
 	if err == nil {
 		t.Error("expected error for missing API key")
+	}
+}
+
+func TestCohereEmbedder_EmbedSuccess(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != "POST" {
+			t.Errorf("expected POST, got %s", r.Method)
+		}
+		if r.Header.Get("Authorization") != "Bearer test-key" {
+			t.Errorf("unexpected auth header: %s", r.Header.Get("Authorization"))
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{"embeddings": [[0.1, 0.2, 0.3]]}`))
+	}))
+	defer server.Close()
+
+	original := os.Getenv("COHERE_API_KEY")
+	defer os.Setenv("COHERE_API_KEY", original)
+	os.Setenv("COHERE_API_KEY", "test-key")
+
+	e := NewCohereEmbedder(WithCohereURL(server.URL))
+	result, err := e.Embed(context.Background(), "test text")
+
+	if err != nil {
+		t.Fatalf("Embed failed: %v", err)
+	}
+	if len(result) != 3 {
+		t.Errorf("expected 3 dimensions, got %d", len(result))
+	}
+}
+
+func TestCohereEmbedder_EmbedBatchSuccess(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{"embeddings": [[0.1, 0.2], [0.3, 0.4]]}`))
+	}))
+	defer server.Close()
+
+	original := os.Getenv("COHERE_API_KEY")
+	defer os.Setenv("COHERE_API_KEY", original)
+	os.Setenv("COHERE_API_KEY", "test-key")
+
+	e := NewCohereEmbedder(WithCohereURL(server.URL))
+	results, err := e.EmbedBatch(context.Background(), []string{"text1", "text2"})
+
+	if err != nil {
+		t.Fatalf("EmbedBatch failed: %v", err)
+	}
+	if len(results) != 2 {
+		t.Errorf("expected 2 results, got %d", len(results))
+	}
+}
+
+func TestCohereEmbedder_APIError(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusTooManyRequests)
+		w.Write([]byte(`{"message": "rate limit exceeded"}`))
+	}))
+	defer server.Close()
+
+	original := os.Getenv("COHERE_API_KEY")
+	defer os.Setenv("COHERE_API_KEY", original)
+	os.Setenv("COHERE_API_KEY", "test-key")
+
+	e := NewCohereEmbedder(WithCohereURL(server.URL))
+	_, err := e.Embed(context.Background(), "test")
+
+	if err == nil {
+		t.Error("expected error for API error response")
+	}
+}
+
+func TestCohereEmbedder_InvalidJSON(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{invalid json`))
+	}))
+	defer server.Close()
+
+	original := os.Getenv("COHERE_API_KEY")
+	defer os.Setenv("COHERE_API_KEY", original)
+	os.Setenv("COHERE_API_KEY", "test-key")
+
+	e := NewCohereEmbedder(WithCohereURL(server.URL))
+	_, err := e.Embed(context.Background(), "test")
+
+	if err == nil {
+		t.Error("expected error for invalid JSON response")
 	}
 }
 

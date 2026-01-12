@@ -16,6 +16,7 @@ var _ Embedder = (*CohereEmbedder)(nil)
 // CohereEmbedder uses Cohere's embedding API.
 type CohereEmbedder struct {
 	apiKey    string
+	baseURL   string
 	model     string
 	dim       int
 	inputType string // "search_document" or "search_query"
@@ -40,12 +41,20 @@ func WithCohereInputType(inputType string) CohereOption {
 	}
 }
 
+// WithCohereURL sets a custom API URL (for testing or proxies).
+func WithCohereURL(url string) CohereOption {
+	return func(e *CohereEmbedder) {
+		e.baseURL = url
+	}
+}
+
 // NewCohereEmbedder creates a new Cohere embedder.
 // Uses COHERE_API_KEY environment variable.
 // Default model: embed-english-v3.0 (1024 dimensions)
 func NewCohereEmbedder(opts ...CohereOption) *CohereEmbedder {
 	e := &CohereEmbedder{
 		apiKey:    os.Getenv("COHERE_API_KEY"),
+		baseURL:   "https://api.cohere.ai/v1/embed",
 		model:     "embed-english-v3.0",
 		dim:       1024,
 		inputType: "search_document",
@@ -100,7 +109,7 @@ func (e *CohereEmbedder) EmbedBatch(ctx context.Context, texts []string) ([][]fl
 		return nil, fmt.Errorf("failed to marshal request: %w", err)
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", "https://api.cohere.ai/v1/embed", bytes.NewReader(bodyBytes))
+	req, err := http.NewRequestWithContext(ctx, "POST", e.baseURL, bytes.NewReader(bodyBytes))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create request: %w", err)
 	}

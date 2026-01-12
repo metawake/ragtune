@@ -16,6 +16,7 @@ var _ Embedder = (*VoyageEmbedder)(nil)
 // VoyageEmbedder uses Voyage AI's embedding API.
 type VoyageEmbedder struct {
 	apiKey    string
+	baseURL   string
 	model     string
 	dim       int
 	inputType string // "document" or "query"
@@ -40,12 +41,20 @@ func WithVoyageInputType(inputType string) VoyageOption {
 	}
 }
 
+// WithVoyageURL sets a custom API URL (for testing or proxies).
+func WithVoyageURL(url string) VoyageOption {
+	return func(e *VoyageEmbedder) {
+		e.baseURL = url
+	}
+}
+
 // NewVoyageEmbedder creates a new Voyage AI embedder.
 // Uses VOYAGE_API_KEY environment variable.
 // Default model: voyage-2 (1024 dimensions)
 func NewVoyageEmbedder(opts ...VoyageOption) *VoyageEmbedder {
 	e := &VoyageEmbedder{
 		apiKey:    os.Getenv("VOYAGE_API_KEY"),
+		baseURL:   "https://api.voyageai.com/v1/embeddings",
 		model:     "voyage-2",
 		dim:       1024,
 		inputType: "document",
@@ -101,7 +110,7 @@ func (e *VoyageEmbedder) EmbedBatch(ctx context.Context, texts []string) ([][]fl
 		return nil, fmt.Errorf("failed to marshal request: %w", err)
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", "https://api.voyageai.com/v1/embeddings", bytes.NewReader(bodyBytes))
+	req, err := http.NewRequestWithContext(ctx, "POST", e.baseURL, bytes.NewReader(bodyBytes))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create request: %w", err)
 	}
