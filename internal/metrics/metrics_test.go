@@ -314,7 +314,9 @@ func TestComputeLatencyStats(t *testing.T) {
 			}
 		})
 	}
-}func TestComputeWithLatency(t *testing.T) {
+}
+
+func TestComputeWithLatency(t *testing.T) {
 	results := []QueryResult{
 		{
 			QueryID:      "q1",
