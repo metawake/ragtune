@@ -45,6 +45,18 @@ ragtune explain "How do I reset my password?" --collection my-docs
 
 No API keys needed with Ollama (runs locally).
 
+### Already using PostgreSQL with pgvector?
+
+Skip Docker entirely — use your existing database:
+
+```bash
+ragtune ingest ./docs --collection my-docs --embedder ollama \
+    --store pgvector --pgvector-url postgres://user:pass@localhost/mydb
+
+ragtune explain "How do I reset my password?" --collection my-docs \
+    --store pgvector --pgvector-url postgres://user:pass@localhost/mydb
+```
+
 ### Build Your Test Suite
 
 ```bash
@@ -151,6 +163,24 @@ RagTune focuses on **retrieval debugging, monitoring, and benchmarking**, not en
 **Use RagTune when:** debugging retrieval, CI/CD quality gates, comparing embedders, deterministic benchmarks.
 
 **Use other tools when:** evaluating LLM answer quality, you need `answer_relevancy` metrics.
+
+---
+
+## Signs You Need This
+
+Retrieval failures are **silent**. No error, no exception — just gradually worse answers.
+
+- Users complaining about "wrong answers" but you can't reproduce it
+- No idea if that embedding change made things better or worse
+- Retrieval was "good" in dev, failing in production
+- You added documents but answers got *worse*
+- Can't tell if the LLM is hallucinating or retrieval is broken
+
+If any of these sound familiar:
+
+```bash
+ragtune explain "the query that's failing" --collection prod
+```
 
 ---
 
