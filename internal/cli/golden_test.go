@@ -57,7 +57,7 @@ func TestAppendGoldenQuery_AppendToExisting(t *testing.T) {
 		},
 	}
 	data, _ := json.MarshalIndent(initial, "", "  ")
-	os.WriteFile(filePath, data, 0644)
+	_ = os.WriteFile(filePath, data, 0644)
 
 	// Append second query
 	err := appendGoldenQuery(filePath, "Second query", "second.md")
@@ -68,7 +68,7 @@ func TestAppendGoldenQuery_AppendToExisting(t *testing.T) {
 	// Verify both queries exist
 	data, _ = os.ReadFile(filePath)
 	var gq GoldenQueries
-	json.Unmarshal(data, &gq)
+	_ = json.Unmarshal(data, &gq)
 
 	if len(gq.Queries) != 2 {
 		t.Errorf("expected 2 queries, got %d", len(gq.Queries))
@@ -107,7 +107,7 @@ func TestAppendGoldenQuery_DuplicateRejected(t *testing.T) {
 	// Verify only one query exists
 	data, _ := os.ReadFile(filePath)
 	var gq GoldenQueries
-	json.Unmarshal(data, &gq)
+	_ = json.Unmarshal(data, &gq)
 
 	if len(gq.Queries) != 1 {
 		t.Errorf("expected 1 query (duplicate rejected), got %d", len(gq.Queries))
@@ -126,7 +126,7 @@ func TestAppendGoldenQuery_PathNormalization(t *testing.T) {
 
 	data, _ := os.ReadFile(filePath)
 	var gq GoldenQueries
-	json.Unmarshal(data, &gq)
+	_ = json.Unmarshal(data, &gq)
 
 	// Should only contain filename, not full path
 	if gq.Queries[0].RelevantDocs[0] != "file.md" {
@@ -149,7 +149,7 @@ func TestAppendGoldenQuery_UniqueIDs(t *testing.T) {
 
 	data, _ := os.ReadFile(filePath)
 	var gq GoldenQueries
-	json.Unmarshal(data, &gq)
+	_ = json.Unmarshal(data, &gq)
 
 	// Verify all IDs are unique
 	ids := make(map[string]bool)
@@ -166,7 +166,7 @@ func TestAppendGoldenQuery_InvalidExistingFile(t *testing.T) {
 	filePath := filepath.Join(tmpDir, "golden.json")
 
 	// Write invalid JSON
-	os.WriteFile(filePath, []byte("not valid json"), 0644)
+	_ = os.WriteFile(filePath, []byte("not valid json"), 0644)
 
 	err := appendGoldenQuery(filePath, "Test query", "doc.md")
 	if err == nil {

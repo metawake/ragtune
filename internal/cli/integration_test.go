@@ -44,7 +44,7 @@ func TestIntegration_GoldenQueryWorkflow(t *testing.T) {
 	csvContent := `query,relevant_docs
 "How do I configure webhooks?",docs/webhooks.md
 "What authentication methods are supported?",docs/auth/methods.md`
-	os.WriteFile(csvPath, []byte(csvContent), 0644)
+	_ = os.WriteFile(csvPath, []byte(csvContent), 0644)
 
 	// Import CSV queries
 	csvQueries, err := parseCSVQueries(csvPath)
@@ -55,7 +55,7 @@ func TestIntegration_GoldenQueryWorkflow(t *testing.T) {
 	// Merge into golden file
 	var existing GoldenQueries
 	data, _ := os.ReadFile(goldenPath)
-	json.Unmarshal(data, &existing)
+	_ = json.Unmarshal(data, &existing)
 
 	existingTexts := make(map[string]bool)
 	for _, q := range existing.Queries {
@@ -69,12 +69,12 @@ func TestIntegration_GoldenQueryWorkflow(t *testing.T) {
 	}
 
 	data, _ = json.MarshalIndent(existing, "", "  ")
-	os.WriteFile(goldenPath, data, 0644)
+	_ = os.WriteFile(goldenPath, data, 0644)
 
 	// Step 3: Verify final file has all 4 queries
 	data, _ = os.ReadFile(goldenPath)
 	var final GoldenQueries
-	json.Unmarshal(data, &final)
+	_ = json.Unmarshal(data, &final)
 
 	if len(final.Queries) != 4 {
 		t.Errorf("expected 4 queries after merge, got %d", len(final.Queries))
@@ -104,7 +104,7 @@ func TestIntegration_SimulateWithMockStore(t *testing.T) {
 	defer store.Close()
 
 	// Create collection with 3D vectors
-	store.EnsureCollection(ctx, "test", 3)
+	_ = store.EnsureCollection(ctx, "test", 3)
 
 	// Insert documents as points (simulating ingested chunks)
 	// Using orthogonal vectors for predictable similarity scores
@@ -134,7 +134,7 @@ func TestIntegration_SimulateWithMockStore(t *testing.T) {
 			},
 		},
 	}
-	store.Upsert(ctx, "test", points)
+	_ = store.Upsert(ctx, "test", points)
 
 	// Create query results simulating what simulate would produce
 	// Query vector [1,0,0] should match password.md with score ~1.0
@@ -291,21 +291,21 @@ func TestIntegration_ImportMergeWorkflow(t *testing.T) {
     {"id": "json-2", "text": "Query from JSON 2", "relevant_docs": ["doc2.md"]}
   ]
 }`
-	os.WriteFile(json1Path, []byte(json1Content), 0644)
+	_ = os.WriteFile(json1Path, []byte(json1Content), 0644)
 
 	// Create second batch as CSV
 	csv1Path := filepath.Join(tmpDir, "batch2.csv")
 	csv1Content := `query,relevant_docs
 "Query from CSV 1",doc3.md
 "Query from CSV 2",doc4.md;doc5.md`
-	os.WriteFile(csv1Path, []byte(csv1Content), 0644)
+	_ = os.WriteFile(csv1Path, []byte(csv1Content), 0644)
 
 	// Create third batch with duplicate
 	csv2Path := filepath.Join(tmpDir, "batch3.csv")
 	csv2Content := `query,relevant_docs
 "Query from JSON 1",doc1.md
 "Query from CSV 3",doc6.md`
-	os.WriteFile(csv2Path, []byte(csv2Content), 0644)
+	_ = os.WriteFile(csv2Path, []byte(csv2Content), 0644)
 
 	// Parse all sources
 	jsonQueries, _ := parseJSONQueries(json1Path)
@@ -379,7 +379,7 @@ func TestIntegration_SearchAndMetrics(t *testing.T) {
 	defer store.Close()
 
 	// Setup: create collection and insert test documents
-	store.EnsureCollection(ctx, "test", 4)
+	_ = store.EnsureCollection(ctx, "test", 4)
 
 	// Insert 4 documents with distinct vectors
 	docs := []struct {
@@ -394,7 +394,7 @@ func TestIntegration_SearchAndMetrics(t *testing.T) {
 	}
 
 	for _, d := range docs {
-		store.Upsert(ctx, "test", []vectorstore.Point{
+		_ = store.Upsert(ctx, "test", []vectorstore.Point{
 			{
 				ID:      d.id,
 				Vector:  d.vector,

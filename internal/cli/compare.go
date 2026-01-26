@@ -64,7 +64,7 @@ func init() {
 	compareCmd.Flags().StringVar(&queriesPath, "queries", "", "Path to queries JSON file (required)")
 	compareCmd.Flags().StringVar(&outputDir, "output", "runs", "Output directory for run artifacts")
 	compareCmd.Flags().IntVar(&compareTopK, "top-k", 5, "Number of results to retrieve")
-	compareCmd.MarkFlagRequired("queries")
+	_ = compareCmd.MarkFlagRequired("queries")
 
 	rootCmd.AddCommand(compareCmd)
 }

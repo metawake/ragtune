@@ -1,7 +1,6 @@
 package cli
 
 import (
-	"bytes"
 	"errors"
 	"io"
 	"testing"
@@ -112,15 +111,4 @@ func TestCloseWithLog_Error(t *testing.T) {
 	mc := &mockCloser{err: io.ErrClosedPipe}
 	// Just verify it doesn't panic - we can't easily capture stderr without more setup
 	closeWithLog(mc, "test resource")
-}
-
-// captureStderr helper for testing stderr output
-func captureStderr(t *testing.T, fn func()) string {
-	t.Helper()
-	// Note: This is a simplified version; full stderr capture would require
-	// redirecting os.Stderr which can be fragile in tests
-	var buf bytes.Buffer
-	// For a complete test, you'd capture os.Stderr here
-	fn()
-	return buf.String()
 }

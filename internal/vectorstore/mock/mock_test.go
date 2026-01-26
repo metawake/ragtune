@@ -160,7 +160,7 @@ func TestStore_SearchTopK(t *testing.T) {
 		points := []vectorstore.Point{
 			{ID: string(rune('a' + i)), Vector: []float32{float32(i), float32(i)}, Payload: nil},
 		}
-		s.Upsert(ctx, "test", points)
+		_ = s.Upsert(ctx, "test", points)
 	}
 
 	// Search with top-k = 2
@@ -199,7 +199,7 @@ func TestStore_Count(t *testing.T) {
 		points := []vectorstore.Point{
 			{ID: string(rune('a' + i)), Vector: []float32{1, 1}, Payload: nil},
 		}
-		s.Upsert(ctx, "test", points)
+		_ = s.Upsert(ctx, "test", points)
 	}
 
 	count, err = s.Count(ctx, "test")
@@ -245,7 +245,7 @@ func TestStore_CustomHook(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	s.EnsureCollection(ctx, "test", 2)
+	_ = s.EnsureCollection(ctx, "test", 2)
 
 	if !called {
 		t.Error("custom hook was not called")

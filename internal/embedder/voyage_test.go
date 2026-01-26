@@ -121,7 +121,7 @@ func TestVoyageEmbedder_EmbedSuccess(t *testing.T) {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data": [{"index": 0, "embedding": [0.1, 0.2, 0.3]}]}`))
+		_, _ = w.Write([]byte(`{"data": [{"index": 0, "embedding": [0.1, 0.2, 0.3]}]}`))
 	}))
 	defer server.Close()
 
@@ -143,7 +143,7 @@ func TestVoyageEmbedder_EmbedSuccess(t *testing.T) {
 func TestVoyageEmbedder_EmbedBatchSuccess(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"data": [{"index": 0, "embedding": [0.1, 0.2]}, {"index": 1, "embedding": [0.3, 0.4]}]}`))
+		_, _ = w.Write([]byte(`{"data": [{"index": 0, "embedding": [0.1, 0.2]}, {"index": 1, "embedding": [0.3, 0.4]}]}`))
 	}))
 	defer server.Close()
 
@@ -165,7 +165,7 @@ func TestVoyageEmbedder_EmbedBatchSuccess(t *testing.T) {
 func TestVoyageEmbedder_APIError(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusTooManyRequests)
-		w.Write([]byte(`{"detail": "rate limit exceeded"}`))
+		_, _ = w.Write([]byte(`{"detail": "rate limit exceeded"}`))
 	}))
 	defer server.Close()
 
@@ -184,7 +184,7 @@ func TestVoyageEmbedder_APIError(t *testing.T) {
 func TestVoyageEmbedder_InvalidJSON(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{invalid json`))
+		_, _ = w.Write([]byte(`{invalid json`))
 	}))
 	defer server.Close()
 

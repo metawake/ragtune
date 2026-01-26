@@ -55,7 +55,7 @@ func init() {
 	auditCmd.Flags().Float64Var(&auditMinMRR, "min-mrr", 0.70, "Minimum MRR threshold")
 	auditCmd.Flags().Float64Var(&auditMinCoverage, "min-coverage", 0.90, "Minimum Coverage threshold")
 	auditCmd.Flags().Float64Var(&auditMaxLatencyP95, "max-latency-p95", 0, "Maximum p95 latency in ms (0 = no limit)")
-	auditCmd.MarkFlagRequired("queries")
+	_ = auditCmd.MarkFlagRequired("queries")
 
 	rootCmd.AddCommand(auditCmd)
 }

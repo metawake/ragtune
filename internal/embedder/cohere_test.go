@@ -119,7 +119,7 @@ func TestCohereEmbedder_EmbedSuccess(t *testing.T) {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"embeddings": [[0.1, 0.2, 0.3]]}`))
+		_, _ = w.Write([]byte(`{"embeddings": [[0.1, 0.2, 0.3]]}`))
 	}))
 	defer server.Close()
 
@@ -141,7 +141,7 @@ func TestCohereEmbedder_EmbedSuccess(t *testing.T) {
 func TestCohereEmbedder_EmbedBatchSuccess(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"embeddings": [[0.1, 0.2], [0.3, 0.4]]}`))
+		_, _ = w.Write([]byte(`{"embeddings": [[0.1, 0.2], [0.3, 0.4]]}`))
 	}))
 	defer server.Close()
 
@@ -163,7 +163,7 @@ func TestCohereEmbedder_EmbedBatchSuccess(t *testing.T) {
 func TestCohereEmbedder_APIError(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusTooManyRequests)
-		w.Write([]byte(`{"message": "rate limit exceeded"}`))
+		_, _ = w.Write([]byte(`{"message": "rate limit exceeded"}`))
 	}))
 	defer server.Close()
 
@@ -182,7 +182,7 @@ func TestCohereEmbedder_APIError(t *testing.T) {
 func TestCohereEmbedder_InvalidJSON(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{invalid json`))
+		_, _ = w.Write([]byte(`{invalid json`))
 	}))
 	defer server.Close()
 

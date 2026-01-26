@@ -75,7 +75,7 @@ func init() {
 	simulateCmd.Flags().StringVar(&queriesPath, "queries", "", "Path to queries JSON file (required)")
 	simulateCmd.Flags().StringVar(&configsPath, "configs", "", "Path to configs YAML/JSON file (optional)")
 	simulateCmd.Flags().StringVar(&outputDir, "output", "runs", "Output directory for run artifacts")
-	simulateCmd.MarkFlagRequired("queries")
+	_ = simulateCmd.MarkFlagRequired("queries")
 
 	// CI mode flags
 	simulateCmd.Flags().BoolVar(&ciMode, "ci", false, "CI mode: exit 1 if thresholds not met")

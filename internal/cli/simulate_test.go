@@ -55,7 +55,7 @@ func TestCheckCIThresholds_AllPass(t *testing.T) {
 	os.Stdout = old
 
 	var buf bytes.Buffer
-	buf.ReadFrom(r)
+	_, _ = buf.ReadFrom(r)
 	output := buf.String()
 
 	if err != nil {
@@ -181,7 +181,7 @@ func TestCheckCIThresholds_ZeroThresholds(t *testing.T) {
 	os.Stdout = old
 
 	var buf bytes.Buffer
-	buf.ReadFrom(r)
+	_, _ = buf.ReadFrom(r)
 	output := buf.String()
 
 	if err != nil {
@@ -236,7 +236,7 @@ func TestCheckCIThresholds_PartialThresholds(t *testing.T) {
 	os.Stdout = old
 
 	var buf bytes.Buffer
-	buf.ReadFrom(r)
+	_, _ = buf.ReadFrom(r)
 	output := buf.String()
 
 	if err != nil {
@@ -743,7 +743,7 @@ func TestLoadBaseline_InvalidJSON(t *testing.T) {
 	}
 	defer os.Remove(tmpFile.Name())
 
-	tmpFile.WriteString("not valid json")
+	_, _ = tmpFile.WriteString("not valid json")
 	tmpFile.Close()
 
 	_, err = loadBaseline(tmpFile.Name())
@@ -760,7 +760,7 @@ func TestLoadBaseline_EmptyConfigs(t *testing.T) {
 	}
 	defer os.Remove(tmpFile.Name())
 
-	tmpFile.WriteString(`{"timestamp": "2026-01-01", "collection": "test", "configs": []}`)
+	_, _ = tmpFile.WriteString(`{"timestamp": "2026-01-01", "collection": "test", "configs": []}`)
 	tmpFile.Close()
 
 	_, err = loadBaseline(tmpFile.Name())
@@ -795,7 +795,7 @@ func TestLoadBaseline_ValidFile(t *testing.T) {
 			"query_results": []
 		}]
 	}`
-	tmpFile.WriteString(content)
+	_, _ = tmpFile.WriteString(content)
 	tmpFile.Close()
 
 	result, err := loadBaseline(tmpFile.Name())

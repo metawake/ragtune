@@ -54,7 +54,7 @@ func TestOpenAIEmbedder_EmbedSuccess(t *testing.T) {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{
+		_, _ = w.Write([]byte(`{
 			"data": [
 				{"index": 0, "embedding": [0.1, 0.2, 0.3]}
 			]
@@ -83,7 +83,7 @@ func TestOpenAIEmbedder_EmbedSuccess(t *testing.T) {
 func TestOpenAIEmbedder_EmbedBatchSuccess(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{
+		_, _ = w.Write([]byte(`{
 			"data": [
 				{"index": 0, "embedding": [0.1, 0.2]},
 				{"index": 1, "embedding": [0.3, 0.4]}
@@ -110,7 +110,7 @@ func TestOpenAIEmbedder_EmbedBatchSuccess(t *testing.T) {
 func TestOpenAIEmbedder_APIError(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusTooManyRequests)
-		w.Write([]byte(`{"error": {"message": "rate limit exceeded"}}`))
+		_, _ = w.Write([]byte(`{"error": {"message": "rate limit exceeded"}}`))
 	}))
 	defer server.Close()
 
@@ -129,7 +129,7 @@ func TestOpenAIEmbedder_APIError(t *testing.T) {
 func TestOpenAIEmbedder_ServerError(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
-		w.Write([]byte(`{"error": {"message": "internal error"}}`))
+		_, _ = w.Write([]byte(`{"error": {"message": "internal error"}}`))
 	}))
 	defer server.Close()
 
@@ -148,7 +148,7 @@ func TestOpenAIEmbedder_ServerError(t *testing.T) {
 func TestOpenAIEmbedder_InvalidJSON(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{invalid json`))
+		_, _ = w.Write([]byte(`{invalid json`))
 	}))
 	defer server.Close()
 

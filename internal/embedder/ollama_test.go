@@ -112,7 +112,7 @@ func TestOllamaEmbedder_EmbedBatchConcurrency(t *testing.T) {
 
 		// Return mock embedding
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"embedding": [0.1, 0.2, 0.3]}`))
+		_, _ = w.Write([]byte(`{"embedding": [0.1, 0.2, 0.3]}`))
 	}))
 	defer server.Close()
 
@@ -163,7 +163,7 @@ func TestOllamaEmbedder_EmbedBatchCancellation(t *testing.T) {
 		// Slow response to allow cancellation
 		time.Sleep(100 * time.Millisecond)
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"embedding": [0.1, 0.2, 0.3]}`))
+		_, _ = w.Write([]byte(`{"embedding": [0.1, 0.2, 0.3]}`))
 	}))
 	defer server.Close()
 
