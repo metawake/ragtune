@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/metawake/ragtune?include_prereleases)](https://github.com/metawake/ragtune/releases)
 
-**Debug, benchmark, and monitor your RAG retrieval layer** — like EXPLAIN ANALYZE for production RAG.
+**Debug, benchmark, and monitor your RAG retrieval layer.** EXPLAIN ANALYZE for production RAG.
 
 <p align="center">
   <img src="assets/demo.gif" alt="RagTune demo" width="700">
@@ -25,6 +25,7 @@
 | **Debug a single query** | `ragtune explain "my query" --collection prod` |
 | **Run batch evaluation** | `ragtune simulate --collection prod --queries queries.json` |
 | **Set up CI/CD quality gates** | `ragtune simulate --ci --min-recall 0.85` |
+| **Detect regressions** | `ragtune simulate --baseline runs/latest.json --fail-on-regression` |
 | **Compare embedders** | `ragtune compare --embedders ollama,openai --docs ./docs` |
 | **Quick health check** | `ragtune audit --collection prod --queries queries.json` |
 
@@ -47,7 +48,7 @@ No API keys needed with Ollama (runs locally).
 
 ### Already using PostgreSQL with pgvector?
 
-Skip Docker entirely — use your existing database:
+Skip Docker entirely. Use your existing database:
 
 ```bash
 ragtune ingest ./docs --collection my-docs --embedder ollama \
@@ -136,11 +137,37 @@ See [CLI Reference](docs/cli-reference.md) for all flags and options.
 
 Exit code 1 if thresholds fail. See [examples/github-actions.yml](examples/github-actions.yml) for complete setup.
 
+### Regression Testing
+
+Compare against a baseline to catch regressions before they reach production:
+
+```bash
+# Compare current run against baseline
+ragtune simulate --collection prod --queries golden.json \
+  --baseline runs/baseline.json --fail-on-regression
+```
+
+Output shows deltas for each metric:
+
+```
+BASELINE COMPARISON
+Comparing against: 2026-01-15T12:00:00Z
+─────────────────────────────────────────────────────────────
+  Recall@5:    0.900 → 0.850  ↓ 5.6%  (REGRESSED)
+  MRR:         0.800 → 0.820  ↑ 2.5%  (improved)
+  Coverage:    0.950 → 0.950  = 0.0%  (unchanged)
+  Latency p95: 100ms → 120ms  ↑ 20.0%  (REGRESSED)
+─────────────────────────────────────────────────────────────
+
+❌ REGRESSION DETECTED
+   The following metrics decreased: [Recall@5, Latency p95]
+```
+
 ---
 
 ## Why RagTune?
 
-Most teams iterate blindly on RAG retrieval. RagTune provides diagnostics to make informed decisions.
+RAG retrieval is a configuration problem: chunk size, embedding model, index type, top-k. Most teams tune by intuition. RagTune provides the measurement layer to make these decisions empirically, using standard IR metrics (Recall@k, MRR, NDCG) on your actual data.
 
 | What Matters | Impact |
 |--------------|--------|
@@ -168,7 +195,7 @@ RagTune focuses on **retrieval debugging, monitoring, and benchmarking**, not en
 
 ## Signs You Need This
 
-Retrieval failures are **silent**. No error, no exception — just gradually worse answers.
+Retrieval failures are **silent**. No error, no exception. Just gradually worse answers.
 
 - Users complaining about "wrong answers" but you can't reproduce it
 - No idea if that embedding change made things better or worse

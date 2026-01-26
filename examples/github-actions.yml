@@ -71,6 +71,18 @@ jobs:
             --min-recall 0.85 \
             --min-coverage 0.90
       
+      # Optional: Compare against baseline to detect regressions
+      # Uncomment if you commit runs/baseline.json to your repo
+      #
+      # - name: Check for regressions
+      #   run: |
+      #     ragtune simulate \
+      #       --collection ci-test \
+      #       --queries ./tests/golden-queries.json \
+      #       --embedder ollama \
+      #       --baseline ./tests/baseline.json \
+      #       --fail-on-regression
+      
       # Option B: Use OpenAI (faster, requires API key)
       # Uncomment below and comment out Ollama steps above
       #

@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/metawake/ragtune/internal/config"
 	"github.com/metawake/ragtune/internal/metrics"
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -24,6 +24,11 @@ var (
 	minMRR        float64
 	minCoverage   float64
 	maxLatencyP95 float64
+	// Baseline comparison flags
+	baselinePath     string
+	failOnRegression bool
+	// Output format flags
+	jsonOutput bool
 )
 
 var simulateCmd = &cobra.Command{
@@ -49,12 +54,20 @@ CI Mode:
   Use --ci with threshold flags for automated quality gates.
   Exit code 1 if any threshold is not met.
 
+Baseline Comparison:
+  Use --baseline to compare against a previous run. Shows deltas for each
+  metric. Use --fail-on-regression to fail CI if any metric decreased.
+
 Examples:
   ragtune simulate --collection demo --queries data/queries.json
 
   # CI mode with thresholds
   ragtune simulate --collection prod --queries golden.json \
-    --ci --min-recall 0.85 --min-coverage 0.90 --max-latency-p95 500`,
+    --ci --min-recall 0.85 --min-coverage 0.90 --max-latency-p95 500
+
+  # Compare against baseline (regression testing)
+  ragtune simulate --collection prod --queries golden.json \
+    --baseline runs/latest.json --fail-on-regression`,
 	RunE: runSimulate,
 }
 
@@ -71,22 +84,29 @@ func init() {
 	simulateCmd.Flags().Float64Var(&minCoverage, "min-coverage", 0, "Minimum Coverage threshold (CI mode)")
 	simulateCmd.Flags().Float64Var(&maxLatencyP95, "max-latency-p95", 0, "Maximum p95 latency in ms (CI mode, 0 = no limit)")
 
+	// Baseline comparison flags
+	simulateCmd.Flags().StringVar(&baselinePath, "baseline", "", "Path to baseline run JSON for comparison (e.g., runs/latest.json)")
+	simulateCmd.Flags().BoolVar(&failOnRegression, "fail-on-regression", false, "Exit 1 if any metric regressed vs baseline (requires --baseline)")
+
+	// Output format flags
+	simulateCmd.Flags().BoolVar(&jsonOutput, "json", false, "Output results as JSON (for CI parsing)")
+
 	rootCmd.AddCommand(simulateCmd)
 }
 
 // RunResult represents the complete simulation run output.
 type RunResult struct {
-	Timestamp   string                  `json:"timestamp"`
-	Collection  string                  `json:"collection"`
-	Store       string                  `json:"store"`
-	Configs     []ConfigResult          `json:"configs"`
+	Timestamp  string         `json:"timestamp"`
+	Collection string         `json:"collection"`
+	Store      string         `json:"store"`
+	Configs    []ConfigResult `json:"configs"`
 }
 
 // ConfigResult represents results for a single configuration.
 type ConfigResult struct {
-	Config       config.SimConfig       `json:"config"`
-	Metrics      metrics.Result         `json:"metrics"`
-	QueryResults []metrics.QueryResult  `json:"query_results"`
+	Config       config.SimConfig      `json:"config"`
+	Metrics      metrics.Result        `json:"metrics"`
+	QueryResults []metrics.QueryResult `json:"query_results"`
 }
 
 func runSimulate(cmd *cobra.Command, args []string) error {
@@ -114,7 +134,9 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return fmt.Errorf("failed to load queries: %w", err)
 	}
-	fmt.Printf("Loaded %d queries\n", len(queries))
+	if !jsonOutput {
+		fmt.Printf("Loaded %d queries\n", len(queries))
+	}
 
 	// Load or create default configs
 	var configs []config.SimConfig
@@ -129,7 +151,9 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 			{Name: "default", TopK: topK},
 		}
 	}
-	fmt.Printf("Running %d configurations\n", len(configs))
+	if !jsonOutput {
+		fmt.Printf("Running %d configurations\n", len(configs))
+	}
 
 	// Run simulation
 	runResult := RunResult{
@@ -139,7 +163,9 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 	}
 
 	for _, cfg := range configs {
-		fmt.Printf("\n--- Config: %s (top_k=%d) ---\n", cfg.Name, cfg.TopK)
+		if !jsonOutput {
+			fmt.Printf("\n--- Config: %s (top_k=%d) ---\n", cfg.Name, cfg.TopK)
+		}
 
 		var queryResults []metrics.QueryResult
 
@@ -182,26 +208,30 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 				LatencyMs:    latencyMs,
 			})
 
-			fmt.Printf("  [%d/%d] %s (%.1fms)\n", i+1, len(queries), q.ID, latencyMs)
+			if !jsonOutput {
+				fmt.Printf("  [%d/%d] %s (%.1fms)\n", i+1, len(queries), q.ID, latencyMs)
+			}
 		}
 
 		// Compute metrics
 		m := metrics.Compute(queryResults, cfg.TopK)
 
-		fmt.Printf("\n  Metrics:\n")
-		fmt.Printf("    Recall@%d:  %.3f\n", cfg.TopK, m.RecallAtK)
-		fmt.Printf("    MRR:        %.3f\n", m.MRR)
-		fmt.Printf("    NDCG@%d:    %.3f\n", cfg.TopK, m.NDCGAtK)
-		fmt.Printf("    Coverage:   %.3f\n", m.Coverage)
-		fmt.Printf("    Redundancy: %.2f\n", m.Redundancy)
-		if m.LatencyAvg > 0 {
-			fmt.Printf("    Latency:    p50=%.1fms  p95=%.1fms  p99=%.1fms  avg=%.1fms\n",
-				m.LatencyP50, m.LatencyP95, m.LatencyP99, m.LatencyAvg)
+		if !jsonOutput {
+			fmt.Printf("\n  Metrics:\n")
+			fmt.Printf("    Recall@%d:  %.3f\n", cfg.TopK, m.RecallAtK)
+			fmt.Printf("    MRR:        %.3f\n", m.MRR)
+			fmt.Printf("    NDCG@%d:    %.3f\n", cfg.TopK, m.NDCGAtK)
+			fmt.Printf("    Coverage:   %.3f\n", m.Coverage)
+			fmt.Printf("    Redundancy: %.2f\n", m.Redundancy)
+			if m.LatencyAvg > 0 {
+				fmt.Printf("    Latency:    p50=%.1fms  p95=%.1fms  p99=%.1fms  avg=%.1fms\n",
+					m.LatencyP50, m.LatencyP95, m.LatencyP99, m.LatencyAvg)
+			}
 		}
 
 		// Per-query failure analysis
 		failures := collectFailures(queryResults, cfg.TopK)
-		if len(failures) > 0 {
+		if len(failures) > 0 && !jsonOutput {
 			printFailureReport(failures, cfg.TopK)
 		}
 
@@ -235,12 +265,108 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("failed to write latest.json: %w", err)
 	}
 
-	fmt.Printf("\n✓ Run saved to %s\n", runPath)
-	fmt.Printf("✓ Also saved as %s\n", latestPath)
+	if !jsonOutput {
+		fmt.Printf("\n✓ Run saved to %s\n", runPath)
+		fmt.Printf("✓ Also saved as %s\n", latestPath)
+	}
+
+	// Variables for JSON output
+	var deltas []MetricDelta
+	var hasRegression bool
+	var baselineTs string
+	var thresholdChecks []JSONThresholdCheck
+	thresholdsPassed := true
+
+	// Collect failures for JSON output
+	var allFailures []QueryFailure
+	if len(runResult.Configs) > 0 {
+		allFailures = collectFailures(runResult.Configs[0].QueryResults, runResult.Configs[0].Config.TopK)
+	}
+
+	// Baseline comparison (if specified)
+	if baselinePath != "" {
+		baseline, err := loadBaseline(baselinePath)
+		if err != nil {
+			return fmt.Errorf("failed to load baseline: %w", err)
+		}
+
+		// Compare first config's metrics
+		currentMetrics := runResult.Configs[0].Metrics
+		baselineMetrics := baseline.Configs[0].Metrics
+		k := runResult.Configs[0].Config.TopK
+		baselineTs = baseline.Timestamp
+
+		deltas, hasRegression = compareWithBaseline(currentMetrics, baselineMetrics, k)
+		if !jsonOutput {
+			printBaselineComparison(deltas, baseline.Timestamp)
+		}
+
+		// Check for regressions if flag is set
+		if failOnRegression && hasRegression {
+			if jsonOutput {
+				output := buildJSONOutput(runResult, runPath, allFailures, deltas, hasRegression, baselineTs, thresholdChecks, thresholdsPassed)
+				printJSONOutput(output)
+			}
+			return checkRegressions(deltas)
+		}
+	}
 
 	// CI mode: check thresholds
 	if ciMode {
+		m := runResult.Configs[0].Metrics
+
+		if minRecall > 0 {
+			passed := m.RecallAtK >= minRecall
+			thresholdChecks = append(thresholdChecks, JSONThresholdCheck{
+				Metric: "Recall@K", Value: m.RecallAtK, Threshold: minRecall, Passed: passed,
+			})
+			if !passed {
+				thresholdsPassed = false
+			}
+		}
+		if minMRR > 0 {
+			passed := m.MRR >= minMRR
+			thresholdChecks = append(thresholdChecks, JSONThresholdCheck{
+				Metric: "MRR", Value: m.MRR, Threshold: minMRR, Passed: passed,
+			})
+			if !passed {
+				thresholdsPassed = false
+			}
+		}
+		if minCoverage > 0 {
+			passed := m.Coverage >= minCoverage
+			thresholdChecks = append(thresholdChecks, JSONThresholdCheck{
+				Metric: "Coverage", Value: m.Coverage, Threshold: minCoverage, Passed: passed,
+			})
+			if !passed {
+				thresholdsPassed = false
+			}
+		}
+		if maxLatencyP95 > 0 {
+			passed := m.LatencyP95 <= maxLatencyP95
+			thresholdChecks = append(thresholdChecks, JSONThresholdCheck{
+				Metric: "Latency p95", Value: m.LatencyP95, Threshold: maxLatencyP95, Passed: passed,
+			})
+			if !passed {
+				thresholdsPassed = false
+			}
+		}
+
+		if jsonOutput {
+			output := buildJSONOutput(runResult, runPath, allFailures, deltas, hasRegression, baselineTs, thresholdChecks, thresholdsPassed)
+			printJSONOutput(output)
+			if !thresholdsPassed {
+				return &CICheckError{FailedChecks: []string{"threshold"}}
+			}
+			return nil
+		}
 		return checkCIThresholds(runResult)
+	}
+
+	// JSON output for non-CI mode
+	if jsonOutput {
+		output := buildJSONOutput(runResult, runPath, allFailures, deltas, hasRegression, baselineTs, thresholdChecks, thresholdsPassed)
+		printJSONOutput(output)
 	}
 
 	return nil
@@ -248,12 +374,12 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 
 // QueryFailure represents a query that failed to retrieve its relevant documents.
 type QueryFailure struct {
-	QueryID      string
-	Query        string
-	RelevantDocs []string
+	QueryID       string
+	Query         string
+	RelevantDocs  []string
 	RetrievedDocs []string
-	TopScores    []float32
-	Recall       float64
+	TopScores     []float32
+	Recall        float64
 }
 
 // collectFailures identifies queries with zero or low recall.
@@ -262,7 +388,7 @@ func collectFailures(results []metrics.QueryResult, k int) []QueryFailure {
 
 	for _, qr := range results {
 		recall := metrics.RecallAtK(qr.RetrievedIDs, qr.RelevantIDs, k)
-		
+
 		// Report queries with Recall@K = 0 (complete failures)
 		if recall == 0 && len(qr.RelevantIDs) > 0 {
 			topDocs := qr.RetrievedIDs
@@ -273,14 +399,14 @@ func collectFailures(results []metrics.QueryResult, k int) []QueryFailure {
 			if len(topScores) > 3 {
 				topScores = topScores[:3]
 			}
-			
+
 			failures = append(failures, QueryFailure{
-				QueryID:      qr.QueryID,
-				Query:        qr.Query,
-				RelevantDocs: qr.RelevantIDs,
+				QueryID:       qr.QueryID,
+				Query:         qr.Query,
+				RelevantDocs:  qr.RelevantIDs,
 				RetrievedDocs: topDocs,
-				TopScores:    topScores,
-				Recall:       recall,
+				TopScores:     topScores,
+				Recall:        recall,
 			})
 		}
 	}
@@ -294,19 +420,19 @@ func printFailureReport(failures []QueryFailure, k int) {
 	fmt.Println("  ─────────────────────────────────────────────────────────────")
 	fmt.Printf("  FAILURES: %d queries with Recall@%d = 0\n", len(failures), k)
 	fmt.Println("  ─────────────────────────────────────────────────────────────")
-	
+
 	// Show up to 5 failures in detail
 	showCount := len(failures)
 	if showCount > 5 {
 		showCount = 5
 	}
-	
+
 	for i := 0; i < showCount; i++ {
 		f := failures[i]
 		fmt.Println()
 		fmt.Printf("  ✗ [%s] %s\n", f.QueryID, truncateQuery(f.Query, 60))
 		fmt.Printf("    Expected:  %v\n", f.RelevantDocs)
-		
+
 		if len(f.RetrievedDocs) > 0 {
 			// Format retrieved docs with scores
 			var docsWithScores []string
@@ -322,11 +448,11 @@ func printFailureReport(failures []QueryFailure, k int) {
 			fmt.Println("    Retrieved: (none)")
 		}
 	}
-	
+
 	if len(failures) > 5 {
 		fmt.Printf("\n  ... and %d more failures (see JSON output for full list)\n", len(failures)-5)
 	}
-	
+
 	// Provide actionable hints
 	fmt.Println()
 	fmt.Println("  💡 Debugging hints:")
@@ -410,3 +536,340 @@ func checkCIThresholds(result RunResult) error {
 	return nil
 }
 
+// loadBaseline reads a previous run result from a JSON file.
+func loadBaseline(path string) (*RunResult, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read baseline file: %w", err)
+	}
+
+	var result RunResult
+	if err := json.Unmarshal(data, &result); err != nil {
+		return nil, fmt.Errorf("failed to parse baseline JSON: %w", err)
+	}
+
+	if len(result.Configs) == 0 {
+		return nil, fmt.Errorf("baseline has no configs")
+	}
+
+	return &result, nil
+}
+
+// MetricDelta represents the change in a metric from baseline to current.
+type MetricDelta struct {
+	Name       string
+	Baseline   float64
+	Current    float64
+	Delta      float64
+	DeltaPct   float64
+	Regressed  bool
+	HigherGood bool // true for recall/mrr/coverage, false for latency
+}
+
+// compareWithBaseline compares current metrics against baseline and prints the comparison.
+// Returns true if any metric regressed.
+func compareWithBaseline(current, baseline metrics.Result, k int) ([]MetricDelta, bool) {
+	deltas := []MetricDelta{
+		{
+			Name:       fmt.Sprintf("Recall@%d", k),
+			Baseline:   baseline.RecallAtK,
+			Current:    current.RecallAtK,
+			HigherGood: true,
+		},
+		{
+			Name:       "MRR",
+			Baseline:   baseline.MRR,
+			Current:    current.MRR,
+			HigherGood: true,
+		},
+		{
+			Name:       "Coverage",
+			Baseline:   baseline.Coverage,
+			Current:    current.Coverage,
+			HigherGood: true,
+		},
+		{
+			Name:       "Latency p95",
+			Baseline:   baseline.LatencyP95,
+			Current:    current.LatencyP95,
+			HigherGood: false,
+		},
+	}
+
+	hasRegression := false
+
+	for i := range deltas {
+		d := &deltas[i]
+		d.Delta = d.Current - d.Baseline
+
+		if d.Baseline != 0 {
+			d.DeltaPct = (d.Delta / d.Baseline) * 100
+		}
+
+		// Determine if this is a regression
+		if d.HigherGood {
+			d.Regressed = d.Delta < -0.001 // Allow tiny floating point tolerance
+		} else {
+			d.Regressed = d.Delta > 0.001 // For latency, higher is worse
+		}
+
+		if d.Regressed {
+			hasRegression = true
+		}
+	}
+
+	return deltas, hasRegression
+}
+
+// printBaselineComparison displays the comparison between current and baseline runs.
+func printBaselineComparison(deltas []MetricDelta, baselineTimestamp string) {
+	fmt.Println()
+	fmt.Println("─────────────────────────────────────────────────────────────")
+	fmt.Println("BASELINE COMPARISON")
+	fmt.Printf("Comparing against: %s\n", baselineTimestamp)
+	fmt.Println("─────────────────────────────────────────────────────────────")
+
+	for _, d := range deltas {
+		var arrow string
+		var status string
+
+		if d.HigherGood {
+			if d.Delta > 0.001 {
+				arrow = "↑"
+				status = "improved"
+			} else if d.Delta < -0.001 {
+				arrow = "↓"
+				status = "REGRESSED"
+			} else {
+				arrow = "="
+				status = "unchanged"
+			}
+		} else {
+			// For latency, lower is better
+			if d.Delta < -0.001 {
+				arrow = "↓"
+				status = "improved"
+			} else if d.Delta > 0.001 {
+				arrow = "↑"
+				status = "REGRESSED"
+			} else {
+				arrow = "="
+				status = "unchanged"
+			}
+		}
+
+		// Format based on metric type
+		if d.Name == "Latency p95" {
+			fmt.Printf("  %-12s %.0fms → %.0fms  %s %.1f%%  (%s)\n",
+				d.Name+":", d.Baseline, d.Current, arrow, abs(d.DeltaPct), status)
+		} else {
+			fmt.Printf("  %-12s %.3f → %.3f  %s %.1f%%  (%s)\n",
+				d.Name+":", d.Baseline, d.Current, arrow, abs(d.DeltaPct), status)
+		}
+	}
+
+	fmt.Println("─────────────────────────────────────────────────────────────")
+}
+
+// abs returns the absolute value of a float64.
+func abs(x float64) float64 {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
+// RegressionError is returned when metrics regress and --fail-on-regression is set.
+type RegressionError struct {
+	Regressions []string
+}
+
+func (e *RegressionError) Error() string {
+	return fmt.Sprintf("metrics regressed: %v", e.Regressions)
+}
+
+// checkRegressions returns an error if any regressions occurred.
+func checkRegressions(deltas []MetricDelta) error {
+	var regressions []string
+	for _, d := range deltas {
+		if d.Regressed {
+			regressions = append(regressions, d.Name)
+		}
+	}
+
+	if len(regressions) > 0 {
+		if !jsonOutput {
+			fmt.Println()
+			fmt.Println("❌ REGRESSION DETECTED")
+			fmt.Printf("   The following metrics decreased: %v\n", regressions)
+		}
+		return &RegressionError{Regressions: regressions}
+	}
+
+	if !jsonOutput {
+		fmt.Println()
+		fmt.Println("✅ No regressions detected")
+	}
+	return nil
+}
+
+// JSONOutput represents the machine-readable output format for CI pipelines.
+type JSONOutput struct {
+	Status     string             `json:"status"` // "pass" or "fail"
+	Timestamp  string             `json:"timestamp"`
+	Collection string             `json:"collection"`
+	Store      string             `json:"store"`
+	Metrics    JSONMetrics        `json:"metrics"`
+	Baseline   *JSONBaseline      `json:"baseline,omitempty"`
+	Thresholds *JSONThresholds    `json:"thresholds,omitempty"`
+	Failures   []JSONQueryFailure `json:"failures,omitempty"`
+	RunFile    string             `json:"run_file"`
+}
+
+// JSONMetrics contains the core metrics in JSON format.
+type JSONMetrics struct {
+	RecallAtK  float64 `json:"recall_at_k"`
+	MRR        float64 `json:"mrr"`
+	NDCGAtK    float64 `json:"ndcg_at_k"`
+	Coverage   float64 `json:"coverage"`
+	Redundancy float64 `json:"redundancy"`
+	LatencyP50 float64 `json:"latency_p50_ms"`
+	LatencyP95 float64 `json:"latency_p95_ms"`
+	LatencyP99 float64 `json:"latency_p99_ms"`
+	LatencyAvg float64 `json:"latency_avg_ms"`
+	QueryCount int     `json:"query_count"`
+	TopK       int     `json:"top_k"`
+}
+
+// JSONBaseline contains baseline comparison data.
+type JSONBaseline struct {
+	Timestamp   string           `json:"timestamp"`
+	Comparisons []JSONComparison `json:"comparisons"`
+	Regressed   bool             `json:"regressed"`
+	Regressions []string         `json:"regressions,omitempty"`
+}
+
+// JSONComparison represents a single metric comparison.
+type JSONComparison struct {
+	Metric    string  `json:"metric"`
+	Baseline  float64 `json:"baseline"`
+	Current   float64 `json:"current"`
+	Delta     float64 `json:"delta"`
+	DeltaPct  float64 `json:"delta_pct"`
+	Regressed bool    `json:"regressed"`
+}
+
+// JSONThresholds contains CI threshold results.
+type JSONThresholds struct {
+	Checks []JSONThresholdCheck `json:"checks"`
+	Passed bool                 `json:"passed"`
+}
+
+// JSONThresholdCheck represents a single threshold check.
+type JSONThresholdCheck struct {
+	Metric    string  `json:"metric"`
+	Value     float64 `json:"value"`
+	Threshold float64 `json:"threshold"`
+	Passed    bool    `json:"passed"`
+}
+
+// JSONQueryFailure represents a failed query in JSON output.
+type JSONQueryFailure struct {
+	QueryID       string   `json:"query_id"`
+	Query         string   `json:"query"`
+	ExpectedDocs  []string `json:"expected_docs"`
+	RetrievedDocs []string `json:"retrieved_docs"`
+}
+
+// buildJSONOutput creates the JSON output structure from run results.
+func buildJSONOutput(result RunResult, runPath string, failures []QueryFailure,
+	deltas []MetricDelta, hasRegression bool, baselineTs string,
+	thresholdChecks []JSONThresholdCheck, thresholdsPassed bool) JSONOutput {
+
+	cfg := result.Configs[0]
+	m := cfg.Metrics
+
+	output := JSONOutput{
+		Status:     "pass",
+		Timestamp:  result.Timestamp,
+		Collection: result.Collection,
+		Store:      result.Store,
+		RunFile:    runPath,
+		Metrics: JSONMetrics{
+			RecallAtK:  m.RecallAtK,
+			MRR:        m.MRR,
+			NDCGAtK:    m.NDCGAtK,
+			Coverage:   m.Coverage,
+			Redundancy: m.Redundancy,
+			LatencyP50: m.LatencyP50,
+			LatencyP95: m.LatencyP95,
+			LatencyP99: m.LatencyP99,
+			LatencyAvg: m.LatencyAvg,
+			QueryCount: len(cfg.QueryResults),
+			TopK:       cfg.Config.TopK,
+		},
+	}
+
+	// Add failures
+	for _, f := range failures {
+		output.Failures = append(output.Failures, JSONQueryFailure{
+			QueryID:       f.QueryID,
+			Query:         f.Query,
+			ExpectedDocs:  f.RelevantDocs,
+			RetrievedDocs: f.RetrievedDocs,
+		})
+	}
+
+	// Add baseline comparison if available
+	if len(deltas) > 0 {
+		var comparisons []JSONComparison
+		var regressions []string
+		for _, d := range deltas {
+			comparisons = append(comparisons, JSONComparison{
+				Metric:    d.Name,
+				Baseline:  d.Baseline,
+				Current:   d.Current,
+				Delta:     d.Delta,
+				DeltaPct:  d.DeltaPct,
+				Regressed: d.Regressed,
+			})
+			if d.Regressed {
+				regressions = append(regressions, d.Name)
+			}
+		}
+		output.Baseline = &JSONBaseline{
+			Timestamp:   baselineTs,
+			Comparisons: comparisons,
+			Regressed:   hasRegression,
+			Regressions: regressions,
+		}
+	}
+
+	// Add threshold checks if in CI mode
+	if len(thresholdChecks) > 0 {
+		output.Thresholds = &JSONThresholds{
+			Checks: thresholdChecks,
+			Passed: thresholdsPassed,
+		}
+	}
+
+	// Set status based on failures
+	if hasRegression && failOnRegression {
+		output.Status = "fail"
+	}
+	if !thresholdsPassed {
+		output.Status = "fail"
+	}
+
+	return output
+}
+
+// printJSONOutput marshals and prints the JSON output.
+func printJSONOutput(output JSONOutput) {
+	data, err := json.MarshalIndent(output, "", "  ")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "failed to marshal JSON output: %v\n", err)
+		return
+	}
+	fmt.Println(string(data))
+}
