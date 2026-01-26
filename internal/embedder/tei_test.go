@@ -128,7 +128,7 @@ func TestTEIEmbedder_EmbedBatch(t *testing.T) {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(embeddings)
+		_ = json.NewEncoder(w).Encode(embeddings)
 	}))
 	defer server.Close()
 

@@ -103,7 +103,7 @@ func (e *OpenAIEmbedder) EmbedBatch(ctx context.Context, texts []string) ([][]fl
 
 	if resp.StatusCode != http.StatusOK {
 		var errResp openaiErrorResponse
-		json.NewDecoder(resp.Body).Decode(&errResp)
+		_ = json.NewDecoder(resp.Body).Decode(&errResp)
 		return nil, fmt.Errorf("API error (status %d): %s", resp.StatusCode, errResp.Error.Message)
 	}
 

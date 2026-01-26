@@ -125,7 +125,7 @@ func (e *CohereEmbedder) EmbedBatch(ctx context.Context, texts []string) ([][]fl
 
 	if resp.StatusCode != http.StatusOK {
 		var errResp cohereErrorResponse
-		json.NewDecoder(resp.Body).Decode(&errResp)
+		_ = json.NewDecoder(resp.Body).Decode(&errResp)
 		return nil, fmt.Errorf("Cohere API error (status %d): %s", resp.StatusCode, errResp.Message)
 	}
 

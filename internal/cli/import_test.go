@@ -173,7 +173,7 @@ func TestParseCSVQueries_HeaderOnly(t *testing.T) {
 	csvPath := filepath.Join(tmpDir, "queries.csv")
 
 	// Only header, no data - should error (need at least one data row)
-	os.WriteFile(csvPath, []byte("query,relevant_docs\n"), 0644)
+	_ = os.WriteFile(csvPath, []byte("query,relevant_docs\n"), 0644)
 
 	_, err := parseCSVQueries(csvPath)
 	if err == nil {
@@ -186,7 +186,7 @@ func TestParseCSVQueries_WithDataRows(t *testing.T) {
 	csvPath := filepath.Join(tmpDir, "queries.csv")
 
 	// Header + one empty data row that gets skipped
-	os.WriteFile(csvPath, []byte("query,relevant_docs\n\"\",\n"), 0644)
+	_ = os.WriteFile(csvPath, []byte("query,relevant_docs\n\"\",\n"), 0644)
 
 	queries, err := parseCSVQueries(csvPath)
 	if err != nil {
@@ -265,7 +265,7 @@ func TestParseJSONQueries_InvalidJSON(t *testing.T) {
 	tmpDir := t.TempDir()
 	jsonPath := filepath.Join(tmpDir, "queries.json")
 
-	os.WriteFile(jsonPath, []byte("not valid json"), 0644)
+	_ = os.WriteFile(jsonPath, []byte("not valid json"), 0644)
 
 	_, err := parseJSONQueries(jsonPath)
 	if err == nil {

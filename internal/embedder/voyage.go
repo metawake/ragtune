@@ -126,7 +126,7 @@ func (e *VoyageEmbedder) EmbedBatch(ctx context.Context, texts []string) ([][]fl
 
 	if resp.StatusCode != http.StatusOK {
 		var errResp voyageErrorResponse
-		json.NewDecoder(resp.Body).Decode(&errResp)
+		_ = json.NewDecoder(resp.Body).Decode(&errResp)
 		return nil, fmt.Errorf("Voyage API error (status %d): %s", resp.StatusCode, errResp.Detail)
 	}
 

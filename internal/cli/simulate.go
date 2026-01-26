@@ -488,8 +488,10 @@ func checkCIThresholds(result RunResult) error {
 	var failedChecks []string
 
 	if minRecall > 0 {
-		status := "✓ PASS"
-		if m.RecallAtK < minRecall {
+		var status string
+		if m.RecallAtK >= minRecall {
+			status = "✓ PASS"
+		} else {
 			status = "✗ FAIL"
 			failedChecks = append(failedChecks, "Recall@K")
 		}
@@ -497,8 +499,10 @@ func checkCIThresholds(result RunResult) error {
 	}
 
 	if minMRR > 0 {
-		status := "✓ PASS"
-		if m.MRR < minMRR {
+		var status string
+		if m.MRR >= minMRR {
+			status = "✓ PASS"
+		} else {
 			status = "✗ FAIL"
 			failedChecks = append(failedChecks, "MRR")
 		}
@@ -506,8 +510,10 @@ func checkCIThresholds(result RunResult) error {
 	}
 
 	if minCoverage > 0 {
-		status := "✓ PASS"
-		if m.Coverage < minCoverage {
+		var status string
+		if m.Coverage >= minCoverage {
+			status = "✓ PASS"
+		} else {
 			status = "✗ FAIL"
 			failedChecks = append(failedChecks, "Coverage")
 		}
@@ -515,8 +521,10 @@ func checkCIThresholds(result RunResult) error {
 	}
 
 	if maxLatencyP95 > 0 {
-		status := "✓ PASS"
-		if m.LatencyP95 > maxLatencyP95 {
+		var status string
+		if m.LatencyP95 <= maxLatencyP95 {
+			status = "✓ PASS"
+		} else {
 			status = "✗ FAIL"
 			failedChecks = append(failedChecks, "Latency p95")
 		}
