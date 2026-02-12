@@ -29,6 +29,9 @@ var (
 	failOnRegression bool
 	// Output format flags
 	jsonOutput bool
+	// Bootstrap flags
+	bootstrapN    int
+	bootstrapSeed int64
 )
 
 var simulateCmd = &cobra.Command{
@@ -58,8 +61,16 @@ Baseline Comparison:
   Use --baseline to compare against a previous run. Shows deltas for each
   metric. Use --fail-on-regression to fail CI if any metric decreased.
 
+Bootstrap Confidence Intervals:
+  Use --bootstrap N to run N bootstrap samples and report mean ± std for
+  each metric. This enables distinguishing real changes from random variance.
+  Example: "Recall@5: 0.664 ± 0.012" means the true value is likely in that range.
+
 Examples:
   ragtune simulate --collection demo --queries data/queries.json
+
+  # With bootstrap confidence intervals
+  ragtune simulate --collection prod --queries golden.json --bootstrap 20
 
   # CI mode with thresholds
   ragtune simulate --collection prod --queries golden.json \
@@ -91,6 +102,10 @@ func init() {
 	// Output format flags
 	simulateCmd.Flags().BoolVar(&jsonOutput, "json", false, "Output results as JSON (for CI parsing)")
 
+	// Bootstrap flags for statistical confidence
+	simulateCmd.Flags().IntVar(&bootstrapN, "bootstrap", 0, "Number of bootstrap samples for confidence intervals (0 = disabled)")
+	simulateCmd.Flags().Int64Var(&bootstrapSeed, "bootstrap-seed", 42, "Random seed for bootstrap reproducibility")
+
 	rootCmd.AddCommand(simulateCmd)
 }
 
@@ -104,9 +119,10 @@ type RunResult struct {
 
 // ConfigResult represents results for a single configuration.
 type ConfigResult struct {
-	Config       config.SimConfig      `json:"config"`
-	Metrics      metrics.Result        `json:"metrics"`
-	QueryResults []metrics.QueryResult `json:"query_results"`
+	Config       config.SimConfig         `json:"config"`
+	Metrics      metrics.Result           `json:"metrics"`
+	Bootstrap    *metrics.BootstrapResult `json:"bootstrap,omitempty"`
+	QueryResults []metrics.QueryResult    `json:"query_results"`
 }
 
 func runSimulate(cmd *cobra.Command, args []string) error {
@@ -195,6 +211,10 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 				source := getPayloadString(r.Payload, "source")
 				// Extract just the filename for matching
 				source = filepath.Base(source)
+				// Normalize: map chunk-level sources back to parent doc.
+				// e.g. "rfc6749_oauth2_cs0227.txt" -> "rfc6749_oauth2.txt"
+				// if "rfc6749_oauth2.txt" is in the relevant docs.
+				source = normalizeSource(source, q.RelevantDocs)
 				retrievedIDs = append(retrievedIDs, source)
 				scores = append(scores, r.Score)
 			}
@@ -216,12 +236,28 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 		// Compute metrics
 		m := metrics.Compute(queryResults, cfg.TopK)
 
+		// Compute bootstrap confidence intervals if requested
+		var bs *metrics.BootstrapResult
+		if bootstrapN > 0 {
+			bsResult := metrics.Bootstrap(queryResults, cfg.TopK, bootstrapN, 0, bootstrapSeed, false)
+			bs = &bsResult
+		}
+
 		if !jsonOutput {
 			fmt.Printf("\n  Metrics:\n")
-			fmt.Printf("    Recall@%d:  %.3f\n", cfg.TopK, m.RecallAtK)
-			fmt.Printf("    MRR:        %.3f\n", m.MRR)
-			fmt.Printf("    NDCG@%d:    %.3f\n", cfg.TopK, m.NDCGAtK)
-			fmt.Printf("    Coverage:   %.3f\n", m.Coverage)
+			if bs != nil {
+				// Show metrics with confidence intervals
+				fmt.Printf("    Recall@%d:  %.3f ± %.3f  (n=%d)\n", cfg.TopK, bs.RecallMean, bs.RecallStd, bs.N)
+				fmt.Printf("    MRR:        %.3f ± %.3f\n", bs.MRRMean, bs.MRRStd)
+				fmt.Printf("    NDCG@%d:    %.3f ± %.3f\n", cfg.TopK, bs.NDCGMean, bs.NDCGStd)
+				fmt.Printf("    Coverage:   %.3f ± %.3f\n", bs.CoverageMean, bs.CoverageStd)
+			} else {
+				// Show point estimates only
+				fmt.Printf("    Recall@%d:  %.3f\n", cfg.TopK, m.RecallAtK)
+				fmt.Printf("    MRR:        %.3f\n", m.MRR)
+				fmt.Printf("    NDCG@%d:    %.3f\n", cfg.TopK, m.NDCGAtK)
+				fmt.Printf("    Coverage:   %.3f\n", m.Coverage)
+			}
 			fmt.Printf("    Redundancy: %.2f\n", m.Redundancy)
 			if m.LatencyAvg > 0 {
 				fmt.Printf("    Latency:    p50=%.1fms  p95=%.1fms  p99=%.1fms  avg=%.1fms\n",
@@ -238,6 +274,7 @@ func runSimulate(cmd *cobra.Command, args []string) error {
 		runResult.Configs = append(runResult.Configs, ConfigResult{
 			Config:       cfg,
 			Metrics:      m,
+			Bootstrap:    bs,
 			QueryResults: queryResults,
 		})
 	}
@@ -728,6 +765,7 @@ type JSONOutput struct {
 	Collection string             `json:"collection"`
 	Store      string             `json:"store"`
 	Metrics    JSONMetrics        `json:"metrics"`
+	Bootstrap  *JSONBootstrap     `json:"bootstrap,omitempty"`
 	Baseline   *JSONBaseline      `json:"baseline,omitempty"`
 	Thresholds *JSONThresholds    `json:"thresholds,omitempty"`
 	Failures   []JSONQueryFailure `json:"failures,omitempty"`
@@ -747,6 +785,23 @@ type JSONMetrics struct {
 	LatencyAvg float64 `json:"latency_avg_ms"`
 	QueryCount int     `json:"query_count"`
 	TopK       int     `json:"top_k"`
+}
+
+// JSONBootstrap contains bootstrap confidence interval data.
+type JSONBootstrap struct {
+	N            int     `json:"n"`
+	RecallMean   float64 `json:"recall_mean"`
+	RecallStd    float64 `json:"recall_std"`
+	RecallCI95Lo float64 `json:"recall_ci95_lo"`
+	RecallCI95Hi float64 `json:"recall_ci95_hi"`
+	MRRMean      float64 `json:"mrr_mean"`
+	MRRStd       float64 `json:"mrr_std"`
+	MRRCI95Lo    float64 `json:"mrr_ci95_lo"`
+	MRRCI95Hi    float64 `json:"mrr_ci95_hi"`
+	NDCGMean     float64 `json:"ndcg_mean"`
+	NDCGStd      float64 `json:"ndcg_std"`
+	CoverageMean float64 `json:"coverage_mean"`
+	CoverageStd  float64 `json:"coverage_std"`
 }
 
 // JSONBaseline contains baseline comparison data.
@@ -818,6 +873,26 @@ func buildJSONOutput(result RunResult, runPath string, failures []QueryFailure,
 		},
 	}
 
+	// Add bootstrap data if available
+	if cfg.Bootstrap != nil {
+		bs := cfg.Bootstrap
+		output.Bootstrap = &JSONBootstrap{
+			N:            bs.N,
+			RecallMean:   bs.RecallMean,
+			RecallStd:    bs.RecallStd,
+			RecallCI95Lo: bs.RecallCI95Lo,
+			RecallCI95Hi: bs.RecallCI95Hi,
+			MRRMean:      bs.MRRMean,
+			MRRStd:       bs.MRRStd,
+			MRRCI95Lo:    bs.MRRCI95Lo,
+			MRRCI95Hi:    bs.MRRCI95Hi,
+			NDCGMean:     bs.NDCGMean,
+			NDCGStd:      bs.NDCGStd,
+			CoverageMean: bs.CoverageMean,
+			CoverageStd:  bs.CoverageStd,
+		}
+	}
+
 	// Add failures
 	for _, f := range failures {
 		output.Failures = append(output.Failures, JSONQueryFailure{
@@ -880,4 +955,32 @@ func printJSONOutput(output JSONOutput) {
 		return
 	}
 	fmt.Println(string(data))
+}
+
+// normalizeSource maps a chunk-level source filename back to its parent document
+// if the parent is among the relevant docs. This enables pre-chunked corpora
+// (where each chunkset is a separate file like "doc_cs0042.txt") to match
+// relevant docs specified at the document level (like "doc.txt").
+//
+// The matching is prefix-based: if a relevant doc's stem (without extension)
+// is a prefix of the source's stem, the source is normalized to the relevant doc name.
+// If no match is found, the source is returned unchanged.
+func normalizeSource(source string, relevantDocs []string) string {
+	// Fast path: exact match
+	for _, rd := range relevantDocs {
+		if source == rd {
+			return source
+		}
+	}
+
+	// Prefix match: strip extensions and check if relevant doc stem is a prefix
+	sourceBase := strings.TrimSuffix(source, filepath.Ext(source))
+	for _, rd := range relevantDocs {
+		rdBase := strings.TrimSuffix(rd, filepath.Ext(rd))
+		if strings.HasPrefix(sourceBase, rdBase) {
+			return rd
+		}
+	}
+
+	return source
 }

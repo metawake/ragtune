@@ -37,6 +37,7 @@ var (
 	chunkOverlap int
 	embeddingDim int
 	explainMode  bool
+	preChunked   bool
 )
 
 var ingestCmd = &cobra.Command{
@@ -47,8 +48,14 @@ var ingestCmd = &cobra.Command{
 Reads .md and .txt files from the specified directory, splits them into chunks,
 generates embeddings, and upserts into the configured vector store.
 
+Use --pre-chunked when your documents are already chunked by an external tool
+(e.g., POMA, Unstructured, LlamaIndex). Each file is treated as a single chunk
+and embedded as-is, without splitting. The source is set to the filename so
+that retrieval metrics match your queries.json relevant_docs.
+
 Example:
-  ragtune ingest ./data/docs --store qdrant --collection demo --chunk-size 512`,
+  ragtune ingest ./data/docs --store qdrant --collection demo --chunk-size 512
+  ragtune ingest ./poma-chunksets/ --collection demo --pre-chunked`,
 	Args: cobra.ExactArgs(1),
 	RunE: runIngest,
 }
@@ -58,6 +65,7 @@ func init() {
 	ingestCmd.Flags().IntVar(&chunkOverlap, "chunk-overlap", 64, "Overlap between chunks in characters")
 	ingestCmd.Flags().IntVar(&embeddingDim, "embedding-dim", 0, "Embedding dimension (auto-detected from embedder if not set)")
 	ingestCmd.Flags().BoolVar(&explainMode, "explain", false, "Explain each step of the ingestion process")
+	ingestCmd.Flags().BoolVar(&preChunked, "pre-chunked", false, "Treat each file as a single pre-chunked unit (skip splitting)")
 }
 
 func runIngest(cmd *cobra.Command, args []string) error {
@@ -111,34 +119,60 @@ func runIngest(cmd *cobra.Command, args []string) error {
 	readTime := time.Since(readStart)
 	fmt.Printf("Found %d documents (read in %s)\n", len(docs), readTime.Round(time.Millisecond))
 
-	// Chunk documents
+	// Chunk documents (or use pre-chunked mode)
 	chunkStart := time.Now()
-	c, err := chunker.New(chunkSize, chunkOverlap)
-	if err != nil {
-		return fmt.Errorf("invalid chunker config: %w", err)
-	}
 	var allChunks []chunker.Chunk
-	for _, doc := range docs {
-		chunks := c.Chunk(doc.Content, doc.Path)
-		allChunks = append(allChunks, chunks...)
-	}
-	chunkTime := time.Since(chunkStart)
-	fmt.Printf("Created %d chunks (chunked in %s)\n", len(allChunks), chunkTime.Round(time.Millisecond))
-	if explainMode {
-		avgChunkSize := 0
-		if len(allChunks) > 0 {
-			totalChars := 0
-			for _, ch := range allChunks {
-				totalChars += len(ch.Text)
+	var chunkTime time.Duration
+
+	if preChunked {
+		// Pre-chunked mode: each file is one chunk, no splitting.
+		// Useful for externally chunked data (POMA chunksets, etc.)
+		for i, doc := range docs {
+			text := strings.TrimSpace(doc.Content)
+			if len(text) == 0 {
+				continue
 			}
-			avgChunkSize = totalChars / len(allChunks)
+			allChunks = append(allChunks, chunker.Chunk{
+				ID:     chunker.GenerateChunkID(doc.Path, i, text),
+				Text:   text,
+				Source: doc.Path,
+				Index:  i,
+			})
 		}
-		fmt.Printf("  💡 Chunking splits documents into smaller pieces for embedding.\n")
-		fmt.Printf("     • Target size: %d chars, Overlap: %d chars\n", chunkSize, chunkOverlap)
-		fmt.Printf("     • Actual avg: %d chars per chunk\n", avgChunkSize)
-		fmt.Println("     • Smaller chunks = precise matching, less context")
-		fmt.Println("     • Larger chunks = more context, may include noise")
-		fmt.Println()
+		chunkTime = time.Since(chunkStart)
+		fmt.Printf("Pre-chunked: %d chunks from %d files (in %s)\n", len(allChunks), len(docs), chunkTime.Round(time.Millisecond))
+		if explainMode {
+			fmt.Println("  💡 Pre-chunked mode: each file is treated as a single chunk.")
+			fmt.Println("     Use this when documents were already chunked by an external tool.")
+			fmt.Println()
+		}
+	} else {
+		c, err := chunker.New(chunkSize, chunkOverlap)
+		if err != nil {
+			return fmt.Errorf("invalid chunker config: %w", err)
+		}
+		for _, doc := range docs {
+			chunks := c.Chunk(doc.Content, doc.Path)
+			allChunks = append(allChunks, chunks...)
+		}
+		chunkTime = time.Since(chunkStart)
+		fmt.Printf("Created %d chunks (chunked in %s)\n", len(allChunks), chunkTime.Round(time.Millisecond))
+		if explainMode {
+			avgChunkSize := 0
+			if len(allChunks) > 0 {
+				totalChars := 0
+				for _, ch := range allChunks {
+					totalChars += len(ch.Text)
+				}
+				avgChunkSize = totalChars / len(allChunks)
+			}
+			fmt.Printf("  💡 Chunking splits documents into smaller pieces for embedding.\n")
+			fmt.Printf("     • Target size: %d chars, Overlap: %d chars\n", chunkSize, chunkOverlap)
+			fmt.Printf("     • Actual avg: %d chars per chunk\n", avgChunkSize)
+			fmt.Println("     • Smaller chunks = precise matching, less context")
+			fmt.Println("     • Larger chunks = more context, may include noise")
+			fmt.Println()
+		}
 	}
 
 	// Generate embeddings in batches

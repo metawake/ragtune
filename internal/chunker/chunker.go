@@ -93,7 +93,7 @@ func (c *Chunker) Chunk(text, source string) []Chunk {
 		chunkText := strings.TrimSpace(text[start:end])
 		if len(chunkText) > 0 {
 			chunks = append(chunks, Chunk{
-				ID:     generateChunkID(source, index, chunkText),
+				ID:     GenerateChunkID(source, index, chunkText),
 				Text:   chunkText,
 				Source: source,
 				Index:  index,
@@ -118,9 +118,9 @@ func (c *Chunker) Chunk(text, source string) []Chunk {
 	return chunks
 }
 
-// generateChunkID creates a deterministic UUID for a chunk based on source and content.
+// GenerateChunkID creates a deterministic UUID for a chunk based on source and content.
 // Uses UUID v5 (SHA-1 namespace) for reproducibility.
-func generateChunkID(source string, index int, text string) string {
+func GenerateChunkID(source string, index int, text string) string {
 	// Create a deterministic UUID based on content hash
 	h := sha256.Sum256([]byte(fmt.Sprintf("%s:%d:%s", source, index, text)))
 	// Use first 16 bytes of hash to create a valid UUID
