@@ -24,9 +24,11 @@
 |--------------|---------|
 | **Debug a single query** | `ragtune explain "my query" --collection prod` |
 | **Run batch evaluation** | `ragtune simulate --collection prod --queries queries.json` |
+| **Get confidence intervals** | `ragtune simulate --queries queries.json --bootstrap 20` |
 | **Set up CI/CD quality gates** | `ragtune simulate --ci --min-recall 0.85` |
 | **Detect regressions** | `ragtune simulate --baseline runs/latest.json --fail-on-regression` |
 | **Compare embedders** | `ragtune compare --embedders ollama,openai --docs ./docs` |
+| **Evaluate external chunkers** | `ragtune ingest ./chunks/ --collection test --pre-chunked` |
 | **Quick health check** | `ragtune audit --collection prod --queries queries.json` |
 
 ---
@@ -45,6 +47,22 @@ ragtune explain "How do I reset my password?" --collection my-docs
 ```
 
 No API keys needed with Ollama (runs locally).
+
+### Evaluate External Chunkers (POMA, Unstructured, LlamaIndex)
+
+Already chunked your documents with an external tool? Use `--pre-chunked` to ingest them as-is — one file per chunk, no re-splitting:
+
+```bash
+# Ingest pre-chunked data (each file = one embedding unit)
+ragtune ingest ./poma-chunksets/ --collection poma-test --embedder ollama --pre-chunked
+
+# Compare against naive chunking
+ragtune ingest ./raw-docs/ --collection naive-test --embedder ollama --chunk-size 512
+
+# Benchmark both
+ragtune simulate --collection poma-test --queries queries.json --bootstrap 20
+ragtune simulate --collection naive-test --queries queries.json --bootstrap 20
+```
 
 ### Already using PostgreSQL with pgvector?
 
